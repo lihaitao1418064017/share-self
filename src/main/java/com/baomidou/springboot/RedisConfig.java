@@ -1,6 +1,5 @@
 package com.baomidou.springboot;
 
-//import com.share.admin.redis.RedisObjectSerializer;
 import com.baomidou.springboot.redis.RedisObjectSerializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +9,15 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 
+/**
+* @Description:    redis序列化配置
+* @Author:         LiHaitao
+* @CreateDate:     2018/8/15 16:42
+* @UpdateUser:
+* @UpdateDate:     2018/8/15 16:42
+* @UpdateRemark:
+* @Version:        1.0.0
+*/
 @Configuration
 public class RedisConfig {
 
