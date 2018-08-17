@@ -1,9 +1,14 @@
 package com.baomidou.springboot.vo;
 
-import com.baomidou.springboot.entity.User;
+import com.baomidou.springboot.domain.Photos;
+import com.baomidou.springboot.domain.User;
+import com.baomidou.springboot.domain.Video;
+import com.baomidou.springboot.domain.enums.ArticleType;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
+
 
 @Data
 public class ArticleVO {
@@ -22,13 +27,12 @@ public class ArticleVO {
     /**
      * 时间
      */
-//    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date date=new Date();
+    private Date date;
 
     /**
      * 文章类型
      */
-    private String articleType;
+    private ArticleType articleType;
 
     /**
      * 推荐
@@ -41,4 +45,14 @@ public class ArticleVO {
      */
     private User user;
 
+
+    /**
+     * 文章图片
+     */
+    private List<Photos> photosList;
+
+    /**
+     * 视频
+     */
+    private List<Video> videosList;
 }

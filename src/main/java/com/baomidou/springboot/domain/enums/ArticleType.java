@@ -1,5 +1,8 @@
-package com.baomidou.springboot.entity.enums;
+package com.baomidou.springboot.domain.enums;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum  ArticleType {
     FRESH(0,"新鲜事"),
     VIDEO(1, "视频"),

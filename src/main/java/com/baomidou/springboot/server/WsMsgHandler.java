@@ -24,12 +24,12 @@ import org.tio.websocket.server.handler.IWsMsgHandler;
 * @UpdateRemark:
 * @Version:        1.0.0
 */
-public class ShowcaseWsMsgHandler implements IWsMsgHandler {
-	private static Logger log = LoggerFactory.getLogger(ShowcaseWsMsgHandler.class);
+public class WsMsgHandler implements IWsMsgHandler {
+	private static Logger log = LoggerFactory.getLogger(WsMsgHandler.class);
 
-	public static final ShowcaseWsMsgHandler me = new ShowcaseWsMsgHandler();
+	public static final WsMsgHandler me = new WsMsgHandler();
 
-	private ShowcaseWsMsgHandler() {
+	private WsMsgHandler() {
 
 	}
 
@@ -44,13 +44,13 @@ public class ShowcaseWsMsgHandler implements IWsMsgHandler {
 		return httpResponse;
 	}
 
-	/** 
-	 * @param httpRequest
-	 * @param httpResponse
-	 * @param channelContext
-	 * @throws Exception
-	 * @author tanyaowu
-	 */
+	/**
+	* @Description:    连接时执行
+	* @Author:         Lihaitao
+	* @Date:       2018/8/15 18:02
+	* @UpdateUser:
+	* @UpdateRemark:
+	*/
 	@Override
 	public void onAfterHandshaked(HttpRequest httpRequest, HttpResponse httpResponse, ChannelContext channelContext) throws Exception {
 
@@ -66,7 +66,7 @@ public class ShowcaseWsMsgHandler implements IWsMsgHandler {
 //		String msg = channelContext.getClientNode().toString() + " 进来了，现在共有【" + count + "】人在线";
 		String msg="Connection successful！";
 		//用tio-websocket，服务器发送到客户端的Packet都是WsResponse
-		WsResponse wsResponse = WsResponse.fromText(msg, ShowcaseServerConfig.CHARSET);
+		WsResponse wsResponse = WsResponse.fromText(msg, ServerConfig.CHARSET);
 		//群发
 		Aio.sendToGroup(channelContext.getGroupContext(), Const.GROUP_ID, wsResponse);
 	}
@@ -88,9 +88,13 @@ public class ShowcaseWsMsgHandler implements IWsMsgHandler {
 		return null;
 	}
 
-	/*
-	 * 字符消息（binaryType = blob）过来后会走这个方法
-	 */
+	/**
+	* @Description:    字符消息过来会走这个方法
+	* @Author:         LiHaitao
+	* @Date:       2018/8/15 18:02
+	* @UpdateUser:
+	* @UpdateRemark:
+	*/
 	@Override
 	public Object onText(WsRequest wsRequest, String text, ChannelContext channelContext) throws Exception {
 		//将字符消息json转化成消息对象
@@ -101,10 +105,10 @@ public class ShowcaseWsMsgHandler implements IWsMsgHandler {
 //		WsSessionContext wsSessionContext = (WsSessionContext) channelContext.getAttribute();
 //		HttpRequest httpRequest = wsSessionContext.getHandshakeRequestPacket();//获取websocket握手包
 
-//		if (MsgUtil.existsUser(msg.getTo())) {
+		if (MsgUtil.existsUser(msg.getTo(),channelContext)) {
 		System.err.println("发给------>"+msg.getTo());
 			MsgUtil.sendToUser(msg.getTo(),msg,channelContext);
-//		}
+		}
 		return null;
 	}
 

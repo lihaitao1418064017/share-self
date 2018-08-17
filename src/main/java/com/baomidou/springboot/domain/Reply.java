@@ -1,4 +1,4 @@
-package com.baomidou.springboot.entity;
+package com.baomidou.springboot.domain;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;

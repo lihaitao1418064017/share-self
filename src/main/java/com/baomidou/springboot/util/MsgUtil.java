@@ -2,7 +2,7 @@ package com.baomidou.springboot.util;
 
 import cn.hutool.json.JSONUtil;
 import com.baomidou.springboot.pojo.Msg;
-import com.baomidou.springboot.server.ShowcaseServerConfig;
+import com.baomidou.springboot.server.ServerConfig;
 import org.tio.core.Aio;
 import org.tio.core.ChannelContext;
 import org.tio.utils.lock.SetWithLock;
@@ -89,7 +89,7 @@ public class MsgUtil {
         if(channelContext == null) {
             return;
         }
-        WsResponse response = WsResponse.fromText(JSONUtil.toJsonStr(msg), ShowcaseServerConfig.CHARSET);
+        WsResponse response = WsResponse.fromText(JSONUtil.toJsonStr(msg), ServerConfig.CHARSET);
         Aio.sendToId(channelContext.getGroupContext(), channelContext.getId(), response);
     }
 }

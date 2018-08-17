@@ -1,4 +1,4 @@
-package com.baomidou.springboot.entity;
+package com.baomidou.springboot.domain;
 
 import java.io.Serializable;
 
@@ -6,12 +6,16 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 
 /**
- * 演示实体父类
- */
+* @Description:   通用实体父类
+* @Author:
+* @UpdateUser:
+* @UpdateRemark:
+* @Version:        1.0.0
+*/
 public class SuperEntity<T extends Model> extends Model<T> {
 
     /**
-     * 主键ID , 这里故意演示注解可以无
+     * 主键ID
      */
     @TableId("id")
     private Long id;

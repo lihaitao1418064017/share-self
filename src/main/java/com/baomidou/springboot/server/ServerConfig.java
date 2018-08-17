@@ -14,7 +14,7 @@ import org.tio.utils.time.Time;
 * @UpdateRemark:
 * @Version:        1.0.0
 */
-public abstract class ShowcaseServerConfig {
+public abstract class ServerConfig {
 	/**
 	 * 协议名字(可以随便取)
 	 */

@@ -1,12 +1,13 @@
 package com.baomidou.springboot.controller;
 
 import com.baomidou.mybatisplus.extension.api.ApiController;
-import com.baomidou.springboot.entity.Article;
-import com.baomidou.springboot.entity.Video;
+import com.baomidou.springboot.domain.Article;
+import com.baomidou.springboot.domain.Video;
 import com.baomidou.springboot.response.ResponseMessage;
 import com.baomidou.springboot.service.IArticleService;
 import com.baomidou.springboot.service.IVideoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,12 +34,13 @@ public class VideoArticleController extends ApiController {
 
 
     @RequestMapping("/add")
-    public ResponseMessage addPhotoByArticle(@RequestParam("video") String videoName, @RequestParam("id")String id){
-       Article article=articleService.selectById(Long.parseLong(id));
-        Video video=new Video();
-        video.setArticle(article);
-        video.setUrl(videoName);
-        videoService.insert(video);
-        return ResponseMessage.ok();
+    public ResponseMessage addPhotoByArticle(@RequestBody Video video){
+
+        return ResponseMessage.ok(videoService.insert(video));
+    }
+
+    @RequestMapping("/update")
+    public ResponseMessage update(@RequestBody Video video){
+        return ResponseMessage.ok(videoService.updateById(video));
     }
 }

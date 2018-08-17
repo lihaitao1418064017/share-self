@@ -61,7 +61,7 @@ DROP TABLE IF EXISTS `photos`;
 CREATE TABLE `photos` (
   `id` bigint(20) NOT NULL COMMENT '涓婚敭ID',
   `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
-  `url` int(11) DEFAULT NULL COMMENT 'uri',
+  `url` VARCHAR (255) DEFAULT NULL COMMENT 'uri',
   `article_id` int(11) DEFAULT NULL COMMENT '鏂囩珷',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -71,17 +71,7 @@ CREATE TABLE `photos` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `reply`
--- ----------------------------
-DROP TABLE IF EXISTS `reply`;
-CREATE TABLE `reply` (
-  `id` bigint(20) NOT NULL COMMENT '主键ID',
-  `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
-  `article_id` int(11) DEFAULT NULL COMMENT '评论文章',
-  `parent_id` int(11) DEFAULT NULL COMMENT '父评论',
-  `child_id` int(11) DEFAULT NULL COMMENT '子评论',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- ----------------------------
 -- Records of reply
@@ -120,11 +110,25 @@ DROP TABLE IF EXISTS `video`;
 CREATE TABLE `video` (
   `id` bigint(20) NOT NULL COMMENT '涓婚敭ID',
   `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
-  `url` int(11) DEFAULT NULL COMMENT 'uri',
+  `url` VARCHAR(255) DEFAULT NULL COMMENT 'uri',
   `article_id` int(11) DEFAULT NULL COMMENT '鏂囩珷',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of video
--- ----------------------------
+
+CREATE TABLE `focus_user` (
+  `id` bigint(20) NOT NULL COMMENT '',
+  `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
+  `user_id` bigint(20) DEFAULT NULL COMMENT '关注用户',
+  `focus_user_id` bigint(20) DEFAULT NULL COMMENT '被关注用户',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `love_article` (
+  `id` bigint(20) NOT NULL COMMENT '',
+  `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
+  `user_id` bigint(20) DEFAULT NULL COMMENT '关注用户',
+  `article_id` bigint(20) DEFAULT NULL COMMENT '关注的文章',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

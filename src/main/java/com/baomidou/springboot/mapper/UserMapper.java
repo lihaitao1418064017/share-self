@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Select;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.springboot.SuperMapper;
-import com.baomidou.springboot.entity.User;
+import com.baomidou.springboot.domain.User;
 
 /**
  * User 表数据库控制层接口

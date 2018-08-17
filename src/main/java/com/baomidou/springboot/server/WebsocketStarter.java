@@ -14,26 +14,23 @@ import java.io.IOException;
 * @UpdateRemark:
 * @Version:        1.0.0
 */
-public class ShowcaseWebsocketStarter {
+public class WebsocketStarter {
 
 	private WsServerStarter wsServerStarter;
 	private ServerGroupContext serverGroupContext;
 
 
-	public ShowcaseWebsocketStarter(int port, ShowcaseWsMsgHandler wsMsgHandler) throws Exception {
+	public WebsocketStarter(int port, WsMsgHandler wsMsgHandler) throws Exception {
 		wsServerStarter = new WsServerStarter(port, wsMsgHandler);
-
 		serverGroupContext = wsServerStarter.getServerGroupContext();
-		serverGroupContext.setName(ShowcaseServerConfig.PROTOCOL_NAME);
-		serverGroupContext.setServerAioListener(ShowcaseServerAioListener.me);
-
+		serverGroupContext.setName(ServerConfig.PROTOCOL_NAME);
+		serverGroupContext.setServerAioListener(ServerAioListener.me);
 		//设置ip监控
-		serverGroupContext.setIpStatListener(ShowcaseIpStatListener.me);
+		serverGroupContext.setIpStatListener(IpStatListener.me);
 		//设置ip统计时间段
-		serverGroupContext.ipStats.addDurations(ShowcaseServerConfig.IpStatDuration.IPSTAT_DURATIONS);
-		
+		serverGroupContext.ipStats.addDurations(ServerConfig.IpStatDuration.IPSTAT_DURATIONS);
 		//设置心跳超时时间
-		serverGroupContext.setHeartbeatTimeout(ShowcaseServerConfig.HEARTBEAT_TIMEOUT);
+		serverGroupContext.setHeartbeatTimeout(ServerConfig.HEARTBEAT_TIMEOUT);
 		//如果你希望通过wss来访问，就加上下面的代码吧，不过首先你得有SSL证书（证书必须和域名相匹配，否则可能访问不了ssl）
 //		String keyStoreFile = "classpath:config/ssl/keystore.jks";
 //		String trustStoreFile = "classpath:config/ssl/keystore.jks";
@@ -41,14 +38,12 @@ public class ShowcaseWebsocketStarter {
 //		serverGroupContext.useSsl(keyStoreFile, trustStoreFile, keyStorePwd);
 		
 	}
-
 	/**
-	 * @param args
 	 * @author tanyaowu
 	 * @throws IOException
 	 */
 	public static void start() throws Exception {
-		ShowcaseWebsocketStarter appStarter = new ShowcaseWebsocketStarter(ShowcaseServerConfig.SERVER_PORT, ShowcaseWsMsgHandler.me);
+		WebsocketStarter appStarter = new WebsocketStarter(ServerConfig.SERVER_PORT, WsMsgHandler.me);
 		appStarter.wsServerStarter.start();
 	}
 
@@ -62,7 +57,13 @@ public class ShowcaseWebsocketStarter {
 	public WsServerStarter getWsServerStarter() {
 		return wsServerStarter;
 	}
-	
+	/**
+	* @Description:    通信接口启动入口
+	* @Author:         Lihaitao
+	* @Date:       2018/8/15 17:39
+	* @UpdateUser:
+	* @UpdateRemark:
+	*/
 	public static void main(String[] args) throws Exception {
 		start();
 	}

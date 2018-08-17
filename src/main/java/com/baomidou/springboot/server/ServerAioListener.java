@@ -21,12 +21,12 @@ import org.tio.websocket.server.WsServerAioListener;
 * @UpdateRemark:
 * @Version:        1.0.0
 */
-public class ShowcaseServerAioListener extends WsServerAioListener {
-	private static Logger log = LoggerFactory.getLogger(ShowcaseServerAioListener.class);
+public class ServerAioListener extends WsServerAioListener {
+	private static Logger log = LoggerFactory.getLogger(ServerAioListener.class);
 
-	public static final ShowcaseServerAioListener me = new ShowcaseServerAioListener();
+	public static final ServerAioListener me = new ServerAioListener();
 
-	private ShowcaseServerAioListener() {
+	private ServerAioListener() {
 
 	}
 
@@ -62,7 +62,7 @@ public class ShowcaseServerAioListener extends WsServerAioListener {
 
 			String msg = channelContext.getClientNode().toString() + " 离开了，现在共有【" + count + "】人在线";
 			//用tio-websocket，服务器发送到客户端的Packet都是WsResponse
-			WsResponse wsResponse = WsResponse.fromText(msg, ShowcaseServerConfig.CHARSET);
+			WsResponse wsResponse = WsResponse.fromText(msg, ServerConfig.CHARSET);
 			//群发
 			Aio.sendToGroup(channelContext.getGroupContext(), Const.GROUP_ID, wsResponse);
 		}

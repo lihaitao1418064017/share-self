@@ -1,10 +1,10 @@
-package com.baomidou.springboot.entity;
+package com.baomidou.springboot.domain;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
-* @Description:    视频
+* @Description:    照片
 * @Author:         LiHaitao
 * @CreateDate:     2018/8/4 15:13
 * @UpdateUser:
@@ -12,20 +12,18 @@ import lombok.Data;
 * @UpdateRemark:
 * @Version:        1.0.0
 */
-@SuppressWarnings("serial")
 @Data
-@TableName("video")
-public class Video extends SuperEntity<Video> {
+@TableName("photos")
+public class Photos extends SuperEntity<Photos> {
+
+    /**
+     * 照片名称
+     */
+    private String url;
 
     /**
      * 文章
      */
-    private Article article;
     private Long articleId;
-
-    /**
-     * 视频地址
-     */
-    private String url;
 
 }

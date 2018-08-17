@@ -1,13 +1,15 @@
 package com.baomidou.springboot.controller;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.baomidou.springboot.domain.enums.UserRoleEnum;
 import com.baomidou.springboot.response.ErrorCode;
+import com.baomidou.springboot.response.ResponseMessage;
+import com.baomidou.springboot.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -16,22 +18,20 @@ import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.api.ApiResult;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.plugins.pagination.PageHelper;
-import com.baomidou.springboot.entity.User;
-import com.baomidou.springboot.entity.enums.AgeEnum;
-import com.baomidou.springboot.entity.enums.PhoneEnum;
+import com.baomidou.springboot.domain.User;
 import com.baomidou.springboot.service.IUserService;
 
 /**
  * 代码生成器，参考源码测试用例：
  * <p>
- * /mybatis-plus/src/test/java/com/baomidou/mybatisplus/test/generator/MysqlGenerator.java
  */
 @RestController
 @RequestMapping("/user")
 public class UserController extends ApiController {
-
     @Autowired
     private IUserService userService;
+
+
 
     /**
      * <p>
@@ -43,84 +43,44 @@ public class UserController extends ApiController {
      */
     @GetMapping("/api")
     public ApiResult<String> testError(String test) {
+
         ApiAssert.isNull(ErrorCode.TEST, test);
         return success(test);
     }
 
     /**
-     * http://localhost:8080/user/test
+     * 添加
      */
-    @GetMapping("/test")
-    public IPage<User> test() {
-        return userService.selectPage(new Page<User>(0, 12), null);
+    @PostMapping("/add")
+    public ResponseMessage<Boolean> addUser(@RequestBody UserVO vo) {
+        return ResponseMessage.ok(userService.insert(modelToEntity(vo)));
+    }
+    /**
+     * 删除
+     */
+    @RequestMapping("/{id}")
+    public ResponseMessage<Boolean> deleteById(@PathVariable("id")String id){
+        return ResponseMessage.ok(userService.deleteById(Long.parseLong(id)));
     }
 
     /**
-     * AR 部分测试
-     * http://localhost:8080/user/test1
+     * 更新
      */
-    @GetMapping("/test1")
-    public IPage<User> test1() {
-        User user = new User("testAr", AgeEnum.ONE, 1);
-        System.err.println("删除所有：" + user.delete(null));
-        user.setRole(111L);
-        user.setTestDate(new Date());
-        user.setPhone(PhoneEnum.CMCC);
-        user.insert();
-        System.err.println("查询插入结果：" + user.selectById().toString());
-        user.setName("mybatis-plus-ar");
-        System.err.println("更新：" + user.updateById());
-        return user.selectPage(new Page<User>(0, 12), null);
+    @RequestMapping("/update")
+    public ResponseMessage<Boolean> update(@RequestBody UserVO userVO){
+        return ResponseMessage.ok(userService.updateById(modelToEntity(userVO)));
     }
+
 
     /**
-     * 增删改查 CRUD
-     * http://localhost:8080/user/test2
+     * 分页查询
      */
-    @GetMapping("/test2")
-    public User test2() {
-        System.err.println("删除一条数据：" + userService.deleteById(1L));
-        System.err.println("deleteAll：" + userService.deleteAll());
-        System.err.println("插入一条数据：" + userService.insert(new User(1L, "张三", AgeEnum.TWO, 1)));
-        User user = new User("张三", AgeEnum.TWO, 1);
-        boolean result = userService.insert(user);
-        // 自动回写的ID
-        Long id = user.getId();
-        System.err.println("插入一条数据：" + result + ", 插入信息：" + user.toString());
-        System.err.println("查询：" + userService.selectById(id).toString());
-        System.err.println("更新一条数据：" + userService.updateById(new User(1L, "三毛", AgeEnum.ONE, 1)));
-        for (int i = 0; i < 5; ++i) {
-            userService.insert(new User(Long.valueOf(100 + i), "张三" + i, AgeEnum.ONE, 1));
-        }
-        IPage<User> userListPage = userService.selectPage(new Page<User>(1, 5), new QueryWrapper<User>());
-        System.err.println("total=" + userListPage.getTotal() + ", current list size=" + userListPage.getRecords().size());
-
-        userListPage = userService.selectPage(new Page<User>(1, 5), new QueryWrapper<User>().orderByDesc("name"));
-        System.err.println("total=" + userListPage.getTotal() + ", current list size=" + userListPage.getRecords().size());
-        return userService.selectById(1L);
+    @GetMapping("/page")
+    public ResponseMessage test(@RequestParam("pageSize")Integer pageSize, @RequestParam("pageNo")Integer pageNo) {
+        QueryWrapper queryWrapper=new QueryWrapper();
+        return ResponseMessage.ok(userService.selectPage(new Page<User>(pageNo-1, pageSize), queryWrapper));
     }
 
-    /**
-     * 插入 OR 修改
-     * http://localhost:8080/user/test3
-     */
-    @GetMapping("/test3")
-    public User test3() {
-        User user = new User(1L, "王五", AgeEnum.ONE, 1);
-        user.setPhone(PhoneEnum.CT);
-        userService.insertOrUpdate(user);
-        return userService.selectById(1L);
-    }
-
-    /**
-     * http://localhost:8080/user/add
-     */
-    @GetMapping("/add")
-    public Object addUser() {
-        User user = new User("张三'特殊`符号", AgeEnum.TWO, 1);
-        user.setPhone(PhoneEnum.CUCC);
-        return userService.insert(user);
-    }
 
     /**
      * http://localhost:8080/user/select_sql
@@ -131,30 +91,14 @@ public class UserController extends ApiController {
     }
 
     /**
-     * http://localhost:8080/user/select_wrapper
+     * 根据XX查询匹配的所有，不分页
      */
-    @GetMapping("/select_wrapper")
-    public Object getUserByWrapper() {
-        return userService.selectListByWrapper(new QueryWrapper<User>()
-                .lambda().like(User::getName, "毛"));
+    @GetMapping("/like_name")
+    public ResponseMessage<List<UserVO>> getUserByWrapper(@RequestParam String name) {
+        return ResponseMessage.ok(entityToModelList(userService.selectListByWrapper(new QueryWrapper<User>()
+                .lambda().like(User::getName, name))));
     }
 
-    /**
-     * <p>
-     * 参数模式分页
-     * </p>
-     * <p>
-     * 7、分页 size 一页显示数量  current 当前页码
-     * 方式一：http://localhost:8080/user/page?size=1&current=1<br>
-     * 方式二：http://localhost:8080/user/page_helper?size=1&current=1<br>
-     *
-     * 集合模式，不进行分页直接返回所有结果集：
-     * http://localhost:8080/user/page?listMode=true
-     */
-    @GetMapping("/page")
-    public IPage page(Page page) {
-        return userService.selectPage(page, null);
-    }
 
     /**
      * ThreadLocal 模式分页
@@ -169,7 +113,6 @@ public class UserController extends ApiController {
         return page;
     }
 
-
     /**
      * 测试事物
      * http://localhost:8080/user/test_transactional<br>
@@ -181,10 +124,52 @@ public class UserController extends ApiController {
      */
     @Transactional(rollbackFor = Exception.class)
     @GetMapping("/test_transactional")
-    public void testTransactional() {
-        User user = new User(1000L, "测试事物", AgeEnum.ONE, 3);
+    public void testTransactional(@RequestBody User user) {
         userService.insert(user);
         System.out.println(" 这里手动抛出异常，自动回滚数据");
         throw new RuntimeException();
+    }
+
+
+    private User modelToEntity(UserVO vo){
+        User user=new User();
+        user.setId(vo.getId());
+        user.setAge(vo.getAge());
+        user.setName(vo.getName());
+        user.setBirthday(vo.getBirthday());
+        user.setHeadshot(vo.getHeadshot());
+        user.setNickname(vo.getNickname());
+        user.setPhone(vo.getPhone());
+        user.setRole(UserRoleEnum.getByRoleName(vo.getRole()));
+        user.setSignature(vo.getSignature());
+        user.setAddress(vo.getAddress());
+        user.setLove(vo.getLove());
+        user.setArticleSum(vo.getArticleSum());
+        user.setFocus(vo.getFocus());
+        return user;
+    }
+
+    private List<UserVO> entityToModelList(List<User> list){
+        List<UserVO> list1=new ArrayList<>();
+        list.forEach(en->{
+            list1.add(entityToModel(en));
+        });
+        return list1;
+    }
+    private UserVO entityToModel(User user){
+        UserVO userVO=new UserVO();
+        userVO.setId(user.getId());
+        userVO.setAge(user.getAge());
+        userVO.setBirthday(user.getBirthday());
+        userVO.setHeadshot(user.getHeadshot());
+        userVO.setNickname(user.getNickname());
+        userVO.setPhone(user.getPhone());
+        userVO.setRole(user.getRole().getRoleName());
+        userVO.setSignature(user.getSignature());
+        userVO.setAddress(user.getAddress());
+        userVO.setLove(user.getLove());
+        userVO.setArticleSum(user.getArticleSum());
+        userVO.setFocus(user.getFocus());
+        return userVO;
     }
 }

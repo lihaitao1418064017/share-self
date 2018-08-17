@@ -1,4 +1,4 @@
-package com.baomidou.springboot.entity;
+package com.baomidou.springboot.domain;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -18,22 +18,29 @@ import java.util.Date;
 @TableName("comments")
 public class Comments extends SuperEntity<Comments> {
 
-    /**
-     * 评论内容
-     */
-    private String content;
-
-    /**
-     * 评论人
-     */
-    private User user;
-    private Long userId;
 
     /**
      * 评论的文章
      */
-    private Article article;
     private Long articleId;
+
+
+    /**
+     * 艾特谁的评论
+     */
+    private Long parentId;
+
+    /**
+     * 评论人
+     */
+//    private User user;
+    private Long userId;
+
+
+    /**
+     * 评论内容
+     */
+    private String content;
 
     /**
      * 评论时间
@@ -44,6 +51,7 @@ public class Comments extends SuperEntity<Comments> {
      * 赞数
      */
     private Integer praise;
+
 
 
 

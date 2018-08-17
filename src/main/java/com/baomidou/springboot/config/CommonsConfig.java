@@ -4,25 +4,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.baomidou.springboot.cache.ArticleCache;
+import com.baomidou.springboot.redis.ICache;
+import com.baomidou.springboot.redis.redisImpl.CacheImpl;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.baomidou.mybatisplus.core.parser.ISqlParser;
-import com.baomidou.mybatisplus.extension.incrementer.H2KeyGenerator;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.tenant.TenantHandler;
 import com.baomidou.mybatisplus.extension.plugins.tenant.TenantSqlParser;
 
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.LongValue;
-
+/**
+* @Description:    配置类
+* @Author:         LiHaitao
+* @CreateDate:     2018/8/15 17:33
+* @UpdateUser:
+* @UpdateDate:     2018/8/15 17:33
+* @UpdateRemark:
+* @Version:        1.0.0
+*/
 @Configuration
 //@MapperScan("com.baomidou.springboot.mapper*")//这个注解，作用相当于下面的@Bean MapperScannerConfigurer，2者配置1份即可
-public class MybatisPlusConfig {
-
-
-
+public class CommonsConfig {
 
 
     /**
@@ -33,6 +39,14 @@ public class MybatisPlusConfig {
         return new ArticleCache();
     }
 
+    /**
+     * 注入redis缓存接口
+     * @return
+     */
+    @Bean
+    public ICache cache(){
+        return  new CacheImpl();
+    }
 
 
 

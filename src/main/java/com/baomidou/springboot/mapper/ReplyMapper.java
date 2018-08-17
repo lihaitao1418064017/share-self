@@ -2,7 +2,7 @@ package com.baomidou.springboot.mapper;
 
 
 import com.baomidou.springboot.SuperMapper;
-import com.baomidou.springboot.entity.Reply;
+import com.baomidou.springboot.domain.Reply;
 
 /**
 * @Description:    评论回复数据接口

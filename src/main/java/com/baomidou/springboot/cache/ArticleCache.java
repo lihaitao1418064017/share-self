@@ -1,6 +1,6 @@
 package com.baomidou.springboot.cache;
 
-import com.baomidou.springboot.entity.Article;
+import com.baomidou.springboot.domain.Article;
 import com.baomidou.springboot.service.IArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 

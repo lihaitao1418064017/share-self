@@ -5,9 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.baomidou.springboot.entity.User;
+import com.baomidou.springboot.domain.User;
 import com.baomidou.springboot.mapper.UserMapper;
 import com.baomidou.springboot.service.IUserService;
 

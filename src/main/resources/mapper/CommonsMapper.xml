@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.share.admin.mapper.CommenstMapper">
+<mapper namespace="com.baomidou.springboot.mapper.CommenstMapper">
+    <resultMap id="CommentsVO" type="com.baomidou.springboot.vo.CommentsVO">
+        <id column="co_id" jdbcType="INTEGER" property="id" />
+        <result column="co_content" jdbcType="VARCHAR" property="content" />
+        <result column="co_date" jdbcType="DATE" property="content" />
+        <result column="co_praise" jdbcType="INTEGER" property="praise" />
+        <association property="parentUser" column="parent_id" javaType="com.baomidou.springboot.domain.User">
+            <id  property="id" column="id"  />
+            <result column="name" property="name" jdbcType="VARCHAR" />
+            <result column="age" property="age" jdbcType="INTEGER" />
+            <result column="birthday" property="birthday" jdbcType="DATE" />
+            <result column="headshot" property="headshot" jdbcType="VARCHAR" />
+            <result column="signature" property="signature" jdbcType="VARCHAR" />
+            <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+            <result column="phone" property="phone" jdbcType="VARCHAR" />
+            <result column="role" property="role" jdbcType="INTEGER" />
+            <result column="love" property="love" jdbcType="INTEGER" />
+            <result column="focus" property="focus" jdbcType="INTEGER" />
+            <result column="article_sum" property="articleSum" jdbcType="INTEGER" />
+            <result column="address" property="address" jdbcType="VARCHAR" />
+        </association>
+        <association property="currentUser" column="user_id" javaType="com.baomidou.springboot.domain.User">
+            <id  property="id" column="id"  />
+            <result column="name" property="name" jdbcType="VARCHAR" />
+            <result column="age" property="age" jdbcType="INTEGER" />
+            <result column="birthday" property="birthday" jdbcType="DATE" />
+            <result column="headshot" property="headshot" jdbcType="VARCHAR" />
+            <result column="signature" property="signature" jdbcType="VARCHAR" />
+            <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+            <result column="phone" property="phone" jdbcType="VARCHAR" />
+            <result column="role" property="role" jdbcType="INTEGER" />
+            <result column="love" property="love" jdbcType="INTEGER" />
+            <result column="focus" property="focus" jdbcType="INTEGER" />
+            <result column="article_sum" property="articleSum" jdbcType="INTEGER" />
+            <result column="address" property="address" jdbcType="VARCHAR" />
+        </association>
+    </resultMap>
+
+    <select id="selectByArticleId" resultMap="CommentsVO">
+         SELECT
+        co.id AS co_id,
+        co.praise AS co_praise,
+        co.content AS co_content,
+        co.date AS co_date,
+
+        us.*,
+        u.*
+
+        FROM (comments co
+        INNER JOIN user u ON u.id = co.parent_id) INNER JOIN user us ON us.id=co.user_id
+        WHERE co.article_id = #{articleId ,jdbcType=INTEGER}
+    </select>
+
+
 
 
 </mapper>

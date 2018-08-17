@@ -1,7 +1,7 @@
-package com.baomidou.springboot.entity;
+package com.baomidou.springboot.domain;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.springboot.entity.enums.ArticleType;
+import com.baomidou.springboot.domain.enums.ArticleType;
 import lombok.Data;
 
 import java.util.Date;
@@ -48,7 +48,6 @@ public class Article extends SuperEntity<Article> {
     /**
      * 文章作者
      */
-    private User user;
     private Long userId;
 
 

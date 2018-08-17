@@ -2,7 +2,7 @@ package com.baomidou.springboot.mapper;
 
 
 import com.baomidou.springboot.SuperMapper;
-import com.baomidou.springboot.entity.Video;
+import com.baomidou.springboot.domain.Video;
 
 /**
 * @Description:    视频数据访问层

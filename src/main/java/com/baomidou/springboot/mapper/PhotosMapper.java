@@ -2,7 +2,7 @@ package com.baomidou.springboot.mapper;
 
 
 import com.baomidou.springboot.SuperMapper;
-import com.baomidou.springboot.entity.Photos;
+import com.baomidou.springboot.domain.Photos;
 
 /**
 * @Description:    图片数据服务层

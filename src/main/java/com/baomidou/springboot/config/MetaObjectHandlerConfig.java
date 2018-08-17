@@ -7,6 +7,15 @@ import org.springframework.stereotype.Component;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 
+/**
+* @Description:    实体自动填充类
+* @Author:         LiHaitao
+* @CreateDate:     2018/8/15 17:36
+* @UpdateUser:
+* @UpdateDate:     2018/8/15 17:36
+* @UpdateRemark:
+* @Version:        1.0.0
+*/
 @Component
 public class MetaObjectHandlerConfig extends MetaObjectHandler {
 

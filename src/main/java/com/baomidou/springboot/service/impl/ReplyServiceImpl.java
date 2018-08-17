@@ -1,7 +1,7 @@
 package com.baomidou.springboot.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.baomidou.springboot.entity.Reply;
+import com.baomidou.springboot.domain.Reply;
 import com.baomidou.springboot.mapper.ReplyMapper;
 import com.baomidou.springboot.service.IReplyService;
 import org.springframework.stereotype.Service;

@@ -9,7 +9,6 @@ import org.tio.core.ChannelContext;
 import org.tio.core.GroupContext;
 import org.tio.core.intf.Packet;
 import org.tio.core.stat.IpStat;
-import org.tio.core.stat.IpStatListener;
 import org.tio.utils.json.Json;
 
 /**
@@ -21,15 +20,15 @@ import org.tio.utils.json.Json;
 * @UpdateRemark:
 * @Version:        1.0.0
 */
-public class ShowcaseIpStatListener implements IpStatListener {
-	private static Logger log = LoggerFactory.getLogger(ShowcaseIpStatListener.class);
+public class IpStatListener implements org.tio.core.stat.IpStatListener {
+	private static Logger log = LoggerFactory.getLogger(IpStatListener.class);
 
-	public static final ShowcaseIpStatListener me = new ShowcaseIpStatListener();
+	public static final IpStatListener me = new IpStatListener();
 
 	/**
 	 * 
 	 */
-	private ShowcaseIpStatListener() {
+	private IpStatListener() {
 	}
 
 	@Override

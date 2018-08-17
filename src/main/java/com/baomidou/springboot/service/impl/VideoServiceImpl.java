@@ -2,7 +2,7 @@ package com.baomidou.springboot.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.baomidou.springboot.entity.Video;
+import com.baomidou.springboot.domain.Video;
 import com.baomidou.springboot.mapper.VideoMapper;
 import com.baomidou.springboot.service.IVideoService;
 import org.springframework.stereotype.Service;

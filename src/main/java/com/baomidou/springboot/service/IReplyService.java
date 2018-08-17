@@ -2,7 +2,7 @@ package com.baomidou.springboot.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.baomidou.springboot.entity.Reply;
+import com.baomidou.springboot.domain.Reply;
 
 /**
 * @Description:    回复评论业务层接口

@@ -29,12 +29,6 @@ public class Application {
      * 使用：JDBC URL 设置 jdbc:h2:mem:testdb 用户名 sa 密码 sa 进入，可视化查看 user 表<br>
      * 误删连接设置，开发机系统本地 ~/.h2.server.properties 文件<br>
      * <br>
-     * 1、http://localhost:8080/user/test<br>
-     * 2、http://localhost:8080/user/test1<br>
-     * 3、http://localhost:8080/user/test2<br>
-     * 4、http://localhost:8080/user/test3<br>
-     * 5、http://localhost:8080/user/add<br>
-     * 6、http://localhost:8080/user/selectsql<br>
      * 7、分页 size 一页显示数量  current 当前页码
      * 方式一：http://localhost:8080/user/page?size=1&current=1<br>
      * 方式二：http://localhost:8080/user/pagehelper?size=1&current=1<br>

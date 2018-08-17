@@ -1,15 +1,13 @@
 package com.baomidou.springboot.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.baomidou.springboot.entity.Article;
-import com.baomidou.springboot.entity.User;
+import com.baomidou.springboot.domain.Article;
 import com.baomidou.springboot.mapper.ArticleMapper;
-import com.baomidou.springboot.mapper.UserMapper;
 import com.baomidou.springboot.service.IArticleService;
-import com.baomidou.springboot.service.IUserService;
+import com.baomidou.springboot.vo.ArticleVO;
 import org.springframework.stereotype.Service;
 
+import java.sql.Wrapper;
 import java.util.List;
 
 /**
@@ -21,4 +19,18 @@ import java.util.List;
 public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> implements IArticleService {
 
 
+    @Override
+    public List<ArticleVO> selectByWrapper(Wrapper wrapper) {
+        return baseMapper.selectByWrapper(wrapper);
+    }
+
+    @Override
+    public ArticleVO selectByPrimaryKey(Long id) {
+        return baseMapper.selectByArticlePrimaryKey(id);
+    }
+
+    @Override
+    public List<ArticleVO> selectByUserId(Long id) {
+        return baseMapper.selectByUserId(id);
+    }
 }

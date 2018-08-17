@@ -18,19 +18,20 @@ import com.baomidou.mybatisplus.extension.enums.ApiErrorCode;
 import com.baomidou.mybatisplus.extension.exceptions.ApiException;
 
 /**
- * <p>
- * 通用 Api Controller 全局异常处理
- * </p>
- */
+* @Description:    通用 Api Controller 全局异常处理
+* @Author:         LiHaitao
+* @CreateDate:     2018/8/15 17:36
+* @UpdateUser:
+* @UpdateDate:     2018/8/15 17:36
+* @UpdateRemark:
+* @Version:        1.0.0
+*/
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     /**
-     * <p>
      * 自定义 REST 业务异常
-     * <p>
-     *
      * @param e 异常类型
      * @return
      */

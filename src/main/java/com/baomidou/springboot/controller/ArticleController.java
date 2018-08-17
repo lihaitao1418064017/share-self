@@ -2,19 +2,16 @@ package com.baomidou.springboot.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.api.ApiAssert;
 import com.baomidou.mybatisplus.extension.api.ApiController;
-import com.baomidou.mybatisplus.extension.api.ApiResult;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.plugins.pagination.PageHelper;
-
-import com.baomidou.springboot.entity.Article;
-import com.baomidou.springboot.entity.User;
-import com.baomidou.springboot.entity.enums.ArticleType;
-import com.baomidou.springboot.response.ErrorCode;
+import com.baomidou.springboot.domain.Article;
+import com.baomidou.springboot.redis.ICache;
 import com.baomidou.springboot.response.ResponseMessage;
 import com.baomidou.springboot.service.IArticleService;
+import com.baomidou.springboot.service.IPhotosService;
 import com.baomidou.springboot.service.IUserService;
+import com.baomidou.springboot.service.IVideoService;
 import com.baomidou.springboot.vo.ArticleVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,7 +22,7 @@ import java.util.List;
 
 
 /**
-* @Description:
+* @Description:    article接口
 * @Author:         LiHaitao
 * @CreateDate:     2018/8/4 15:36
 * @UpdateUser:
@@ -42,49 +39,61 @@ public class ArticleController extends ApiController {
     @Autowired
     private IUserService userService;
 
-    private static final String ARTICLE_KEY="article_page";
+    @Autowired
+    private IPhotosService photosService;
+    @Autowired
+    private IVideoService videoService;
 
-   /* @Autowired
-    private ICache cache;*/
 
-    /**
-     * <p>
-     * 测试通用 Api Controller 逻辑
-     * </p>
-     * 测试地址：
-     */
-    @GetMapping("/api")
-    public ApiResult<String> testError(String test) {
+    private static final String ARTICLE_KEY="article_page";//文章key
 
-        ApiAssert.isNull(ErrorCode.TEST, test);
-        return success(test);
-    }
+    @Autowired
+    private ICache cache;//redis
+
 
     /**
      * 添加
      */
     @PostMapping("/add")
-    public ResponseMessage<Boolean> addUser(@RequestBody ArticleVO vo, @RequestParam("id")String id) {
-        User user=userService.selectById(id);
-        vo.setUser(user);
-        return ResponseMessage.ok(articleService.insert(modelToEntity(vo)));
+    public ResponseMessage<Boolean> addArticle(@RequestBody Article article, @RequestParam("id")String id) {
+        return ResponseMessage.ok(articleService.insert(article));
     }
 
     /**
      * 删除
      */
     @RequestMapping("/{id}")
-    public ResponseMessage<Boolean> deleteById(@PathVariable("id")String id){
-        return ResponseMessage.ok(articleService.deleteById(Long.parseLong(id)));
+    public ResponseMessage<Boolean> deleteById(@PathVariable("id")Long id){
+        return ResponseMessage.ok(articleService.deleteById(id));
     }
 
     /**
      * 更新
      */
     @RequestMapping("/update")
-    public ResponseMessage<Boolean> update(@RequestBody ArticleVO articleVO,@RequestParam("id")String id){
-       articleVO.setId(Long.parseLong(id));
+    public ResponseMessage<Boolean> update(@RequestBody ArticleVO articleVO,@RequestParam("id")Long id){
        return ResponseMessage.ok(articleService.updateById(modelToEntity(articleVO)));
+    }
+    /**
+     * 根据id查询文章信息
+     */
+    @GetMapping("/get")
+    public ResponseMessage<ArticleVO> getById(@RequestParam()Long id){
+        return ResponseMessage.ok(articleService.selectByPrimaryKey(id));
+    }
+    /**
+     * 根据文章作者查询
+     */
+    @GetMapping("/getByUser")
+    public ResponseMessage<List<ArticleVO>> getByUser(@RequestParam()Long id){
+        return ResponseMessage.ok(articleService.selectByUserId(id));
+    }
+    /**
+     * 根据条件查询所有文章
+     */
+    @GetMapping("/getAll")
+    public ResponseMessage<List<ArticleVO>> getAll(){
+        return ResponseMessage.ok(articleService.selectByWrapper(null));
     }
 
 
@@ -92,15 +101,31 @@ public class ArticleController extends ApiController {
      * 分页查询
      */
     @GetMapping("/page")
-    public ResponseMessage page(@RequestParam("pageSize")Integer pageSize, @RequestParam("pageNo")Integer pageNo) {
-        QueryWrapper queryWrapper=new QueryWrapper();
-        IPage<Article> page= articleService.selectPage(new Page<Article>(pageNo-1, pageSize), queryWrapper);
-        return ResponseMessage.ok(page);
+    public ResponseMessage<IPage<ArticleVO>> page(@RequestParam("pageSize")Integer pageSize, @RequestParam("pageNo")Integer pageNo) {
+        QueryWrapper queryWrapper1=new QueryWrapper();
+        IPage<Article> page= articleService.selectPage(new Page<Article>(pageNo-1, pageSize), queryWrapper1);
+        IPage<ArticleVO> page1=pageToPageVO(page);
+        page1.getRecords().forEach(articleVO -> {
+            QueryWrapper queryWrapper=new QueryWrapper();
+            queryWrapper.eq("article_id",articleVO.getId());
+            articleVO.setPhotosList(photosService.selectList(queryWrapper));
+            articleVO.setVideosList(videoService.selectList(queryWrapper));
+        });
+        return ResponseMessage.ok(page1);
     }
 
+    private IPage<ArticleVO> pageToPageVO(IPage<Article> page){
+        IPage<ArticleVO> page1=new Page<>();
+        page1.setRecords(entityToModelList(page.getRecords()));
+        page1.setCurrent(page.getCurrent());
+        page1.setSize(page.getSize());
+        page1.setTotal(page.getTotal());
+
+        return page1;
+    }
 
     /**
-     * 根据XX查询匹配的所有，不分页
+     * 根据XX标题查询匹配的所有，不分页
      */
     @GetMapping("/like_title")
     public ResponseMessage<List<ArticleVO>> getArticleByWrapper(@RequestParam String title) {
@@ -137,24 +162,24 @@ public class ArticleController extends ApiController {
 
     private Article modelToEntity(ArticleVO vo){
         Article article=new Article();
-        article.setArticleType(ArticleType.getByTypeName(vo.getArticleType()));
+        article.setArticleType(vo.getArticleType());
         article.setContent(vo.getContent());
         article.setDate(vo.getDate());
         article.setRecommend(vo.getRecommend());
         article.setTitle(vo.getTitle());
-        article.setUser(vo.getUser());
+        article.setUserId(vo.getUser().getId());
         article.setId(vo.getId());
         return article;
     }
     private ArticleVO entityToModel(Article article){
         ArticleVO articleVO=new ArticleVO();
-        articleVO.setArticleType(article.getArticleType().getTypeName());
+        articleVO.setArticleType(article.getArticleType());
         articleVO.setContent(article.getContent());
         articleVO.setDate(article.getDate());
         articleVO.setId(article.getId());
         articleVO.setRecommend(article.getRecommend());
         articleVO.setTitle(article.getTitle());
-        articleVO.setUser(article.getUser());
+        articleVO.setUser(userService.selectById(article.getUserId()));
         return articleVO;
     }
 

@@ -2,7 +2,7 @@ package com.baomidou.springboot.service;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.baomidou.springboot.entity.Photos;
+import com.baomidou.springboot.domain.Photos;
 
 /**
 * @Description:    图片业务层接口
