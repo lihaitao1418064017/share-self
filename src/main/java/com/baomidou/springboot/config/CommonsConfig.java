@@ -3,7 +3,7 @@ package com.baomidou.springboot.config;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.baomidou.springboot.cache.ArticleCache;
+import com.baomidou.springboot.pojo.ArticleCache;
 import com.baomidou.springboot.redis.ICache;
 import com.baomidou.springboot.redis.redisImpl.CacheImpl;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
@@ -36,6 +36,7 @@ public class CommonsConfig {
      */
     @Bean
     public ArticleCache articleCache(){
+
         return new ArticleCache();
     }
 

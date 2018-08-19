@@ -3,7 +3,6 @@ package com.baomidou.springboot.mapper;
 
 import com.baomidou.springboot.SuperMapper;
 import com.baomidou.springboot.domain.Article;
-import com.baomidou.springboot.domain.User;
 import com.baomidou.springboot.vo.ArticleVO;
 import org.apache.ibatis.annotations.Param;
 

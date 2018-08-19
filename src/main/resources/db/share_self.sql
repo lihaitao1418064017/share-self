@@ -90,6 +90,7 @@ CREATE TABLE `user` (
   `headshot` varchar(255) DEFAULT NULL COMMENT '头像',
   `signature` varchar(255) DEFAULT NULL COMMENT '个性签名',
   `nickname` varchar(255) DEFAULT NULL COMMENT '昵称',
+  `password` varchar(255) DEFAULT NULL COMMENT '密码',
   `phone` varchar(255) DEFAULT NULL COMMENT '手机号',
   `role` int(11) DEFAULT NULL COMMENT '角色',
   `love` int(11) DEFAULT NULL COMMENT '喜欢',

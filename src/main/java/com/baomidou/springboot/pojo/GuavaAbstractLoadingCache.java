@@ -1,4 +1,4 @@
-package com.baomidou.springboot.cache;
+package com.baomidou.springboot.pojo;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;

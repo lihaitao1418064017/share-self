@@ -1,4 +1,4 @@
-package com.baomidou.springboot.cache;
+package com.baomidou.springboot.pojo;
 
 import com.baomidou.springboot.domain.Article;
 import com.baomidou.springboot.service.IArticleService;

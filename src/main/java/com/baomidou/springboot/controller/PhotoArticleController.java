@@ -1,7 +1,6 @@
 package com.baomidou.springboot.controller;
 
 import com.baomidou.mybatisplus.extension.api.ApiController;
-import com.baomidou.springboot.domain.Article;
 import com.baomidou.springboot.domain.Photos;
 import com.baomidou.springboot.response.ResponseMessage;
 import com.baomidou.springboot.service.IArticleService;

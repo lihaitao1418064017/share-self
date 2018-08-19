@@ -38,6 +38,9 @@
 			<version>${HikariCP.version}</version>
 		</dependency>
 
+
+
+
 		<!-- mybatis-plus begin -->
 		<dependency>
 			<groupId>com.baomidou</groupId>
@@ -78,11 +81,34 @@
 			<version>24.1-jre</version>
 		</dependency>
 
-
 		<dependency>
 			<groupId>org.t-io</groupId>
 			<artifactId>tio-websocket-server</artifactId>
 			<version>2.4.0.v20180508-RELEASE</version>
+		</dependency>
+
+		<!--shiro start-->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-ehcache</artifactId>
+			<version>1.2.4</version>
+		</dependency>
+		<!--end-->
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 
 	</dependencies>

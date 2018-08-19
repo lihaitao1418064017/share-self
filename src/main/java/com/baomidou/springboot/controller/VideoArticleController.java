@@ -1,7 +1,6 @@
 package com.baomidou.springboot.controller;
 
 import com.baomidou.mybatisplus.extension.api.ApiController;
-import com.baomidou.springboot.domain.Article;
 import com.baomidou.springboot.domain.Video;
 import com.baomidou.springboot.response.ResponseMessage;
 import com.baomidou.springboot.service.IArticleService;
@@ -9,7 +8,6 @@ import com.baomidou.springboot.service.IVideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
