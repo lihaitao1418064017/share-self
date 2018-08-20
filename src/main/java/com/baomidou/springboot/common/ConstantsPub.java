@@ -31,4 +31,10 @@ public class ConstantsPub {
      */
     public static final String salt = "shareSelf";
 
+
+    /**
+     * 用于群聊的group id
+     */
+    public static final String GROUP_ID = "showcase-websocket";
+
 }

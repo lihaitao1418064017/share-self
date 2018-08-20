@@ -39,7 +39,6 @@ public class WebsocketStarter {
 		
 	}
 	/**
-	 * @author tanyaowu
 	 * @throws IOException
 	 */
 	public static void start() throws Exception {

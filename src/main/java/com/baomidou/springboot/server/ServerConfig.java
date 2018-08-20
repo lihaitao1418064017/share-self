@@ -39,7 +39,6 @@ public abstract class ServerConfig {
 
 	/**
 	 * ip数据监控统计，时间段
-	 * @author tanyaowu
 	 *
 	 */
 	public static interface IpStatDuration {

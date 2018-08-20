@@ -3,6 +3,7 @@
  */
 package com.baomidou.springboot.server;
 
+import com.baomidou.springboot.common.ConstantsPub;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tio.core.Aio;
@@ -64,7 +65,7 @@ public class ServerAioListener extends WsServerAioListener {
 			//用tio-websocket，服务器发送到客户端的Packet都是WsResponse
 			WsResponse wsResponse = WsResponse.fromText(msg, ServerConfig.CHARSET);
 			//群发
-			Aio.sendToGroup(channelContext.getGroupContext(), Const.GROUP_ID, wsResponse);
+			Aio.sendToGroup(channelContext.getGroupContext(), ConstantsPub.GROUP_ID, wsResponse);
 		}
 	}
 
