@@ -1,6 +1,5 @@
 package com.baomidou.springboot.controller;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.springboot.domain.entity.Permission;
 import com.baomidou.springboot.response.ResponseMessage;

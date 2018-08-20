@@ -3,7 +3,7 @@
 <mapper namespace="com.xiaobingby.sys.mapper.PermissionMapper">
 
 	<!-- 通用查询映射结果 -->
-	<resultMap id="BaseResultMap" type="com.xiaobingby.sys.entity.Permission">
+	<resultMap id="BaseResultMap" type="com.baomidou.springboot.domain.entity.Permission">
 		<id column="id" property="id" />
 		<result column="pid" property="pid" />
 		<result column="name" property="name" />

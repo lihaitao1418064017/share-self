@@ -17,7 +17,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = {
         "com.baomidou.springboot.config",
         "com.baomidou.springboot.controller",
-        "com.baomidou.springboot.service"})
+        "com.baomidou.springboot.service",
+        "com.baomidou.springboot.domain"})
 public class Application {
 
     protected final static Logger logger = LoggerFactory.getLogger(Application.class);

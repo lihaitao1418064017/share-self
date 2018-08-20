@@ -17,7 +17,7 @@ import java.util.Date;
  **/
 @Data
 @TableName("user_role")
-public class UserRole extends SuperEntity<UserRole>{
+public class UserRole extends SuperEntity<UserRole> {
 
     /**
      * 用户id
