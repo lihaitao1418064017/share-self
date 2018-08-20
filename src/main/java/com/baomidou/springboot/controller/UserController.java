@@ -43,8 +43,8 @@ public class UserController extends ApiController {
      */
     @GetMapping("/api")
     public ApiResult<String> testError(String test) {
-
-        ApiAssert.isNull(ErrorCode.TEST, test);
+        //如果test不是空的就报FAILE错误
+        ApiAssert.isNull(ErrorCode.FAILE, test);
         return success(test);
     }
 

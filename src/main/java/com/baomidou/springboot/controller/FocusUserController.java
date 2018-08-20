@@ -1,6 +1,7 @@
 package com.baomidou.springboot.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.api.ApiAssert;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.springboot.domain.FocusUser;
 import com.baomidou.springboot.domain.User;
@@ -28,7 +29,7 @@ import java.util.List;
 */
 @RestController
 @RequestMapping("/focus")
-public class FocusUserController extends ApiController {
+public class FocusUserController  {
 
     @Autowired
     private IFocusUserService focusUserService;

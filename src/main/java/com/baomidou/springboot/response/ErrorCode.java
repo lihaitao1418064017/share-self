@@ -3,7 +3,8 @@ package com.baomidou.springboot.response;
 import com.baomidou.mybatisplus.extension.api.IErrorCode;
 
 public enum ErrorCode implements IErrorCode {
-    TEST("1000", "测试错误编码");
+    FAILE("1000", "失败"),
+    SUCCESS("1001","成功");
 
     private String code;
     private String msg;

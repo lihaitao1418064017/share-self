@@ -43,18 +43,18 @@ public class ShiroConfig {
         // SecurityManager
         shiroFilterFactoryBean.setSecurityManager(securityManager);
 
-        // 登陆页面
+       /* // 登陆页面
         shiroFilterFactoryBean.setLoginUrl("/admin/login.html");
         // 登录成功后要跳转的链接
         shiroFilterFactoryBean.setSuccessUrl("/admin/index");
         // 未授权界面
-        shiroFilterFactoryBean.setUnauthorizedUrl("/500.html");
+        shiroFilterFactoryBean.setUnauthorizedUrl("/500.html");*/
 
         // 拦截器.
         Map<String,String> filterChainDefinitionMap = new LinkedHashMap<String,String>();
 
         // 配置退出过滤器,其中的具体的退出代码Shiro已经替我们实现了
-        filterChainDefinitionMap.put("/admin/logout", "logout");
+//        filterChainDefinitionMap.put("/admin/logout", "logout");
 
         // 过滤链
        /* filterChainDefinitionMap.put("/css/**", "anon");
@@ -71,7 +71,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/admin/isUsername/**", "anon"); // 判断用户名是否存在
         filterChainDefinitionMap.put("/admin/isEmail/**", "anon"); // 判断邮箱是否存在
 */
-        filterChainDefinitionMap.put("/**", "authc");
+//        filterChainDefinitionMap.put("/**", "authc");
         /**
          * anon:所有url都都可以匿名访问;
          * authc: 需要认证才能进行访问;

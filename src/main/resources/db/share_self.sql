@@ -133,3 +133,60 @@ CREATE TABLE `love_article` (
   `article_id` bigint(20) DEFAULT NULL COMMENT '关注的文章',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+   /*权限表*/
+CREATE TABLE `permission` (
+  `id` bigint(20) NOT NULL COMMENT '',
+  `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
+  `p_id` bigint(20) DEFAULT NULL COMMENT '',
+  `type` INT(11) DEFAULT NULL COMMENT '',
+  `name` VARCHAR(255) DEFAULT NULL COMMENT '',
+  `sort` int(11) DEFAULT NULL COMMENT '排序',
+  `url` VARCHAR(255) DEFAULT NULL COMMENT '',
+  `description` VARCHAR(255) DEFAULT NULL COMMENT '',
+  `perm_code` VARCHAR(255) DEFAULT NULL COMMENT '',
+  `icon` VARCHAR(255) DEFAULT NULL COMMENT '',
+  `create_time` DATE DEFAULT NULL COMMENT '',
+  `modify_time` DATE DEFAULT NULL COMMENT '',
+  `status` INT(11) DEFAULT NULL COMMENT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+    /*role*/
+CREATE TABLE `role` (
+  `id` bigint(20) NOT NULL COMMENT '',
+  `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
+  `name` VARCHAR(255) DEFAULT NULL COMMENT '',
+  `sort` int(11) DEFAULT NULL COMMENT '排序',
+  `description` VARCHAR(255) DEFAULT NULL COMMENT '',
+  `create_time` DATE DEFAULT NULL COMMENT '',
+  `modify_time` DATE DEFAULT NULL COMMENT '',
+  `status` INT(11) DEFAULT NULL COMMENT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+/*RolePermission*/
+CREATE TABLE `role_permission` (
+  `id` bigint(20) NOT NULL COMMENT '',
+  `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
+  `role_id`  bigint(20) DEFAULT NULL COMMENT '',
+  `permission_id`  bigint(20) DEFAULT NULL COMMENT '',
+  `create_time` DATE DEFAULT NULL COMMENT '',
+  `modify_time` DATE DEFAULT NULL COMMENT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*UserRole*/
+CREATE TABLE `user_role` (
+  `id` bigint(20) NOT NULL COMMENT '',
+  `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
+  `role_id`  bigint(20) DEFAULT NULL COMMENT '',
+  `user_id`  bigint(20) DEFAULT NULL COMMENT '',
+  `create_time` DATE DEFAULT NULL COMMENT '',
+  `modify_time` DATE DEFAULT NULL COMMENT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

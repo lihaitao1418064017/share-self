@@ -5,8 +5,9 @@ import com.baomidou.springboot.common.ConstantsPub;
 import com.baomidou.springboot.domain.User;
 import com.baomidou.springboot.domain.entity.Permission;
 import com.baomidou.springboot.domain.entity.Role;
+import com.baomidou.springboot.service.IPermissionService;
+import com.baomidou.springboot.service.IUserRoleService;
 import com.baomidou.springboot.service.IUserService;
-import jodd.util.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -39,7 +40,7 @@ public class MyShiroRealm extends AuthorizingRealm {
     @Autowired
     private IPermissionService permissionService;
     @Autowired
-    private IRoleService roleService;
+    private IUserRoleService userRoleService;
 
     /**
      * 授权
@@ -56,25 +57,31 @@ public class MyShiroRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
 
         // 查询用户拥有那些权限
+
+        QueryWrapper queryWrapper=new QueryWrapper();
+        queryWrapper.eq("user_id",user.getId());
         List<Permission> permissions = permissionService.findUserPermission(user.getId());
-        List<Role> roles=roleService.findUserRole(user.getId());
+        List<Role> roles=userRoleService.selectList(queryWrapper);
+
+
+
         //添加角色
         List<String> roleList=new ArrayList<>();
+
         roles.forEach(role -> {
             roleList.add(role.getName());
         });
-        List<String> permissionList = new ArrayList<String>();
         // 添加权限代码
-        for (Permission item: permissions) {
-            if (StringUtil.isNotEmpty(item.getPermCode()))
-                permissionList.add(item.getPermCode());
-        }
+        List<String> permissionList = new ArrayList<String>();
+
+        permissions.forEach(permission -> {
+            permissionList.add(permission.getName());
+        });
+
+
         authorizationInfo.addStringPermissions(permissionList);
         authorizationInfo.addRoles(roleList);
-
         return authorizationInfo;
-
-
     }
 
     /**
