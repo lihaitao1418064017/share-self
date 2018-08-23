@@ -92,6 +92,7 @@ CREATE TABLE `user` (
   `nickname` varchar(255) DEFAULT NULL COMMENT '昵称',
   `password` varchar(255) DEFAULT NULL COMMENT '密码',
   `phone` varchar(255) DEFAULT NULL COMMENT '手机号',
+  `email` varchar(255) DEFAULT NULL COMMENT '邮箱',
   `role` int(11) DEFAULT NULL COMMENT '角色',
   `love` int(11) DEFAULT NULL COMMENT '喜欢',
   `focus` int(11) DEFAULT NULL COMMENT '关注',

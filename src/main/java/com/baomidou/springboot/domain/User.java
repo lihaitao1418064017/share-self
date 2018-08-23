@@ -66,5 +66,9 @@ public class User extends SuperEntity<User> {
      * 籍贯
      */
     private String address;
+    /**
+     * 邮箱
+     */
+    private String email;
 
 }

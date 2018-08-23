@@ -5,7 +5,9 @@ import com.baomidou.springboot.common.ConstantsPub;
 import com.baomidou.springboot.domain.User;
 import com.baomidou.springboot.domain.entity.Permission;
 import com.baomidou.springboot.domain.entity.Role;
+import com.baomidou.springboot.domain.entity.UserRole;
 import com.baomidou.springboot.service.IPermissionService;
+import com.baomidou.springboot.service.IRoleService;
 import com.baomidou.springboot.service.IUserRoleService;
 import com.baomidou.springboot.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
@@ -21,6 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * @Description MyShiroRealm:自定义Realm
@@ -36,11 +39,12 @@ public class MyShiroRealm extends AuthorizingRealm {
 
     @Autowired
     private IUserService userService;
-
     @Autowired
     private IPermissionService permissionService;
     @Autowired
     private IUserRoleService userRoleService;
+    @Autowired
+    private IRoleService roleService;
 
     /**
      * 授权
@@ -53,32 +57,30 @@ public class MyShiroRealm extends AuthorizingRealm {
 
         // 获取用户信息
         User user = (User) principalCollection.getPrimaryPrincipal();
-
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
 
         // 查询用户拥有那些权限
-
         QueryWrapper queryWrapper=new QueryWrapper();
         queryWrapper.eq("user_id",user.getId());
         List<Permission> permissions = permissionService.findUserPermission(user.getId());
-        List<Role> roles=userRoleService.selectList(queryWrapper);
-
-
+        //查询用户拥有哪些角色
+        List<UserRole> userRoles=userRoleService.selectList(queryWrapper);
+        List<Role> roles=new ArrayList<>();
+                userRoles.forEach(userRole -> {
+            roles.add(roleService.selectById(userRole.getRoleId()));
+        });
 
         //添加角色
         List<String> roleList=new ArrayList<>();
-
         roles.forEach(role -> {
             roleList.add(role.getName());
         });
+
         // 添加权限代码
         List<String> permissionList = new ArrayList<String>();
-
         permissions.forEach(permission -> {
             permissionList.add(permission.getName());
         });
-
-
         authorizationInfo.addStringPermissions(permissionList);
         authorizationInfo.addRoles(roleList);
         return authorizationInfo;
@@ -101,7 +103,6 @@ public class MyShiroRealm extends AuthorizingRealm {
         if(user==null){
             return null;
         }
-
         SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(user, user.getPassword(),
                 ByteSource.Util.bytes(ConstantsPub.salt),getName());
         return simpleAuthenticationInfo;

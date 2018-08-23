@@ -140,6 +140,8 @@ public class UserController extends ApiController {
         user.setHeadshot(vo.getHeadshot());
         user.setNickname(vo.getNickname());
         user.setPhone(vo.getPhone());
+        user.setPassword(vo.getPassword());
+        user.setEmail(vo.getEmail());
         user.setRole(UserRoleEnum.getByRoleName(vo.getRole()));
         user.setSignature(vo.getSignature());
         user.setAddress(vo.getAddress());

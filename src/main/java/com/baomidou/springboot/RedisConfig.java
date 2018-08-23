@@ -14,7 +14,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 * @Author:         LiHaitao
 * @CreateDate:     2018/8/15 16:42
 * @UpdateUser:
-* @UpdateDate:     2018/8/15 16:42
+* @UpdateDate:
 * @UpdateRemark:
 * @Version:        1.0.0
 */

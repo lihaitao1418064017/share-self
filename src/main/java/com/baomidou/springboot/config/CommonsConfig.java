@@ -3,6 +3,7 @@ package com.baomidou.springboot.config;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.baomidou.springboot.config.shiro.MyShiroRealm;
 import com.baomidou.springboot.pojo.ArticleCache;
 import com.baomidou.springboot.redis.ICache;
 import com.baomidou.springboot.redis.redisImpl.CacheImpl;
@@ -29,6 +30,7 @@ import net.sf.jsqlparser.expression.LongValue;
 @Configuration
 //@MapperScan("com.baomidou.springboot.mapper*")//这个注解，作用相当于下面的@Bean MapperScannerConfigurer，2者配置1份即可
 public class CommonsConfig {
+
 
 
     /**
