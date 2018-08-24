@@ -2,17 +2,27 @@ package com.baomidou.springboot.config.shiro;
 
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
+import org.apache.shiro.cas.CasFilter;
+import org.apache.shiro.cas.CasSubjectFactory;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.jasig.cas.client.session.SingleSignOutFilter;
+import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
+import org.springframework.web.filter.DelegatingFilterProxy;
 
+import javax.servlet.Filter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -29,14 +39,26 @@ import java.util.Map;
 public class ShiroConfig {
 
     private static final transient Logger log = LoggerFactory.getLogger(ShiroConfig.class);
+    // cas server地址
+    public static final String casServerUrlPrefix = "http://127.0.0.1";
+    // Cas登录页面地址
+    public static final String casLoginUrl = casServerUrlPrefix + "/login";
+    // Cas登出页面地址
+    public static final String casLogoutUrl = casServerUrlPrefix + "/logout";
+    // 当前工程对外提供的服务地址
+    public static final String shiroServerUrlPrefix = "http://127.0.0.1:8080";
+    // casFilter UrlPattern
+    public static final String casFilterUrlPattern = "/index";
 
     /**
-     *  Shiro 过滤器
-     * @param securityManager
-     * @return
-     */
-    @Bean
-    public ShiroFilterFactoryBean shiroFilter(DefaultWebSecurityManager securityManager) {
+    * @Description:   过滤器
+    * @Author:         Lihaitao
+    * @Date:       2018/8/24 13:43
+    * @UpdateUser:
+    * @UpdateRemark:
+    */
+    @Bean(name = "shiroFilter")
+    public ShiroFilterFactoryBean shiroFilter(DefaultWebSecurityManager securityManager,CasFilter casFilter) {
 
         ShiroFilterFactoryBean shiroFilterFactoryBean  = new ShiroFilterFactoryBean();
 
@@ -51,11 +73,14 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setUnauthorizedUrl("/500.html");*/
 
         // 拦截器.
-        Map<String,String> filterChainDefinitionMap = new LinkedHashMap<String,String>();
+        Map<String,Filter> filters = new LinkedHashMap<String,Filter>();
+        filters.put("casFilter",casFilter);
+        shiroFilterFactoryBean.setFilters(filters);
 
+
+        Map<String,String> filterChainDefinitionMap = new LinkedHashMap<String,String>();
         // 配置退出过滤器,其中的具体的退出代码Shiro已经替我们实现了
 //        filterChainDefinitionMap.put("/admin/logout", "logout");
-
         // 过滤链
        /* filterChainDefinitionMap.put("/css/**", "anon");
         filterChainDefinitionMap.put("/fonts/**", "anon");
@@ -77,15 +102,17 @@ public class ShiroConfig {
          * authc: 需要认证才能进行访问;
          * user:配置记住我或认证通过可以访问；
          */
-
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }
 
-    /**
-     *  Shiro 安全管理器
-     * @return
-     */
+   /**
+   * @Description:    安全管理器
+   * @Author:         Lihaitao
+   * @Date:       2018/8/24 13:43
+   * @UpdateUser:
+   * @UpdateRemark:
+   */
     @Bean
     public DefaultWebSecurityManager securityManager(){
         DefaultWebSecurityManager securityManager =  new DefaultWebSecurityManager();
@@ -94,41 +121,128 @@ public class ShiroConfig {
         securityManager.setRealm(myShiroRealm());
         //设置缓存
         securityManager.setCacheManager(ehCacheManager());
+        //现cas的remember me的功能
+        securityManager.setSubjectFactory(new CasSubjectFactory());
         return securityManager;
     }
 
     /**
-     * 身份认证realm
-     * @return
-     */
+    * @Description:   Realm的配置
+    * @Author:         Lihaitao
+    * @Date:       2018/8/24 13:43
+    * @UpdateUser:
+    * @UpdateRemark:
+    */
     @Bean
     @DependsOn("lifecycleBeanPostProcessor")
-    public MyShiroRealm myShiroRealm() {
-        MyShiroRealm myShiroRealm = new MyShiroRealm();
+    public ShiroCasRealm myShiroRealm() {
+        ShiroCasRealm realm = new ShiroCasRealm();
+        // cas登录服务器地址前缀
+        realm.setCasServerUrlPrefix(ShiroConfig.casServerUrlPrefix);
+        // 客户端回调地址，登录成功后的跳转地址(自己的服务地址)
+        realm.setCasService(ShiroConfig.shiroServerUrlPrefix + ShiroConfig.casFilterUrlPattern);
+        // 登录成功后的默认角色，此处默认为user角色
+        realm.setDefaultRoles("user");
         //设置加密凭证
-        myShiroRealm.setCredentialsMatcher(hashedCredentialsMatcher());
-        return myShiroRealm;
+        realm.setCredentialsMatcher(hashedCredentialsMatcher());
+        return realm;
     }
 
     /**
-     * 凭证匹配器
-     * （由于我们的密码校验交给Shiro的SimpleAuthenticationInfo进行处理了
-     *  所以我们需要修改下doGetAuthenticationInfo中的代码;
-     * ）
-     * @return
-     */
+    * @Description:    单点登出listener
+    * @Author:         Lihaitao
+    * @Date:       2018/8/24 15:48
+    * @UpdateUser:
+    * @UpdateRemark:
+    */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @Bean
+    @Order(Ordered.HIGHEST_PRECEDENCE)// 优先级
+    public ServletListenerRegistrationBean<?> singleSignOutHttpSessionListener(){
+        ServletListenerRegistrationBean bean = new ServletListenerRegistrationBean();
+        bean.setListener(new SingleSignOutHttpSessionListener());
+        bean.setEnabled(true);
+        return bean;
+    }
+
+    /**
+    * @Description:    单点登出过滤器
+    * @Author:         Lihaitao
+    * @Date:       2018/8/24 15:48
+    * @UpdateUser:
+    * @UpdateRemark:
+    */
+    @Bean
+    public FilterRegistrationBean singleSignOutFilter(){
+        FilterRegistrationBean bean = new FilterRegistrationBean();
+        bean.setName("singleSignOutFilter");
+        bean.setFilter(new SingleSignOutFilter());
+        bean.addUrlPatterns("/*");
+        bean.setEnabled(true);
+        return bean;
+    }
+    /**
+    * @Description:    注册DelegatingFilterProxy
+    * @Author:         Lihaitao
+    * @Date:       2018/8/24 16:12
+    * @UpdateUser:
+    * @UpdateRemark:
+    */
+    @Bean
+    public FilterRegistrationBean delegatingFilterProxy() {
+        FilterRegistrationBean filterRegistration = new FilterRegistrationBean();
+        filterRegistration.setFilter(new DelegatingFilterProxy("shiroFilter"));
+        //  该值缺省为false,表示生命周期由SpringApplicationContext管理,设置为true则表示由ServletContainer管理
+        filterRegistration.addInitParameter("targetFilterLifecycle", "true");
+        filterRegistration.setEnabled(true);
+        filterRegistration.addUrlPatterns("/*");
+        return filterRegistration;
+    }
+
+
+    /**
+    * @Description:    cas过滤器
+    * @Author:         Lihaitao
+    * @Date:       2018/8/24 16:16
+    * @UpdateUser:
+    * @UpdateRemark:
+    */
+    @Bean(name = "casFilter")
+    public CasFilter getCasFilter() {
+        CasFilter casFilter = new CasFilter();
+        casFilter.setName("casFilter");
+        casFilter.setEnabled(true);
+        casFilter.setFailureUrl("");// 认证失败后的页面
+        casFilter.setLoginUrl("");
+        return casFilter;
+    }
+
+
+
+    /**
+   * @Description:    凭证匹配；利用MD5加盐，进行一次散列
+   * @Author:         Lihaitao
+   * @Date:       2018/8/24 13:43
+   * @UpdateUser:
+   * @UpdateRemark:
+   */
     @Bean
     public HashedCredentialsMatcher hashedCredentialsMatcher(){
         HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
-        hashedCredentialsMatcher.setHashAlgorithmName("MD5"); // 散列算法:这里使用MD5算法;
-        hashedCredentialsMatcher.setHashIterations(1); // 散列的次数，比如散列两次，相当于 md5(md5(""));
+        hashedCredentialsMatcher.setHashAlgorithmName("MD5");
+        hashedCredentialsMatcher.setHashIterations(1);
         return hashedCredentialsMatcher;
     }
 
-    /**
-     * 配置Shiro 缓存
-     * @return
-     */
+
+
+      /**
+      * @Description:  配置缓存
+      * @Author:         Lihaitao
+      * @Date:       2018/8/24 16:12
+      * @UpdateUser:
+      * @UpdateRemark:
+      */
     @Bean
     @DependsOn("lifecycleBeanPostProcessor")
     public EhCacheManager ehCacheManager(){
@@ -138,18 +252,24 @@ public class ShiroConfig {
     }
 
     /**
-     * Shiro生命周期处理器 * @return
-     */
+    * @Description:   shiro生命周期处理器
+    * @Author:         Lihaitao
+    * @Date:       2018/8/24 16:10
+    * @UpdateUser:
+    * @UpdateRemark:
+    */
     @Bean("lifecycleBeanPostProcessor")
     public LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
         return new LifecycleBeanPostProcessor();
     }
 
     /**
-     *  开启Shiro的注解(如@RequiresRoles,@RequiresPermissions),需借助SpringAOP扫描使用Shiro注解的类,并在必要时进行安全
-     *  逻辑验证 * 配置以下两个bean(DefaultAdvisorAutoProxyCreator(可选)和AuthorizationAttributeSourceAdvisor)即可实现此功能 * @return
-     * @return
-     */
+    * @Description:    开启shiro注解
+    * @Author:         Lihaitao
+    * @Date:       2018/8/24 16:11
+    * @UpdateUser:
+    * @UpdateRemark:
+    */
     @Bean
     @DependsOn({"lifecycleBeanPostProcessor"})
     public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator() {

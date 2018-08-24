@@ -2,6 +2,7 @@ package com.baomidou.springboot.controller;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.springboot.common.ConstantsPub;
 import com.baomidou.springboot.domain.User;
 import com.baomidou.springboot.domain.enums.UserRoleEnum;
 import com.baomidou.springboot.response.ResponseMessage;
@@ -10,6 +11,7 @@ import com.baomidou.springboot.vo.UserVO;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,6 +37,8 @@ public class IndexController extends CurrentUserController {
 
     @RequestMapping("/register")
     public ResponseMessage reg(@RequestBody UserVO userVO) {
+        Md5Hash md5Hash=new Md5Hash(userVO.getPassword(), ConstantsPub.salt);
+        userVO.setPassword(md5Hash.toString());
         return ResponseMessage.ok(userService.insert(modelToEntity(userVO)));
     }
 
@@ -54,7 +58,7 @@ public class IndexController extends CurrentUserController {
         }
         boolean authenticated = subject.isAuthenticated();
         if (authenticated) {
-            return ResponseMessage.ok();
+            return ResponseMessage.ok("Login successfully");
         }
         return ResponseMessage.error("Login failure");
 
