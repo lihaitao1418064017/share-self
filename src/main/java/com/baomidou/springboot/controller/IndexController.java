@@ -16,6 +16,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -43,9 +44,10 @@ public class IndexController extends CurrentUserController {
     }
 
     @RequestMapping("/login")
-    public ResponseMessage login(String name,String password,String code){
+    public ResponseMessage login(String name,String password,String code,String rememberMe){
         UsernamePasswordToken token=new UsernamePasswordToken(name,password);
         Subject subject= SecurityUtils.getSubject();
+        token.setRememberMe(rememberMe==null?false:true);
         try{
             subject.login(token);
         }catch (AuthenticationException e){
@@ -62,6 +64,12 @@ public class IndexController extends CurrentUserController {
         }
         return ResponseMessage.error("Login failure");
 
+    }
+    @RequestMapping("/logout")
+    public ResponseMessage logout() {
+        // 注销登录
+        SecurityUtils.getSubject().logout();
+        return ResponseMessage.ok();
     }
 
     @RequestMapping("/checkPhone")
