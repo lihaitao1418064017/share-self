@@ -10,7 +10,6 @@ public interface IDGenerator<T> {
 
     IDGenerator AUTO = () -> null;
     IDGenerator<String> UUID = RandomUtil::simpleUUID;
-
     T generate();
 }
 

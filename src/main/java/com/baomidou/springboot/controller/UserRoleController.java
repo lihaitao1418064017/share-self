@@ -36,3 +36,5 @@ public class UserRoleController extends ApiController {
         return ResponseMessage.ok(userRoleService.selectList(queryWrapper));
     }
 }
+
+

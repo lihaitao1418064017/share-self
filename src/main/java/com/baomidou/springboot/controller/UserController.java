@@ -1,30 +1,38 @@
 package com.baomidou.springboot.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import cn.hutool.core.util.ObjectUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.api.ApiController;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.plugins.pagination.PageHelper;
+import com.baomidou.springboot.config.jwt.JwtHelper;
+import com.baomidou.springboot.domain.User;
 import com.baomidou.springboot.domain.enums.UserRoleEnum;
-import com.baomidou.springboot.response.ErrorCode;
 import com.baomidou.springboot.response.ResponseMessage;
+import com.baomidou.springboot.service.IUserService;
 import com.baomidou.springboot.vo.UserVO;
+import org.jasig.cas.client.jaas.AssertionPrincipal;
+import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.api.ApiAssert;
-import com.baomidou.mybatisplus.extension.api.ApiController;
-import com.baomidou.mybatisplus.extension.api.ApiResult;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.baomidou.mybatisplus.extension.plugins.pagination.PageHelper;
-import com.baomidou.springboot.domain.User;
-import com.baomidou.springboot.service.IUserService;
+import javax.validation.Valid;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * 代码生成器，参考源码测试用例：
- * <p>
- */
+* @Description:
+* @Author:         LiHaitao
+* @CreateDate:
+* @UpdateUser:
+* @UpdateDate:     2018/8/28 10:09
+* @UpdateRemark:
+* @Version:        1.0.0
+*/
 @RestController
 @RequestMapping("/user")
 public class UserController extends ApiController {
@@ -32,27 +40,72 @@ public class UserController extends ApiController {
     private IUserService userService;
 
 
+    @RequestMapping("/login")
+    public ResponseMessage login(@RequestParam String name,@RequestParam String password){
+        QueryWrapper queryWrapper=new QueryWrapper();
+        queryWrapper.eq("name",name);
+        String token;
+        User user=userService.selectOne(queryWrapper);
+        if(ObjectUtil.isNotNull(user)){
+            if (user.getPassword().equals(password)){
+                token= JwtHelper.createJWT(user.getName(),user.getId().toString(),30*60*1000);
 
-    /**
-     * <p>
-     * 测试通用 Api Controller 逻辑
-     * </p>
-     * 测试地址：
-     * http://localhost:8080/user/api
-     * http://localhost:8080/user/api?test=mybatisplus
-     */
-    @GetMapping("/api")
-    public ApiResult<String> testError(String test) {
-        //如果test不是空的就报FAILE错误
-        ApiAssert.isNull(ErrorCode.FAILE, test);
-        return success(test);
+                return ResponseMessage.ok(token);
+            }
+        }
+        return ResponseMessage.error("Login failure");
     }
+
+    @RequestMapping("/register")
+    public ResponseMessage register(@RequestBody @Valid UserVO userVO){
+        QueryWrapper queryWrapper=new QueryWrapper();
+        queryWrapper.eq("name",userVO.getName());
+        User user=userService.selectOne(queryWrapper);
+        return ResponseMessage.ok(userService.insert(modelToEntity(userVO)));
+    }
+
+    @RequestMapping("/checkPhone")
+    public ResponseMessage isPhone(@RequestParam String phone) {
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("phone", phone);
+        User user = userService.selectOne(queryWrapper);
+        if (ObjectUtil.isNull(user)) {
+            return ResponseMessage.ok();
+        }
+        return ResponseMessage.error("The phone already exists");
+    }
+
+    @RequestMapping("/checkName")
+    public ResponseMessage isName(@RequestParam  String name) {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("name", name);
+        User user = userService.selectOne(wrapper);
+        if (ObjectUtil.isNull(user)) {
+            return ResponseMessage.ok();
+        }
+        return ResponseMessage.error("The name already exists");
+
+    }
+
+    @RequestMapping("/checkEmail")
+    public ResponseMessage isEmail(@RequestParam String email) {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("email", email);
+        User user = userService.selectOne(wrapper);
+        if (ObjectUtil.isNull(user)) {
+            return ResponseMessage.ok();
+        }
+        return ResponseMessage.error("The email already exists");
+
+    }
+
+
 
     /**
      * 添加
      */
     @PostMapping("/add")
-    public ResponseMessage<Boolean> addUser(@RequestBody UserVO vo) {
+    public ResponseMessage<Boolean> addUser(@RequestBody @Valid UserVO vo) {
         return ResponseMessage.ok(userService.insert(modelToEntity(vo)));
     }
     /**
@@ -67,7 +120,7 @@ public class UserController extends ApiController {
      * 更新
      */
     @RequestMapping("/update")
-    public ResponseMessage<Boolean> update(@RequestBody UserVO userVO){
+    public ResponseMessage<Boolean> update(@RequestBody @Valid UserVO userVO){
         return ResponseMessage.ok(userService.updateById(modelToEntity(userVO)));
     }
 

@@ -72,40 +72,6 @@ public class IndexController extends CurrentUserController {
         return ResponseMessage.ok();
     }
 
-    @RequestMapping("/checkPhone")
-    public ResponseMessage isPhone(String phone) {
-        QueryWrapper queryWrapper = new QueryWrapper();
-        queryWrapper.eq("phone", phone);
-        User user = userService.selectOne(queryWrapper);
-        if (ObjectUtil.isNull(user)) {
-            return ResponseMessage.ok();
-        }
-        return ResponseMessage.error("The phone already exists");
-    }
-
-    @RequestMapping("/checkName")
-    public ResponseMessage isName(String username) {
-        QueryWrapper<User> wrapper = new QueryWrapper<>();
-        wrapper.eq("name", username);
-        User user = userService.selectOne(wrapper);
-        if (ObjectUtil.isNull(user)) {
-            return ResponseMessage.ok();
-        }
-        return ResponseMessage.error("The name already exists");
-
-    }
-
-    @RequestMapping("/checkEmail")
-    public ResponseMessage isEmail(String email) {
-        QueryWrapper<User> wrapper = new QueryWrapper<>();
-        wrapper.eq("email", email);
-        User user = userService.selectOne(wrapper);
-        if (ObjectUtil.isNull(user)) {
-            return ResponseMessage.ok();
-        }
-        return ResponseMessage.error("The email already exists");
-
-    }
 
     private User modelToEntity(UserVO vo){
         User user=new User();

@@ -26,11 +26,11 @@ import net.sf.jsqlparser.expression.LongValue;
 * @UpdateRemark:
 * @Version:        1.0.0
 */
+
+
 @Configuration
 //@MapperScan("com.baomidou.springboot.mapper*")//这个注解，作用相当于下面的@Bean MapperScannerConfigurer，2者配置1份即可
 public class CommonsConfig {
-
-
 
     /**
      * ArticleCache对象注入

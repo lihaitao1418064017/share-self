@@ -2,6 +2,7 @@ package com.baomidou.springboot.response;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.feilong.core.lang.StringUtil;
 
 import java.io.Serializable;
 import java.util.LinkedHashSet;
@@ -14,7 +15,6 @@ public class ResponseMessage<T> implements Serializable {
     private static final String SUCCESS="0";
     protected int status;//状态
     protected String code;//状态码
-    protected LinkedHashSet<String> fields;
     protected Long timestamp;//时间戳
 
 
@@ -37,7 +37,13 @@ public class ResponseMessage<T> implements Serializable {
     public static <T> ResponseMessage<T> error(int status, String message, Object... args) {
         return error(status, UNKNOW, message, args);
     }
-
+    public static <T> ResponseMessage<T> error(int status, String code, String message, Object... args) {
+        ResponseMessage<T> msg = new ResponseMessage();
+        msg.message = StringUtil.format(message, args);
+        msg.status(status);
+        msg.code(code);
+        return msg.putTimeStamp();
+    }
     public static <T> ResponseMessage<T> error(int status, String code, String message) {
         return error(status, code, message, (Object[])null);
     }
@@ -47,6 +53,7 @@ public class ResponseMessage<T> implements Serializable {
     }
 
     public static <T> ResponseMessage<T> ok(T result) {
+
         return (new ResponseMessage()).result(result).putTimeStamp().code(SUCCESS).status(200);
     }
 
@@ -74,10 +81,6 @@ public class ResponseMessage<T> implements Serializable {
         return this;
     }
 
-    public ResponseMessage<T> fields(LinkedHashSet<String> fields) {
-        this.fields = fields;
-        return this;
-    }
 
 
 
@@ -114,13 +117,6 @@ public class ResponseMessage<T> implements Serializable {
         this.code = code;
     }
 
-    public LinkedHashSet<String> getFields() {
-        return this.fields;
-    }
-
-    public void setFields(LinkedHashSet<String> fields) {
-        this.fields = fields;
-    }
 
     public Long getTimestamp() {
         return this.timestamp;

@@ -28,6 +28,7 @@ public class JwtHelper {
 	
 	public static Claims parseJWT(String jsonWebToken) {
 		try {
+
 			Claims claims = Jwts.parser().setSigningKey(generalKey())
 					.parseClaimsJws(jsonWebToken).getBody();
 			return claims;
@@ -36,6 +37,8 @@ public class JwtHelper {
 			return null;
 		}
 	}
+
+
 
 	public static String createJWT(String name, String userId,
 			long TTLMillis) {
@@ -59,5 +62,6 @@ public class JwtHelper {
 
 		// 生成JWT
 		return builder.compact();
+
 	}
 }

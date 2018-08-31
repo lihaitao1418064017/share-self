@@ -40,7 +40,7 @@ public class Application {
         app.setBannerMode(Banner.Mode.OFF);
         app.run(args);
         logger.info("PortalApplication is success!");
-        System.err.println("sample started. http://localhost:8080/user/test");
+        System.err.println("The application entry is. http://localhost:8080/wap/login.html");
     }
 
 }

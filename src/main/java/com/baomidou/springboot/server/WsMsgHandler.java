@@ -3,6 +3,7 @@ package com.baomidou.springboot.server;
 
 import cn.hutool.json.JSONUtil;
 import com.alibaba.fastjson.JSON;
+import com.baomidou.springboot.common.ConstantsPub;
 import com.baomidou.springboot.pojo.Msg;
 import com.baomidou.springboot.util.MsgUtil;
 import org.slf4j.Logger;
@@ -55,7 +56,7 @@ public class WsMsgHandler implements IWsMsgHandler {
 	public void onAfterHandshaked(HttpRequest httpRequest, HttpResponse httpResponse, ChannelContext channelContext) throws Exception {
 
 //		//绑定到群组，后面会有群发
-		Aio.bindGroup(channelContext, Const.GROUP_ID);
+		Aio.bindGroup(channelContext, ConstantsPub.GROUP_ID);
 //		//获取聊天人数
 //		int count = Tio.getAllChannelContexts(channelContext.groupContext).getObj().size();
 
@@ -68,7 +69,7 @@ public class WsMsgHandler implements IWsMsgHandler {
 		//用tio-websocket，服务器发送到客户端的Packet都是WsResponse
 		WsResponse wsResponse = WsResponse.fromText(msg, ServerConfig.CHARSET);
 		//群发
-		Aio.sendToGroup(channelContext.getGroupContext(), Const.GROUP_ID, wsResponse);
+		Aio.sendToGroup(channelContext.getGroupContext(), ConstantsPub.GROUP_ID, wsResponse);
 	}
 
 	/**

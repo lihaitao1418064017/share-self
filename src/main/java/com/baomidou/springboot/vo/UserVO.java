@@ -16,7 +16,7 @@ public class UserVO {
     /**
      * 名称
      */
-    @NotBlank(message = "The name cannot be empty")
+
     @Length(min=5, max=20, message="Names are between 5 and 20 in length")
     private String name;
     /**
@@ -51,13 +51,12 @@ public class UserVO {
      */
     @NotBlank(message = "The phone cannot be empty")
     @Length(min = 11,max = 11,message = "The phone number must be 11 digits long")
-    @Size(min = 0,max = 9)
     private String phone;
     /**
      * 密码
      */
     @NotNull(message = "The password cannot be empty")
-    @Length(max = 30,min = 11,message = "Names are between 11 and 30 in length")
+    @Length(max = 30,min = 6,message = "Names are between 11 and 30 in length")
     private String password;
 
     /**

@@ -48,8 +48,8 @@ public class JwtFilter extends GenericFilterBean {
 		response.setContentType("application/json; charset=utf-8");   
 		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 		/**
-		 * 这里要设置转换的对象详细
-		 */
+		 * 这里要设置转换的对象信息
+		 **/
 		response.getWriter().write(JsonUtil.getJsonFromObject(new ResponseMessage<>()));
         return;  
 	}

@@ -28,20 +28,25 @@ import com.baomidou.mybatisplus.extension.exceptions.ApiException;
 * @UpdateRemark:   添加登录权限的异常信息
 * @Version:        1.0.0
 */
+/*
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-    /**
+    */
+/**
      * 自定义 REST 业务异常
      * @param e 异常类型
      * @return
-     */
+     *//*
+
     @ExceptionHandler(value = Exception.class)
     public ApiResult<Object> handleBadRequest(Exception e) {
-        /*
+        */
+/*
          * 业务逻辑异常
-         */
+         *//*
+
         if (e instanceof ApiException) {
             IErrorCode errorCode = ((ApiException) e).getErrorCode();
             if (null != errorCode) {
@@ -52,9 +57,11 @@ public class GlobalExceptionHandler {
             return ApiResult.failed(e.getMessage());
         }
 
-        /*
+        */
+/*
          * 参数校验异常
-         */
+         *//*
+
 
         if (e instanceof BindException) {
             BindingResult bindingResult = ((BindException) e).getBindingResult();
@@ -86,3 +93,4 @@ public class GlobalExceptionHandler {
         }
     }
 }
+*/
