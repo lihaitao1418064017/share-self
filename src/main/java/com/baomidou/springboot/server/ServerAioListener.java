@@ -4,8 +4,12 @@
 package com.baomidou.springboot.server;
 
 import com.baomidou.springboot.common.ConstantsPub;
+import com.baomidou.springboot.config.ServerConfig;
+import com.baomidou.springboot.domain.User;
+import com.baomidou.springboot.service.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.tio.core.Aio;
 import org.tio.core.ChannelContext;
 import org.tio.core.intf.Packet;
@@ -26,6 +30,8 @@ public class ServerAioListener extends WsServerAioListener {
 	private static Logger log = LoggerFactory.getLogger(ServerAioListener.class);
 
 	public static final ServerAioListener me = new ServerAioListener();
+	@Autowired
+	private IUserService userService;
 
 	private ServerAioListener() {
 
@@ -58,13 +64,14 @@ public class ServerAioListener extends WsServerAioListener {
 		WsSessionContext wsSessionContext = (WsSessionContext) channelContext.getAttribute();
 
 		if (wsSessionContext.isHandshaked()) {
-			
+			String userid=channelContext.getUserid();
+			User user=userService.selectById(userid);
 			int count = Aio.getAllChannelContexts(channelContext.getGroupContext()).getObj().size();
 
-			String msg = channelContext.getClientNode().toString() + " 离开了，现在共有【" + count + "】人在线";
+			String msg = user.getName() + " 离开了，现在共有【" + count + "】人在线";
 			//用tio-websocket，服务器发送到客户端的Packet都是WsResponse
 			WsResponse wsResponse = WsResponse.fromText(msg, ServerConfig.CHARSET);
-			//群发
+			//群发出离线结果
 			Aio.sendToGroup(channelContext.getGroupContext(), ConstantsPub.GROUP_ID, wsResponse);
 		}
 	}

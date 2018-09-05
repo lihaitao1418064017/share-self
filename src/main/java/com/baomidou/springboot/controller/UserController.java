@@ -12,15 +12,11 @@ import com.baomidou.springboot.domain.enums.UserRoleEnum;
 import com.baomidou.springboot.response.ResponseMessage;
 import com.baomidou.springboot.service.IUserService;
 import com.baomidou.springboot.vo.UserVO;
-import org.jasig.cas.client.jaas.AssertionPrincipal;
-import org.junit.Assert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.validation.Validation;
-import javax.validation.Validator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +45,6 @@ public class UserController extends ApiController {
         if(ObjectUtil.isNotNull(user)){
             if (user.getPassword().equals(password)){
                 token= JwtHelper.createJWT(user.getName(),user.getId().toString(),30*60*1000);
-
                 return ResponseMessage.ok(token);
             }
         }

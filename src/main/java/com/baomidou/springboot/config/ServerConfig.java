@@ -1,12 +1,12 @@
 /**
  * 
  */
-package com.baomidou.springboot.server;
+package com.baomidou.springboot.config;
 
 import org.tio.utils.time.Time;
 
 /**
-* @Description:    配置类
+* @Description:    Tio配置类
 * @Author:         LiHaitao
 * @CreateDate:     2018/8/14 22:00
 * @UpdateUser:
