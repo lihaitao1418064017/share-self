@@ -1,5 +1,6 @@
 package com.baomidou.springboot.config.shiro;
 
+import com.baomidou.springboot.common.ConstantsPub;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO;
@@ -184,8 +185,8 @@ public class ShiroConfig {
     @Bean
     public HashedCredentialsMatcher hashedCredentialsMatcher(){
         HashedCredentialsMatcher hashedCredentialsMatcher = new RetryLimitHashedCredentialsMatcher(ehCacheManager());
-        hashedCredentialsMatcher.setHashAlgorithmName("MD5");
-        hashedCredentialsMatcher.setHashIterations(1);
+        hashedCredentialsMatcher.setHashAlgorithmName(ConstantsPub.hashAlgorithmName);
+        hashedCredentialsMatcher.setHashIterations(ConstantsPub.hashIterations);
         return hashedCredentialsMatcher;
     }
 

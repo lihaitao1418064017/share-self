@@ -1,7 +1,7 @@
 package com.baomidou.springboot.util;
 
 import cn.hutool.json.JSONUtil;
-import com.baomidou.springboot.pojo.Msg;
+import com.baomidou.springboot.domain.Msg;
 import com.baomidou.springboot.config.ServerConfig;
 import org.tio.core.Aio;
 import org.tio.core.ChannelContext;

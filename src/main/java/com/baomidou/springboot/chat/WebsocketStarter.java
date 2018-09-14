@@ -1,4 +1,4 @@
-package com.baomidou.springboot.server;
+package com.baomidou.springboot.chat;
 
 import com.baomidou.springboot.config.ServerConfig;
 import org.tio.server.ServerGroupContext;

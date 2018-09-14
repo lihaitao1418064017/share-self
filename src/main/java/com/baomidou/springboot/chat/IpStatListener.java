@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.baomidou.springboot.server;
+package com.baomidou.springboot.chat;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.baomidou.springboot.server;
+package com.baomidou.springboot.chat;
 
 import com.baomidou.springboot.common.ConstantsPub;
 import com.baomidou.springboot.config.ServerConfig;

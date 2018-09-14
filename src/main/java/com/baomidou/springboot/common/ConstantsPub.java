@@ -37,4 +37,10 @@ public class ConstantsPub {
      */
     public static final String GROUP_ID = "showcase-websocket";
 
+    /**
+     * 消息类型
+     */
+    public static final int PERSON_MSG=0;
+    public static final int GROUP_MSG=1;
+
 }

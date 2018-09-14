@@ -28,7 +28,7 @@ public class Application {
      * 测试 RUN<br>
      * 查看 h2 数据库控制台：http://localhost:8080/console<br>
      * 使用：JDBC URL 设置 jdbc:h2:mem:testdb 用户名 sa 密码 sa 进入，可视化查看 user 表<br>
-     * 误删连接设置，开发机系统本地 ~/.h2.server.properties 文件<br>
+     * 误删连接设置，开发机系统本地 ~/.h2.chat.properties 文件<br>
      * <br>
      * 7、分页 size 一页显示数量  current 当前页码
      * 方式一：http://localhost:8080/user/page?size=1&current=1<br>
