@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.plugins.pagination.PageHelper;
 import com.baomidou.springboot.domain.Article;
-import com.baomidou.springboot.redis.ICache;
+import com.baomidou.springboot.cache.ICache;
 import com.baomidou.springboot.response.ResponseMessage;
 import com.baomidou.springboot.service.IArticleService;
 import com.baomidou.springboot.service.IPhotosService;
@@ -48,7 +48,7 @@ public class ArticleController extends ApiController {
     private static final String ARTICLE_KEY="article_page";//文章key
 
     @Autowired
-    private ICache cache;//redis
+    private ICache cache;//cache
 
 
     /**

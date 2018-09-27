@@ -3,9 +3,9 @@ package com.baomidou.springboot.config;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.baomidou.springboot.pojo.ArticleCache;
-import com.baomidou.springboot.redis.ICache;
-import com.baomidou.springboot.redis.redisImpl.CacheImpl;
+import com.baomidou.springboot.cache.GuavaArticleCache;
+import com.baomidou.springboot.cache.ICache;
+import com.baomidou.springboot.cache.redisImpl.CacheImpl;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -36,9 +36,9 @@ public class CommonsConfig {
      * ArticleCache对象注入
      */
     @Bean
-    public ArticleCache articleCache(){
+    public GuavaArticleCache articleCache(){
 
-        return new ArticleCache();
+        return new GuavaArticleCache();
     }
 
     /**

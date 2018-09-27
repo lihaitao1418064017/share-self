@@ -1,6 +1,6 @@
 package com.baomidou.springboot;
 
-import com.baomidou.springboot.redis.RedisObjectSerializer;
+import com.baomidou.springboot.cache.RedisObjectSerializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;

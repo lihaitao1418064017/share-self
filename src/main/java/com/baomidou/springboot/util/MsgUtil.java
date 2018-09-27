@@ -1,7 +1,7 @@
 package com.baomidou.springboot.util;
 
 import cn.hutool.json.JSONUtil;
-import com.baomidou.springboot.domain.Msg;
+import com.baomidou.springboot.domain.dto.Msg;
 import com.baomidou.springboot.config.ServerConfig;
 import org.tio.core.Aio;
 import org.tio.core.ChannelContext;
@@ -26,6 +26,7 @@ public class MsgUtil {
 
     public static boolean existsUser(String userId,ChannelContext channelContext) {
         SetWithLock<ChannelContext> set = channelContext.getGroupContext().users.find(channelContext.getGroupContext(),userId);
+//      SetWithLock<ChannelContext> set = Aio.getChannelContextsByUserid(channelContext.getGroupContext(),userId);/**检查用户是否在线*/
         if(set == null || set.size() < 1) {
             return false;
         }

@@ -1,7 +1,7 @@
 package com.baomidou.springboot.controller;
 
 import com.baomidou.mybatisplus.extension.api.ApiController;
-import com.baomidou.springboot.domain.entity.Role;
+import com.baomidou.springboot.domain.po.Role;
 import com.baomidou.springboot.response.ResponseMessage;
 import com.baomidou.springboot.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;

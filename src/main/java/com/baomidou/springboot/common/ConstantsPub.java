@@ -42,5 +42,7 @@ public class ConstantsPub {
      */
     public static final int PERSON_MSG=0;
     public static final int GROUP_MSG=1;
+    public static final int APPLY_GROUP_MSG=2;
+    public static final int APPLY_PERSON_MSG=3;
 
 }

@@ -2,7 +2,7 @@ package com.baomidou.springboot.mapper;
 
 
 import com.baomidou.springboot.SuperMapper;
-import com.baomidou.springboot.domain.entity.Role;
+import com.baomidou.springboot.domain.po.Role;
 
 /**
 * @Description:

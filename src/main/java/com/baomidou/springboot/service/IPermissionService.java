@@ -1,7 +1,7 @@
 package com.baomidou.springboot.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.baomidou.springboot.domain.entity.Permission;
+import com.baomidou.springboot.domain.po.Permission;
 
 import java.util.List;
 

@@ -2,7 +2,7 @@ package com.baomidou.springboot.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.ApiController;
-import com.baomidou.springboot.domain.entity.UserRole;
+import com.baomidou.springboot.domain.po.UserRole;
 import com.baomidou.springboot.response.ResponseMessage;
 import com.baomidou.springboot.service.IUserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;

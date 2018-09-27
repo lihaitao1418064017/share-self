@@ -2,7 +2,7 @@ package com.baomidou.springboot.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.ApiController;
-import com.baomidou.springboot.domain.entity.RolePermission;
+import com.baomidou.springboot.domain.po.RolePermission;
 import com.baomidou.springboot.response.ResponseMessage;
 import com.baomidou.springboot.service.IRolePermissionService;
 import org.springframework.beans.factory.annotation.Autowired;

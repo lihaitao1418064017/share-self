@@ -1,7 +1,7 @@
 package com.baomidou.springboot.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.baomidou.springboot.domain.entity.UserRole;
+import com.baomidou.springboot.domain.po.UserRole;
 import com.baomidou.springboot.mapper.UserRoleMapper;
 import com.baomidou.springboot.service.IUserRoleService;
 import org.springframework.stereotype.Service;

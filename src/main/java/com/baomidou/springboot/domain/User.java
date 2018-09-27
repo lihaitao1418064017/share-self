@@ -1,6 +1,7 @@
 package com.baomidou.springboot.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.springboot.domain.enums.UserRoleEnum;
@@ -70,5 +71,8 @@ public class User extends SuperEntity<User> {
      * 邮箱
      */
     private String email;
+
+
+
 
 }

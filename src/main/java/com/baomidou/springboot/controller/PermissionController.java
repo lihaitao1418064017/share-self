@@ -1,7 +1,7 @@
 package com.baomidou.springboot.controller;
 
 import com.baomidou.mybatisplus.extension.api.ApiController;
-import com.baomidou.springboot.domain.entity.Permission;
+import com.baomidou.springboot.domain.po.Permission;
 import com.baomidou.springboot.response.ResponseMessage;
 import com.baomidou.springboot.service.IPermissionService;
 import org.springframework.beans.factory.annotation.Autowired;

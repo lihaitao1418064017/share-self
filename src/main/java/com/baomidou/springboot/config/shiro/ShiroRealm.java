@@ -1,12 +1,11 @@
 package com.baomidou.springboot.config.shiro;
 
-import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.springboot.common.ConstantsPub;
 import com.baomidou.springboot.domain.User;
-import com.baomidou.springboot.domain.entity.Permission;
-import com.baomidou.springboot.domain.entity.Role;
-import com.baomidou.springboot.domain.entity.UserRole;
+import com.baomidou.springboot.domain.po.Permission;
+import com.baomidou.springboot.domain.po.Role;
+import com.baomidou.springboot.domain.po.UserRole;
 import com.baomidou.springboot.service.IPermissionService;
 import com.baomidou.springboot.service.IRoleService;
 import com.baomidou.springboot.service.IUserRoleService;
@@ -18,24 +17,13 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
-import org.apache.shiro.cas.CasAuthenticationException;
-import org.apache.shiro.cas.CasRealm;
-import org.apache.shiro.cas.CasToken;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.apache.shiro.subject.SimplePrincipalCollection;
 import org.apache.shiro.util.ByteSource;
-import org.apache.shiro.util.CollectionUtils;
-import org.apache.shiro.util.StringUtils;
-import org.jasig.cas.client.authentication.AttributePrincipal;
-import org.jasig.cas.client.validation.Assertion;
-import org.jasig.cas.client.validation.TicketValidationException;
-import org.jasig.cas.client.validation.TicketValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @Description ShiroRealm:自定义Realm
