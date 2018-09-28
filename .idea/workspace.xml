@@ -1,328 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db4c74d8-3fa0-428c-afd8-dad2ff5f7a0b" name="Default" comment="1，添加注释">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/Application.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/RedisConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/SuperMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/common/ConstantsPub.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/CommonsConfig$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/CommonsConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/MetaObjectHandlerConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/ServerConfig$IpStatDuration.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/ServerConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/jwt/JwtConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/jwt/JwtFilter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/jwt/JwtHelper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/shiro/KickoutSessionControlFilter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/shiro/RetryLimitHashedCredentialsMatcher.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/shiro/ShiroConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/shiro/ShiroRealm.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/ArticleController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/CommentsController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/CurrentUserController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/FileUploadController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/FocusUserController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/IndexController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/LoveArticleController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/PermissionController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/PhotoArticleController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/RoleController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/RolePermissionController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/UserController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/UserRoleController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/VideoArticleController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/Article.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/Comments.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/FocusUser.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/LoveArticle.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/Photos.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/SuperEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/User.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/Video.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/enums/ArticleType.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/enums/UserRoleEnum.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/ArticleMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/CommenstMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/FocusUserMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/LoveArticleMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/PermissionMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/PhotosMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/RoleMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/RolePermissionMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/UserMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/UserRoleMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/VideoMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/response/ErrorCode.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/response/ResponseMessage.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IArticleService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/ICommentsService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IFocusUserService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/ILoveArticleService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IPermissionService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IPhotosService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IRolePermissionService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IRoleService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IUserRoleService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IUserService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IVideoService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/ArticleServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/CommentsServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/FocusUserServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/LoveArticleServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/PermissionServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/PhotosServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/RolePermissionServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/RoleServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/UserRoleServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/UserServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/VideoServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/util/IDGenerator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/util/JsonUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/util/MsgUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/util/RandomUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/util/ShiroUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/util/StringUitls.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/vo/ArticleVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/vo/CommentsVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/vo/UserVO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/page/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/share-self-ER图.xlsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/0.页面说明.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/alipay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/goTop.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/icon1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/icon2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/icon3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/img1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/img2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/img3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/money.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/qrcode.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/uhomeapp1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/uhomeapp10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/uhomeapp11.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/uhomeapp12.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/uhomeapp13.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/uhomeapp2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/uhomeapp3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/uhomeapp4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/uhomeapp5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/uhomeapp6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/uhomeapp7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/uhomeapp8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/uhomeapp9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/wechat.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/fonts/fontawesome-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/fonts/iconfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/fonts/iconfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/fonts/iconfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/a1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/a2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/a2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/a3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/a3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/a4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/a5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/a6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/aa1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/aa2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/aa3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/c.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/c1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/c2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/c3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/c4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/c5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/c6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/c7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/c8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/fl01.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/fl02.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/fl03.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/flshadow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/footdon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/gg1g.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/ggg - 副本.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/ggg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/goTop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/n1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/q1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/q1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/q2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/q3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/q4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/q4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/q5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/qq1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/qq1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/qq2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/qq2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/qq3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/qq3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/qq4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/qq5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/qq6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/qq7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/qq8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/qq9.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/qqq1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/s1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/w1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/w2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/w3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/w4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/w5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/w6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/wikibg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/img/z1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/css/modules/layer/default/icon-ext.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/css/modules/layer/default/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/css/modules/layer/default/loading-0.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/css/modules/layer/default/loading-1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/css/modules/layer/default/loading-2.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/font/iconfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/font/iconfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/font/iconfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/images/face/0.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/images/face/1.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/images/face/10.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/images/face/11.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/images/face/12.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/images/face/13.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/images/face/14.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/images/face/15.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/images/face/16.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/baomidou/springboot/test/AppTest.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/test-classes/com/baomidou/springboot/test/Generate.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/FriendGroup.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/GroupUser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/dto/Apply.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/dto/ApplyStatus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/dto/ApplyType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/dto/FriendGroupDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/dto/UserDTO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/ApplyMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/FriendGroupMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IApplyService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IFriendGroupService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/ApplyServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/FriendGroupServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util/ByteUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/application.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/config/ehcache-shiro.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/db/data-h2.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/db/share_self.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapper/ArticleMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapper/CommonsMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapper/PermissionMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapper/PhotosMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapper/ReplyMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapper/RoleMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapper/RolePermissionMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapper/UserRoleMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapper/VideoMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/mapper/example.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/page/DemoHandler.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/page/demo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/page/demo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/page/demo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/page/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/page/tio/tiows.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/.idea/WAP.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/activityContent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/activityList.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/content.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/contentList.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/css/amazeui.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/css/animate.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/css/wap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/_notes/dwsync.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/default/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/fonts/iconfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/js/amazeui.lazyload.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/js/amazeui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/js/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/js/commons_use_example.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/js/normal-config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/css/layui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/css/layui.mobile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/css/modules/code.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/css/modules/laydate/default/laydate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/css/modules/layer/default/layer.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/font/iconfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/layui.all.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/layui/layui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/personCenter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/personSpaceAt.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/privateLetter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/reg.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/specialConent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/specialList.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/videoContent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/static/wap/videoList.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/db/schema-h2.sql" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mybatisplus-spring-boot.iml" afterPath="$PROJECT_DIR$/mybatisplus-spring-boot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/RedisConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/RedisConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/chat/WsMsgHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/chat/WsMsgHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/common/ConstantsPub.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/common/ConstantsPub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/CommonsConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/CommonsConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/ShiroRealm.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/ShiroRealm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/ArticleController.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/ArticleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/PermissionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/PermissionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/RoleController.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/RoleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/RolePermissionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/RolePermissionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/UserRoleController.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/UserRoleController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/MsgMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/MsgMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/PermissionMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/PermissionMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/RoleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/RoleMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/RolePermissionMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/RolePermissionMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/UserRoleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/UserRoleMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IMsgService.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IMsgService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IPermissionService.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IPermissionService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IRolePermissionService.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IRolePermissionService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IRoleService.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IRoleService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IUserRoleService.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IUserRoleService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/MsgServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/MsgServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/PermissionServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/PermissionServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/RolePermissionServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/RolePermissionServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/RoleServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/RoleServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/UserRoleServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/UserRoleServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util/MsgUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util/MsgUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db/share_self.sql" afterPath="$PROJECT_DIR$/src/main/resources/db/share_self.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/Msg.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/dto/Msg.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/entity/Permission.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/po/Permission.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/entity/Role.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/po/Role.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/entity/RolePermission.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/po/RolePermission.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/entity/UserRole.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/po/UserRole.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/pojo/ArticleCache.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaArticleCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/pojo/GuavaAbstractLoadingCache.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaAbstractLoadingCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/redis/ICache.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/ICache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/redis/IHashCache.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/IHashCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/redis/IListCache.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/IListCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/redis/ISetCache.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/ISetCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/redis/IStringCache.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/IStringCache.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/redis/RedisObjectSerializer.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/RedisObjectSerializer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/redis/redisImpl/CacheImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/redisImpl/CacheImpl.java" />
+    <list default="true" id="db4c74d8-3fa0-428c-afd8-dad2ff5f7a0b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-09-27.0.log" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/GroupUserMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IGroupUserService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/GroupUserServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/db/schema-h2.sql" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/demo/target/" />
@@ -371,11 +57,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="WsMsgHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WsMsgHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/chat/WsMsgHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3212">
-              <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+            <state relative-caret-position="224">
+              <caret line="30" column="34" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonsConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/CommonsConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -552,8 +248,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -631,6 +326,17 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="baomidou" type="462c0819:PsiDirectoryNode" />
               <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mybatisplus-spring-boot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mybatisplus-spring-boot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="baomidou" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -652,7 +358,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -660,7 +367,7 @@
     <property name="nodejs_interpreter_path" value="D:/nodejs/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../springboot/SpringBoot-Learning/Chapter4-2-2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -962,7 +669,8 @@
       <workItem from="1537238652836" duration="18057000" />
       <workItem from="1537507016058" duration="6678000" />
       <workItem from="1537837585729" duration="36000" />
-      <workItem from="1538011581307" duration="8042000" />
+      <workItem from="1538011581307" duration="8813000" />
+      <workItem from="1538122426572" duration="58000" />
     </task>
     <task id="LOCAL-00001" summary="1，添加注释">
       <created>1534322613276</created>
@@ -1069,7 +777,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536912796772</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="1，加入群聊配置">
+      <created>1538025561336</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1538025561336</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1105,14 +820,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272596000" />
+    <option name="totallyTimeSpent" value="273425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.63771427" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1124,23 +838,24 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3062857" sideWeight="0.4967811" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32886267" sideWeight="0.49421966" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.333691" sideWeight="0.49421966" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21834764" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914287" sideWeight="0.49785408" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26770386" sideWeight="0.50578034" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22742857" sideWeight="0.49785408" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34742856" sideWeight="0.49785408" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.63771427" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914287" sideWeight="0.49785408" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1175,7 +890,8 @@
     <MESSAGE value="1，代码更新" />
     <MESSAGE value="1,flyway配置加入" />
     <MESSAGE value="1，点对点聊天优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="1，点对点聊天优化" />
+    <MESSAGE value="1，加入群聊配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="1，加入群聊配置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1187,13 +903,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/FocusUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/LoveArticle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1240,28 +949,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="728">
           <caret line="38" column="16" lean-forward="true" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-          <folding>
-            <marker date="1534490539660" expanded="true" signature="2854:3182" ph="SELECT co.id... comments" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/example.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-420">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PhotosMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1269,7 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1277,7 +980,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1285,7 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1293,9 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1534394580767" expanded="true" signature="303:319" ph="DELETE FROM " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1303,7 +1001,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1311,7 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1319,12 +1015,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <marker date="1534470197169" expanded="true" signature="3630:4321" ph="SELECT a.id article" />
-            <marker date="1534470197169" expanded="true" signature="4429:5108" ph="SELECT a.id article" />
-            <marker date="1534470197169" expanded="true" signature="5206:5365" ph="SELECT ph.id... photos" />
-            <marker date="1534470197169" expanded="true" signature="5460:5618" ph="SELECT vi.id... video" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1385,9 +1075,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1395,14 +1082,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <marker date="1537523987286" expanded="true" signature="951:1194" ph="SELECT * fro... permission" />
-            <marker date="1537523987286" expanded="true" signature="994:1175" ph="SELECT permi... role_permission" />
-            <marker date="1537523987286" expanded="true" signature="1000:1175" ph="select permi... role_permission" />
-            <marker date="1537523987286" expanded="true" signature="1059:1171" ph="SELECT role_... user_role" />
-            <marker date="1537523987286" expanded="true" signature="1065:1171" ph="select role_... user_role" />
-            <marker date="1537523987286" expanded="true" signature="1195:1216" ph="/*and type i... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1410,7 +1089,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1418,7 +1096,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1426,9 +1103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1436,7 +1110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1444,9 +1117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1454,7 +1124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1462,7 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="591">
           <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1470,7 +1138,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1478,7 +1145,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1486,7 +1152,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1494,7 +1159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1502,7 +1166,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
           <caret line="33" column="18" lean-forward="false" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1510,26 +1173,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
           <caret line="210" column="26" lean-forward="false" selection-start-line="210" selection-start-column="26" selection-end-line="210" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@build.finalName@.log.2018-09-27.0.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="1961" column="0" lean-forward="false" selection-start-line="1961" selection-start-column="0" selection-end-line="1962" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml" />
+    <entry file="file://$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@build.finalName@.log.2018-09-27.0.log" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -1538,14 +1186,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -1574,14 +1215,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3076">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/chat/WsMsgHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3212">
-          <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+        <state relative-caret-position="224">
+          <caret line="30" column="34" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/CommonsConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
           <folding />
         </state>
       </provider>
