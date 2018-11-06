@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
+
 /**
 * @Description:    Json工具类
 * @Author:         LiHaitao
@@ -41,7 +42,7 @@ public class JsonUtil {
      * @param json
      * @param clazz
      * @return
-     *//*
+     */
     public static <T> T getObjectFromJson(String json, Class<T> clazz) {
     	objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         try {
@@ -56,12 +57,12 @@ public class JsonUtil {
         return null;
     }
 
-    *//**
+    /**
      * 反序列化字符串成为对象
      * @param json
      * @param valueTypeRef
      * @return
-     *//*
+     */
     public static <T> T getObjectFromJson(String json, TypeReference<T> valueTypeRef) {
         try {
             return objectMapper.readValue(json, valueTypeRef);
@@ -73,5 +74,5 @@ public class JsonUtil {
             e.printStackTrace();
         }
         return null;
-    }*/
+    }
 }

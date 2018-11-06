@@ -40,7 +40,6 @@ public abstract class FileUploadController {
     @Value("${share.file.storage.path}")
     private String fileStoragePath;
 
-    String f="";
     @Autowired
     private IPhotosService photosService;
 
