@@ -26,9 +26,9 @@ public interface ICache extends IStringCache,ISetCache,IListCache,IHashCache {
     void deleteFromRedis(Collection<String> keys);
 
 
-    void expire(String key, Long second, TimeUnit timeUnit);
+    Boolean expire(String key, Long second, TimeUnit timeUnit);
 
-    void expireAt(String key, Date date);
+    Boolean expireAt(String key, Date date);
 
     boolean isExist(String key);
 }

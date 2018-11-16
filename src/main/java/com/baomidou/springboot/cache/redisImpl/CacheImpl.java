@@ -26,9 +26,9 @@ public class CacheImpl implements ICache {
      * @param key
      */
     @Override
-    public void expire(String key,Long second,TimeUnit timeUnit){
-
-        redisTemplate.expire(key,second,timeUnit);
+    public Boolean expire(String key,Long second,TimeUnit timeUnit){
+        Boolean expire = redisTemplate.expire(key, second, timeUnit);
+        return expire;
     }
 
     /**
@@ -36,8 +36,9 @@ public class CacheImpl implements ICache {
      * @param key
      */
     @Override
-    public void expireAt(String key,Date date){
-        redisTemplate.expireAt(key,date);
+    public Boolean expireAt(String key,Date date){
+        Boolean aBoolean = redisTemplate.expireAt(key, date);
+        return aBoolean;
     }
 
     /**

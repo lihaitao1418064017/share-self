@@ -1,66 +1,77 @@
-# mybatisplus-spring-boot  Demo
+###项目架构以及模块分析
+####项目介绍
+    1，内容分享功能：能分享文字，图片，用户之间评论回复。
+    2，视频浏览：发布视频，连续播放，
+    3，内容分类：用户内容分模块化，待议（朋友圈/微博）
+    4，聊天功能：用户之间可以有专门的聊天模块
+    5，周边功能：平台发布信息
+####项目准备
+    1，环境搭建
+       （1）服务器：内置tomcat
+       （2）数据库：mysql（云主机）；缓存：redis（云主机）
+       （3）内容存储：es（云主机）
+       （4）文件存储：云主机
+       （5）项目必须环境/服务器均在云主机搭建
+    2，工具
+        （1）idea
+        （2）webstorm
+        （3）navicat premium 12
 
-![Mybatis-Plus-Logo](http://git.oschina.net/uploads/images/2016/0824/211639_4d931e7f_12260.png "logo")
 
-[![license](https://img.shields.io/github/license/baomidou/mybatis-plus.svg?maxAge=2592000)](http://www.apache.org/licenses/LICENSE-2.0)
-[![GitHub release](https://img.shields.io/github/release/baomidou/mybatis-plus.svg?maxAge=2592000)](https://github.com/baomidou/mybatis-plus)
 
-> 为简化开发工作、提高生产率而生
 
-# 简介 | Intro
-
-Mybatis Plus - Spring Boot Demo
-
-* boot version: 1.5.2.RELEASE
-* mp version: 2.0.7
-* database: h2(boot默认数据库，如需修改，请在application.properties中查看mysql配置)
-
-> 技术讨论 QQ 群 576493122[（有钱的捧个钱场【点击捐赠】, 没钱的捧个人场）](http://git.oschina.net/uploads/images/2015/1222/211207_0acab44e_12260.png)
-
-# MP文档 | Documentation
-
-[中文](http://mp.baomidou.com/) | [English](http://mp.baomidou.com/en/)
-
-# 原理 | Principle
-
-[Mybatis-Plus 实践及架构原理](http://git.oschina.net/baomidou/mybatis-plus/attach_files)
-
-# 应用实例 | Demo
-
-[Spring-MVC](https://git.oschina.net/baomidou/mybatisplus-spring-mvc)
-
-[Spring-Boot](https://git.oschina.net/baomidou/mybatisplus-spring-boot)
-
-[SSM-实战 Demo](http://git.oschina.net/juapk/SpringWind)
-
-# 下载地址 | Download
-
-[点此去下载](http://maven.aliyun.com/nexus/#nexus-search;quick~mybatis-plus)
-
-```xml
-<dependency>
-    <groupId>com.baomidou</groupId>
-    <artifactId>mybatis-plus</artifactId>
-    <version>maven 官方最新版本为准</version>
-</dependency>
-```
-
-# 其他开源项目 | Other Project
-
-- [基于Cookie的SSO中间件 Kisso](http://git.oschina.net/baomidou/kisso)
-- [Java快速开发框架 SpringWind](http://git.oschina.net/juapk/SpringWind)
-
-# 期望 | Futures
-
-> 欢迎提出更好的意见，帮助完善 Mybatis-Plus
-
-# 版权 | License
-
-[Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
-
-# 捐赠 | Donate
-
-> [捐赠记录,感谢你们的支持！](http://git.oschina.net/baomidou/kisso/wikis/%E6%8D%90%E8%B5%A0%E8%AE%B0%E5%BD%95)
-
-![捐赠 mybatis-plus](http://git.oschina.net/uploads/images/2015/1222/211207_0acab44e_12260.png "支持一下mybatis-plus")
-
+#####1,内容模块（刘浩）
+      （1），文章管理，分类
+      （2），视频管理，分类
+      （3），评论管理
+      （4），文章，视频，评论相关联系管理
+#####2，用户模块以及权限（刘宇鹏）
+       （1），用户角色
+       （2），用户管理
+       （3），角色管理
+       （4），权限管理
+       （5），资源管理
+       （6），登录，注册
+#####3，通信模块（李海涛）
+        （1），点对点通信
+        （2），聊天室
+        （3），聊天人员管理
+        （4），通信模块代码架构
+#####4，中间技术模块
+         （1）websocket，socket
+         （2）Aio，NIO
+         （3）redis
+         （4）shiro
+         （5）mybatis plus
+         （6）springboot 配置
+         （7）日志log4j/logback
+         （8）数据迁移flyway
+         （9）ehcache缓存，memcache缓存
+         （10）guavacache缓存
+         （11）文件上传
+         （12）xxl-job任务调度*
+         （13）ElasticSearch搜索*
+         （14）kafka*
+         （15）dubbon...RPC框架*
+         （16）nginx，tomcat*
+         （17）mongoDb*
+         （18）邮件发送*
+         （19）OAuth 2.0*
+         （20）webservice，cxf*
+         （21）docker**
+         （22）k8s**
+         （23）flume**
+         （24）jenkins
+#####5，前端
+        （1）html5
+        （2）css3
+        （3）amazeui
+        （4）layui
+        （5）jquery
+        （6）boostrap
+        （7）vue全家桶**
+#####6，公共模块
+         （1），视频播放
+         （2），后台管理
+         （3），项目架构，模块划分
+          

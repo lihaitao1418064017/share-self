@@ -52,7 +52,7 @@ public abstract class FileUploadController {
 
     /**
     * @Description:     上传图片,个人头像
-    * @Author:         Lihaitao
+    * @Author:         LiHaiTao
     * @Date:       2018/8/4 22:03
     * @UpdateUser:
     * @UpdateRemark:
