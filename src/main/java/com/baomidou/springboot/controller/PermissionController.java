@@ -1,5 +1,6 @@
 package com.baomidou.springboot.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.springboot.domain.po.Permission;
 import com.baomidou.springboot.response.ResponseMessage;
@@ -29,6 +30,6 @@ public class PermissionController extends ApiController {
 
     @GetMapping("/get")
     public ResponseMessage<List<Permission>> get(){
-        return ResponseMessage.ok(permissionService.selectList(null));
+        return ResponseMessage.ok(permissionService.selectList(new QueryWrapper<Permission>()));
     }
 }

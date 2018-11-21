@@ -46,7 +46,7 @@ public class FocusUserController  {
     @GetMapping("/getAll")
     public ResponseMessage<List<User>> getAll(@RequestParam Long id){
         List<User> users=new ArrayList<>();
-        QueryWrapper queryWrapper=new QueryWrapper();
+        QueryWrapper<FocusUser> queryWrapper=new QueryWrapper<FocusUser>();
         queryWrapper.eq("user_id",id);
         List<FocusUser> list=focusUserService.selectList(queryWrapper);
         list.forEach(focusUser -> {

@@ -98,9 +98,9 @@
               login:function () {
                   var names=$('#name').val();
                   var password=$('#password').val();
-                  var index=layer.load(1);
+                  // var index=layer.load(1);
                   Global.service.login({"name":names,"password":password},function (data) {
-                      layer.close(index);
+                      // layer.close(index);
                       window.location.href="index.html";
                   },function (err) {
                       layer.msg("登录失败");

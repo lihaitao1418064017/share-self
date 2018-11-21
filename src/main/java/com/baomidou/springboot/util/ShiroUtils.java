@@ -1,9 +1,7 @@
 package com.baomidou.springboot.util;
 
-import com.feilong.core.Validator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
@@ -39,12 +37,8 @@ public class ShiroUtils {
 	 */
 	public static String getRemoteAddr(HttpServletRequest request) {
 		String remoteAddr = request.getHeader("X-Real-IP");
-		if (Validator.isNotNullOrEmpty(remoteAddr)) {
+		if (remoteAddr.equals("")||null==remoteAddr) {
 			remoteAddr = request.getHeader("X-Forwarded-For");
-		} else if (Validator.isNotNullOrEmpty(remoteAddr)) {
-			remoteAddr = request.getHeader("Proxy-Client-IP");
-		} else if (Validator.isNotNullOrEmpty(remoteAddr)) {
-			remoteAddr = request.getHeader("WL-Proxy-Client-IP");
 		}
 		return remoteAddr != null ? remoteAddr : request.getRemoteAddr();
 	}

@@ -31,7 +31,7 @@ public class RolePermissionController extends ApiController {
 
     @GetMapping("/get")
     public ResponseMessage<List<RolePermission>> get(@RequestParam Long id){
-        QueryWrapper queryWrapper=new QueryWrapper();
+        QueryWrapper<RolePermission> queryWrapper=new QueryWrapper<RolePermission>();
         queryWrapper.eq("role_id",id);
         return ResponseMessage.ok(rolePermissionService.selectList(queryWrapper));
     }

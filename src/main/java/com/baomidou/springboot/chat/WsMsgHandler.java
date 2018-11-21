@@ -34,6 +34,7 @@ import java.util.List;
 * @UpdateRemark:
 * @Version:        1.0.0
 */
+@SuppressWarnings("MagicConstant")
 public class WsMsgHandler implements IWsMsgHandler {
 	private static Logger log = LoggerFactory.getLogger(WsMsgHandler.class);
 
@@ -73,23 +74,13 @@ public class WsMsgHandler implements IWsMsgHandler {
 	*/
 	@Override
 	public void onAfterHandshaked(HttpRequest httpRequest, HttpResponse httpResponse, ChannelContext channelContext) throws Exception {
-//		int size=Aio.getAllChannelContexts(channelContext.getGroupContext()).getObj().size();
-		String group=httpRequest.getParam("group");
-		if (group!=null){
-			Aio.bindGroup(channelContext,group);
-		}
 		/**用户连接*/
 		String userId = httpRequest.getParam("id");
 		/**为用户绑定通道*/
 		Aio.bindUser(channelContext,userId);
-		/**当用户上线建立连接后首先判读是否有消息，如果有的话，发送*/
-		QueryWrapper queryWrapper=new QueryWrapper();
-		queryWrapper.eq("to",userId);
-		queryWrapper.eq("type",ConstantsPub.GROUP_MSG);
-		queryWrapper.orderByAsc("time");
-		List<Msg> msgs=msgService.selectList(queryWrapper);
-		msgService.delete(queryWrapper);
-		msgs.forEach(msg -> MsgUtil.sendToUser(userId,msg,channelContext));
+		msgService.sendOfflineMessage(channelContext,userId);
+		/**为用户绑定群组*/
+		groupUserService.bingAllGroup(userId,channelContext);
 		log.info("Connection successful！");
 	}
 
@@ -120,59 +111,12 @@ public class WsMsgHandler implements IWsMsgHandler {
 	*/
 	@Override
 	public Object onText(WsRequest wsRequest, String text, ChannelContext channelContext) throws Exception {
-		/**消息转换*/
-		String jsonStr = JSONUtil.toJsonStr(text);
-		Msg msg= JSON.parseObject(jsonStr,Msg.class);
-		msg.setTime(System.currentTimeMillis());
-		log.info("消息对象：{}"+msg.toString());
-		int type=msg.getType();
-		switch (type){
-			case ConstantsPub.PERSON_MSG : {/**点对点消息*/
-				/**判读接受者是否在线*/
-				if (MsgUtil.existsUser(msg.getTo(),channelContext)){
-					MsgUtil.sendToUser(msg.getTo(),msg,channelContext);
-					log.info("用户在线，直接发送消息给用户");
-				}else{/**如果用户不在线，将消息保存到DB中，当用户在线后发送*/
-				      /**用接受者的id作为标识*/
-					  msgService.insert(msg);
-					  log.info("用户不在线，将消息放入DB");
-				}
-			}
-			break;
-			case ConstantsPub.GROUP_MSG : {/**群发消息*/
-				/**1，群组存在*/
-				MsgUtil.sendToGroup(msg.getGroupId(), msg, channelContext);
-			}
-			break;
-			case ConstantsPub.APPLY_GROUP_MSG : {/**添加群组*/
-				/**2,群不存在，*/
-				String id= IDGenerator.UUID.generate();
-				FriendGroup friendGroup=new FriendGroup();
-				friendGroup.setGroupName("群组"+id.substring(1,5));
-				friendGroup.setCode(id);
-				friendGroup.setId(id);
-				/**建立群組*/
-				if (friendGroupService.insert(friendGroup)){
-					Aio.bindGroup(channelContext,id);
-				}
-			}
-			case ConstantsPub.APPLY_PERSON_MSG : {/**添加群成员*/
-				GroupUser groupUser=new GroupUser();
-				groupUser.setUserId(Long.parseLong(msg.getTo()));
-				groupUser.setGroupId(msg.getGroupId());
-				if (groupUserService.insert(groupUser)){
-					MsgUtil.sendToUser(msg.getTo(),msg,channelContext);
-				}
-			}
-			break;
-			default:{
-				log.info("消息类型不明确");
-				throw new Exception("不清楚的消息类型");
-			}
-
-		}
-
-		return null;
+	        /**处理消息*/
+			Boolean suc=msgService.sendOnlineMessage(channelContext,text);
+			if (suc.equals(false)){
+			    log.info("消息处理失败");
+            }
+		return true;
 	}
 
 }

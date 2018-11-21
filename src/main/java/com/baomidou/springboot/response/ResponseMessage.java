@@ -2,10 +2,9 @@ package com.baomidou.springboot.response;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.feilong.core.lang.StringUtil;
+
 
 import java.io.Serializable;
-import java.util.LinkedHashSet;
 
 public class ResponseMessage<T> implements Serializable {
     private static final long serialVersionUID = 8992436576262574064L;
@@ -39,7 +38,6 @@ public class ResponseMessage<T> implements Serializable {
     }
     public static <T> ResponseMessage<T> error(int status, String code, String message, Object... args) {
         ResponseMessage<T> msg = new ResponseMessage();
-        msg.message = StringUtil.format(message, args);
         msg.status(status);
         msg.code(code);
         return msg.putTimeStamp();

@@ -6,15 +6,18 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.plugins.pagination.PageHelper;
+import com.baomidou.springboot.common.ConstantsPub;
 import com.baomidou.springboot.config.jwt.JwtHelper;
 import com.baomidou.springboot.domain.User;
 import com.baomidou.springboot.domain.enums.UserRoleEnum;
 import com.baomidou.springboot.response.ResponseMessage;
 import com.baomidou.springboot.service.IUserService;
 import com.baomidou.springboot.vo.UserVO;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import sun.security.provider.MD5;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -38,12 +41,13 @@ public class UserController extends ApiController {
 
     @RequestMapping("/login")
     public ResponseMessage login(@RequestParam String name,@RequestParam String password){
-        QueryWrapper queryWrapper=new QueryWrapper();
+        QueryWrapper<User> queryWrapper=new QueryWrapper<User>();
         queryWrapper.eq("name",name);
         String token;
         User user=userService.selectOne(queryWrapper);
         if(ObjectUtil.isNotNull(user)){
-            if (user.getPassword().equals(password)){
+            Md5Hash md5Hash=new Md5Hash(password, ConstantsPub.salt);
+            if (user.getPassword().equals(md5Hash.toString())){
                 token= JwtHelper.createJWT(user.getName(),user.getId().toString(),30*60*1000);
                 return ResponseMessage.ok(token);
             }
@@ -53,7 +57,7 @@ public class UserController extends ApiController {
 
     @RequestMapping("/register")
     public ResponseMessage register(@RequestBody @Valid UserVO userVO){
-        QueryWrapper queryWrapper=new QueryWrapper();
+        QueryWrapper<User> queryWrapper=new QueryWrapper<User>();
         queryWrapper.eq("name",userVO.getName());
         User user=userService.selectOne(queryWrapper);
         return ResponseMessage.ok(userService.insert(modelToEntity(userVO)));
@@ -61,7 +65,7 @@ public class UserController extends ApiController {
 
     @RequestMapping("/checkPhone")
     public ResponseMessage isPhone(@RequestParam String phone) {
-        QueryWrapper queryWrapper = new QueryWrapper();
+        QueryWrapper<User> queryWrapper = new QueryWrapper<User>();
         queryWrapper.eq("phone", phone);
         User user = userService.selectOne(queryWrapper);
         if (ObjectUtil.isNull(user)) {
@@ -155,7 +159,7 @@ public class UserController extends ApiController {
     @GetMapping("/page_helper")
     public IPage pagehelper(Page page) {
         PageHelper.setPage(page);
-        page.setRecords(userService.selectList(null));
+        page.setRecords(userService.selectList(new QueryWrapper<>()));
         //获取总数并释放资源 也可以 PageHelper.getTotal()
         page.setTotal(PageHelper.freeTotal());
         return page;

@@ -2,6 +2,7 @@ package com.baomidou.springboot.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.springboot.domain.GroupUser;
+import org.tio.core.ChannelContext;
 
 /**
 * @Description:
@@ -14,5 +15,10 @@ import com.baomidou.springboot.domain.GroupUser;
 */
 public interface IGroupUserService extends IService<GroupUser> {
 
+
+    /**
+     * 为用户绑定所有群组id，以便接受群组消息
+     */
+    public void bingAllGroup(String userId, ChannelContext channelContext);
 
 }

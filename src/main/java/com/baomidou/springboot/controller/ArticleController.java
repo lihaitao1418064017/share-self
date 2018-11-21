@@ -102,7 +102,7 @@ public class ArticleController extends ApiController {
      */
     @GetMapping("/page")
     public ResponseMessage<IPage<ArticleVO>> page(@RequestParam("pageSize")Integer pageSize, @RequestParam("pageNo")Integer pageNo) {
-        QueryWrapper queryWrapper1=new QueryWrapper();
+        QueryWrapper<Article> queryWrapper1=new QueryWrapper<Article>();
         IPage<Article> page= articleService.selectPage(new Page<Article>(pageNo-1, pageSize), queryWrapper1);
         IPage<ArticleVO> page1=pageToPageVO(page);
         page1.getRecords().forEach(articleVO -> {
@@ -140,7 +140,7 @@ public class ArticleController extends ApiController {
     @GetMapping("/page_helper")
     public IPage pagehelper(Page page) {
         PageHelper.setPage(page);
-        page.setRecords(articleService.selectList(null));
+        page.setRecords(articleService.selectList(new QueryWrapper<Article>()));
         //获取总数并释放资源 也可以 PageHelper.getTotal()
         page.setTotal(PageHelper.freeTotal());
         return page;

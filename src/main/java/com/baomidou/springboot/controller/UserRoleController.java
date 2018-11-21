@@ -31,7 +31,7 @@ public class UserRoleController extends ApiController {
 
     @GetMapping("getByUserId")
     public ResponseMessage<List<UserRole>> get(@RequestParam Long id){
-        QueryWrapper queryWrapper=new QueryWrapper();
+        QueryWrapper<UserRole> queryWrapper=new QueryWrapper<UserRole>();
         queryWrapper.eq("user_id",id);
         return ResponseMessage.ok(userRoleService.selectList(queryWrapper));
     }

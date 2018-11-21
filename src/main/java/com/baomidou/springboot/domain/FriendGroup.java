@@ -1,6 +1,8 @@
 package com.baomidou.springboot.domain;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.util.List;
 
@@ -14,6 +16,7 @@ import java.util.List;
  * @Version 1.0.0
  **/
 @Data
+@TableName("friend_group")
 public class FriendGroup {
 
     private String id;
@@ -22,7 +25,6 @@ public class FriendGroup {
      * 群主，创建者
      */
     private Long userId;
-
 
     /**
      * 群名称

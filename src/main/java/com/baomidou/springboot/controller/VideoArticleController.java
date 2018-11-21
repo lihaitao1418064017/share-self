@@ -33,7 +33,6 @@ public class VideoArticleController extends ApiController {
 
     @RequestMapping("/add")
     public ResponseMessage addPhotoByArticle(@RequestBody Video video){
-
         return ResponseMessage.ok(videoService.insert(video));
     }
 

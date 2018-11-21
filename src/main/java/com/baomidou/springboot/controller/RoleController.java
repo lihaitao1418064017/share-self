@@ -1,5 +1,6 @@
 package com.baomidou.springboot.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.springboot.domain.po.Role;
 import com.baomidou.springboot.response.ResponseMessage;
@@ -28,6 +29,6 @@ public class RoleController extends ApiController {
     private IRoleService roleService;
     @GetMapping("/get")
     public ResponseMessage<List<Role>> get(){
-        return ResponseMessage.ok(roleService.selectList(null));
+        return ResponseMessage.ok(roleService.selectList(new QueryWrapper<Role>()));
     }
 }

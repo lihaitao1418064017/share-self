@@ -12,7 +12,6 @@ import lombok.Data;
  */
 @Data
 @TableName("user")
-@SuppressWarnings("serial")
 public class User extends SuperEntity<User> {
 
     /**

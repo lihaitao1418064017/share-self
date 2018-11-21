@@ -12,10 +12,11 @@ import lombok.Data;
 * @UpdateRemark:
 * @Version:        1.0.0
 */
-@SuppressWarnings("serial")
+
 @Data
 @TableName("video")
 public class Video extends SuperEntity<Video> {
+    private static final long serialVersionUID = 5952689219411916553L;
 
     /**
      * 文章

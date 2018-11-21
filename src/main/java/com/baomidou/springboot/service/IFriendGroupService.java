@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.springboot.domain.FriendGroup;
 
 /**
-* @Description:
+* @Description:    群组信息管理
 * @Author:         LiHaitao
 * @CreateDate:     2018/9/18 18:24
 * @UpdateUser:

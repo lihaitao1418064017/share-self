@@ -44,7 +44,7 @@ public class LoveArticleController extends ApiController {
     */
     @GetMapping("/getALl")
     public ResponseMessage<List<ArticleVO>> getAll(@RequestParam Long id){
-        QueryWrapper queryWrapper=new QueryWrapper();
+        QueryWrapper<LoveArticle> queryWrapper=new QueryWrapper<LoveArticle>();
         queryWrapper.eq("user_id",id);
         List<LoveArticle> loveArticles=loveArticleService.selectList(queryWrapper);
         List<ArticleVO>  list=new ArrayList<>();
