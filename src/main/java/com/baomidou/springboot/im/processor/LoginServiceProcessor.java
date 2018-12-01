@@ -4,26 +4,37 @@
 package com.baomidou.springboot.im.processor;
 
 import cn.hutool.core.util.RandomUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.springboot.cache.ICache;
+import com.baomidou.springboot.im.entity.Friend;
+import com.baomidou.springboot.im.entity.GroupClient;
+import com.baomidou.springboot.im.entity.GroupUser;
+import com.baomidou.springboot.im.entity.UserClient;
+import com.baomidou.springboot.im.service.IFriendService;
+import com.baomidou.springboot.im.service.IGroupService;
+import com.baomidou.springboot.im.service.IGroupUserService;
+import com.baomidou.springboot.im.service.IUserClientService;
 import com.baomidou.springboot.util.ImgMnUtil;
+import com.google.common.collect.Lists;
 import org.apache.commons.lang3.StringUtils;
 
-import org.jim.common.ImConst;
+import org.jim.common.ImAio;
 import org.jim.common.ImPacket;
 import org.jim.common.ImSessionContext;
 import org.jim.common.ImStatus;
-import org.jim.common.http.HttpConst;
 import org.jim.common.packets.*;
 import org.jim.common.session.id.impl.UUIDSessionIdGenerator;
 import org.jim.common.utils.JsonKit;
-import org.jim.common.utils.Md5;
 import org.jim.server.command.CommandManager;
 import org.jim.server.command.handler.JoinGroupReqHandler;
 import org.jim.server.command.handler.processor.login.LoginCmdProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.tio.core.ChannelContext;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author
@@ -32,7 +43,22 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
 
     private Logger logger = LoggerFactory.getLogger(LoginServiceProcessor.class);
 
-    public static final Map<String, User> tokenMap = new HashMap<>();
+
+
+    @Autowired
+    private IUserClientService userClientService;
+    @Autowired
+    private IGroupUserService groupUserService;
+
+    @Autowired
+    private IGroupService groupService;
+
+    @Autowired
+    private IFriendService friendService;
+
+    @Autowired
+    private ICache cache;
+
 
     private static String[] familyName = new String[]{"谭", "刘", "张", "李", "胡", "沈", "朱", "钱", "王", "伍", "赵", "孙", "吕", "马", "秦", "毛", "成", "梅", "黄", "郭", "杨", "季", "童", "习", "郑",
             "吴", "周", "蒋", "卫", "尤", "何", "魏", "章", "郎", " 唐", "汤", "苗", "孔", "鲁", "韦", "任", "袁", "贺", "狄朱"};
@@ -50,61 +76,66 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
      * @return
      * @author:
      */
-    public User getUser(String loginname, String password) {
-        String text = loginname + password;
-        String key = ImConst.authkey;
-        String token = Md5.sign(text, key, HttpConst.CHARSET_NAME);
-        User user = getUser(token);
-        user.setId(loginname);
-        return user;
-    }
+//    public User getUser(String loginname, String password) {
+//        String text = loginname + password;
+//        String key = ImConst.authkey;
+//        String token = Md5.sign(text, key, HttpConst.CHARSET_NAME);
+//        User user = getUser(token);
+//        user.setId(loginname);
+//        return user;
+//    }
 
     /**
-     * 根据token获取用户信息
+     * 根据用户id获取用户信息
      *
-     * @param token
+     * @param
      * @return
      * @author:
      */
-    public User getUser(String token) {
-        //demo中用map，生产环境需要用cache
-        User user = tokenMap.get(token);
-        if (user == null) {
-            user = new User();
-            user.setId(UUIDSessionIdGenerator.instance.sessionId(null));
-            user.setNick(familyName[RandomUtil.randomInt(0, familyName.length - 1)] + secondName[RandomUtil.randomInt(0, secondName.length - 1)]);
-
-            user.setGroups(initGroups(user));
-            user.setFriends(initFriends(user));
-            user.setAvatar(nextImg());
-
-            if (tokenMap.size() > 10000) {
-                tokenMap.clear();
-            }
-            tokenMap.put(token, user);
+    public UserClient getUser(String userId) {
+        UserClient user=(UserClient)cache.stringGetStringByKey(userId);
+        if (user!=null){
+            return user;
         }
+        QueryWrapper<UserClient> queryWrapper=new QueryWrapper<UserClient>();
+        queryWrapper.eq("id",userId);
+        user=userClientService.selectOne(queryWrapper);
+        user.setGroups(initGroups(user));
+        user.setFriendList(initFriends(user));
+        cache.stringSetString(user.getId().toString(),user);
         return user;
     }
 
-    public List<Group> initGroups(User user) {
-        //模拟的群组;正式根据业务去查数据库或者缓存;
-        List<Group> groups = new ArrayList<Group>();
-        groups.add(new Group("100", "J-IM朋友圈"));
-        return groups;
+    public List<GroupClient> initGroups(UserClient user) {
+        //业务去查数据库或者缓存;
+        List<GroupClient> groupClients = new ArrayList<GroupClient>();
+        QueryWrapper<GroupUser> groupQueryWrapper=new QueryWrapper<>();
+        groupQueryWrapper.eq("user_id",user.getId());
+        //查询用户的所有群组
+        List<GroupUser> groupUsers=groupUserService.selectList(groupQueryWrapper);
+        groupUsers.forEach(groupUser -> {
+           GroupClient groupClient =groupService.selectById(groupUser.getGroupId());
+           groupClients.add(groupClient);//添加群
+            //查询群组中的人
+                QueryWrapper<GroupUser> groupUserQueryWrapper = new QueryWrapper<>();
+                groupUserQueryWrapper.eq("group_id", groupClient.getGroup_id());
+                List<GroupUser> groupUserList=groupUserService.selectList(groupUserQueryWrapper);//所有加群的用户
+                 //转换成用户放入群组
+                List<UserClient> userClients=Lists.newArrayList();
+                for (GroupUser each:groupUserList){
+                    UserClient userClient= userClientService.selectById(each.getUserId());
+                    userClients.add(userClient);
+                }
+                groupClient.setUsers(userClients);
+        });
+        return groupClients;
     }
 
-    public List<Group> initFriends(User user) {
-        List<Group> friends = new ArrayList<Group>();
-        Group myFriend = new Group("1", "我的好友");
-        List<User> myFriendGroupUsers = new ArrayList<User>();
-        User user1 = new User();
-        user1.setId(UUIDSessionIdGenerator.instance.sessionId(null));
-        user1.setNick(familyName[RandomUtil.randomInt(0, familyName.length - 1)] + secondName[RandomUtil.randomInt(0, secondName.length - 1)]);
-        user1.setAvatar(nextImg());
-        myFriendGroupUsers.add(user1);
-        myFriend.setUsers(myFriendGroupUsers);
-        friends.add(myFriend);
-        return friends;
+    public List<Friend> initFriends(UserClient user) {
+        List<Friend> friends=Lists.newArrayList();
+        QueryWrapper<Friend> friendQueryWrapper=new QueryWrapper<>();
+        friendQueryWrapper.eq("id",user.getId());
+        return friendService.selectList(friendQueryWrapper);
     }
 
     public String nextImg() {
@@ -123,16 +154,9 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
     @Override
     public LoginRespBody doLogin(LoginReqBody loginReqBody, ChannelContext channelContext) {
         String loginname = loginReqBody.getLoginname();
-        String password = loginReqBody.getPassword();
-        ImSessionContext imSessionContext = (ImSessionContext) channelContext.getAttribute();
-        String handshakeToken = imSessionContext.getToken();
-        User user;
         LoginRespBody loginRespBody;
-        if (!StringUtils.isBlank(handshakeToken)) {
-            user = this.getUser(handshakeToken);
-        } else {
-            user = this.getUser(loginname, password);
-        }
+        UserClient userClient = this.getUser(loginname);
+        User user=ucToUser(userClient);
         if (user == null) {
             loginRespBody = new LoginRespBody(Command.COMMAND_LOGIN_RESP, ImStatus.C10008);
         } else {
@@ -140,12 +164,59 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
         }
         return loginRespBody;
     }
+    public Group gcToGroup(GroupClient client){
+        Group group=new Group();
+        group.setAvatar(client.getAvatar());
+        group.setName(client.getName());
+        group.setGroup_id(client.getGroup_id());
+        group.setOnline(client.getOnline());
+        group.setCmd(client.getCmd());
+        group.setCreateTime(client.getCreateTime());
+        group.setUsers(client.getUsers().stream().map(this::ucToUser).collect(Collectors.toList()));
+        return group;
+    }
+    public User ucToUser(UserClient client){
+        User user=new User();
+        List<Group> list=Lists.newArrayList();
+        list.add(friendToGroup(client.getFriendList()));
+        user.setFriends(list);
+        user.setAvatar(client.getAvatar());
+        user.setGroups(client.getGroups().stream().map(this::gcToGroup).collect(Collectors.toList()));
+        user.setId(client.getId().toString());
+        user.setNick(client.getNick());
+        user.setStatus(client.getStatus());
+        user.setSign(client.getSign());
+        user.setTerminal(client.getTerminal());
+        return user;
+    }
+    public Group friendToGroup(List<Friend> friends){
+        Group group=new Group();
+        List<UserClient> list=new ArrayList<>();
+        for(Friend each:friends){
+            UserClient userClient=userClientService.selectById(each.getUserId());
+            list.add(userClient);
+        }
+        group.setUsers(list.stream().map(this::userClientToUser).collect(Collectors.toList()));
+        return group;
+    }
+
+    public User userClientToUser(UserClient client){
+        User user=new User();
+        user.setAvatar(client.getAvatar());
+        user.setId(client.getId().toString());
+        user.setNick(client.getNick());
+        user.setStatus(client.getStatus());
+        user.setSign(client.getSign());
+        user.setTerminal(client.getTerminal());
+        return user;
+    }
 
     @Override
     public void onSuccess(ChannelContext channelContext) {
         logger.info("登录成功回调方法");
         ImSessionContext imSessionContext = (ImSessionContext) channelContext.getAttribute();
         User user = imSessionContext.getClient().getUser();
+        ImAio.bindUser(channelContext,user.getId());
         if (user.getGroups() != null) {
             for (Group group : user.getGroups()) {//发送加入群组通知
                 ImPacket groupPacket = new ImPacket(Command.COMMAND_JOIN_GROUP_REQ, JsonKit.toJsonBytes(group));

@@ -1,12 +1,12 @@
 package com.baomidou.springboot.content.mapper;
 
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.springboot.SuperMapper;
 import com.baomidou.springboot.content.entity.Article;
 import com.baomidou.springboot.content.vo.ArticleVO;
 import org.apache.ibatis.annotations.Param;
 
-import java.sql.Wrapper;
 import java.util.List;
 
 /**

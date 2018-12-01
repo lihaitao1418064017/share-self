@@ -65,7 +65,7 @@ public interface IStringCache {
      * @description
 
      */
-    void stringSetString(String key, String value);
+    void stringSetString(String key, Object value);
 
     /**
      * 设置键的字符串值并返回其旧值
@@ -87,6 +87,6 @@ public interface IStringCache {
      * @description
 
      */
-    void stringSetValueAndExpireTime(String key, String value, long timeout);
+    void stringSetValueAndExpireTime(String key, Object value, long timeout);
 
 }

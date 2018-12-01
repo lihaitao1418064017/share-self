@@ -77,6 +77,19 @@
                 url : baseUrl+'/user/login?name='+data.name+"&password="+data.password,
                 dataType : 'json'
             },successCallBack,failCallBack);
+        },
+        /**
+         * 登录
+         * @param data
+         * @param successCallBack
+         * @param failCallBack
+         */
+        chatlogin:function (data,successCallBack,failCallBack) {
+            ajaxRequest({
+                type:'POST',
+                url : baseUrl+'/userclient/login?name='+data.name+"&password="+data.password,
+                dataType : 'json'
+            },successCallBack,failCallBack);
         }
 
 

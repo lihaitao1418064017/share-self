@@ -2,6 +2,7 @@ package com.baomidou.springboot.im.mapper;
 
 
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.springboot.SuperMapper;
 import com.baomidou.springboot.im.entity.UserClient;
 

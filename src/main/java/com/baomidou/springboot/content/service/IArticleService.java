@@ -1,10 +1,10 @@
 package com.baomidou.springboot.content.service;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.springboot.content.entity.Article;
 import com.baomidou.springboot.content.vo.ArticleVO;
 
-import java.sql.Wrapper;
 import java.util.List;
 
 

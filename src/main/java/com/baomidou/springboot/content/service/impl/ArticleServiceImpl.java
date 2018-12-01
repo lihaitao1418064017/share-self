@@ -1,5 +1,6 @@
 package com.baomidou.springboot.content.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.springboot.content.entity.Article;
 import com.baomidou.springboot.content.mapper.ArticleMapper;
@@ -7,7 +8,6 @@ import com.baomidou.springboot.content.service.IArticleService;
 import com.baomidou.springboot.content.vo.ArticleVO;
 import org.springframework.stereotype.Service;
 
-import java.sql.Wrapper;
 import java.util.List;
 
 /**

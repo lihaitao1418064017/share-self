@@ -16,7 +16,8 @@ import lombok.Data;
 public class GroupUser extends SuperEntity<GroupUser> {
 
 
-    private Long userId;
+
+    private String userId;
 
     private String groupId;
 

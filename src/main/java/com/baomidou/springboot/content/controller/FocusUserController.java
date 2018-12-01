@@ -31,8 +31,9 @@ public class FocusUserController  {
 
     @Autowired
     private IFocusUserService focusUserService;
-    @Autowired
-    private IUserService userService;
+
+//    @Autowired
+//    private IUserService userService;
 
     /**
     * @Description:    根据用户id查询用户关注的所有用户
@@ -48,7 +49,7 @@ public class FocusUserController  {
         queryWrapper.eq("user_id",id);
         List<FocusUser> list=focusUserService.selectList(queryWrapper);
         list.forEach(focusUser -> {
-            users.add(userService.selectById(focusUser.getUserId()));
+//            users.add(userService.selectById(focusUser.getUserId()));
         });
         return  ResponseMessage.ok(users);
     }

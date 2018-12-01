@@ -209,7 +209,7 @@ public class CacheImpl implements ICache {
     }
 
     @Override
-    public void stringSetString(String key, String value) {
+    public void stringSetString(String key, Object value) {
                 redisTemplate.opsForValue().set(key,value);
     }
 
@@ -219,7 +219,7 @@ public class CacheImpl implements ICache {
     }
 
     @Override
-    public void stringSetValueAndExpireTime(String key, String value, long timeout) {
+    public void stringSetValueAndExpireTime(String key, Object value, long timeout) {
                 redisTemplate.opsForValue().set(key,value,timeout, TimeUnit.MILLISECONDS);
     }
 }

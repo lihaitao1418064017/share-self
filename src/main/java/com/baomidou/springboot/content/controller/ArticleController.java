@@ -1,5 +1,6 @@
 package com.baomidou.springboot.content.controller;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.api.ApiController;
@@ -36,11 +37,14 @@ public class ArticleController extends ApiController {
 
     @Autowired
     private IArticleService articleService;
-    @Autowired
-    private IUserService userService;
+
+
+//    @Autowired
+//    private IUserService userService;
 
     @Autowired
     private IPhotosService photosService;
+
     @Autowired
     private IVideoService videoService;
 
@@ -93,7 +97,8 @@ public class ArticleController extends ApiController {
      */
     @GetMapping("/getAll")
     public ResponseMessage<List<ArticleVO>> getAll(){
-        return ResponseMessage.ok(articleService.selectByWrapper(null));
+        Wrapper wrapper=new QueryWrapper();
+        return ResponseMessage.ok(articleService.selectByWrapper(wrapper));
     }
 
 
@@ -179,7 +184,7 @@ public class ArticleController extends ApiController {
         articleVO.setId(article.getId());
         articleVO.setRecommend(article.getRecommend());
         articleVO.setTitle(article.getTitle());
-        articleVO.setUser(userService.selectById(article.getUserId()));
+//        articleVO.setUser(userService.selectById(article.getUserId()));
         return articleVO;
     }
 

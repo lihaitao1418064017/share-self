@@ -4,6 +4,7 @@ package com.baomidou.springboot.auth.mapper;
 import com.baomidou.springboot.SuperMapper;
 import com.baomidou.springboot.auth.entity.Permission;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**

@@ -13,6 +13,7 @@ import com.baomidou.springboot.auth.entity.RolePermission;
 * @UpdateRemark:
 * @Version:        1.0.0
 */
+
 public interface RolePermissionMapper extends SuperMapper<RolePermission> {
 
 

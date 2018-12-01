@@ -212,3 +212,45 @@ CREATE TABLE `group_user` (
   `user_id`  bigint(20) DEFAULT NULL COMMENT '群成员',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- ----------------------------------------------------
+CREATE TABLE `im_friend` (
+  `id` bigint(20) NOT NULL COMMENT '主键ID',
+  `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
+  `friend_id`  VARCHAR (255) DEFAULT NULL COMMENT '朋友id',
+  `user_id`  VARCHAR (20) DEFAULT NULL COMMENT '用户id',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `im_group` (
+  `id` bigint(20) NOT NULL COMMENT '主键ID',
+  `group_id`  VARCHAR (255) DEFAULT NULL COMMENT '',
+  `name`  VARCHAR (20) DEFAULT NULL COMMENT '用户id',
+  `online`  INTEGER (10) DEFAULT NULL COMMENT '',
+  `avatar`  VARCHAR (20) DEFAULT NULL COMMENT '头像',
+  `group_owner`  VARCHAR (20) DEFAULT NULL COMMENT '群主',
+
+    `cmd`  VARCHAR (20) DEFAULT NULL COMMENT '',
+  `create_time`  bigint(20) DEFAULT NULL COMMENT '',
+
+
+
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+CREATE TABLE `im_user` (
+  `id` bigint(20) NOT NULL COMMENT '主键ID',
+  `nick`  VARCHAR (255) DEFAULT NULL COMMENT '',
+  `avatar`  VARCHAR (255) DEFAULT NULL COMMENT '',
+  `status`  VARCHAR (255) DEFAULT NULL COMMENT '',
+  `sign`  VARCHAR (255) DEFAULT NULL COMMENT '',
+  `terminal`  VARCHAR (255) DEFAULT NULL COMMENT '',
+  `token`  VARCHAR (20) DEFAULT NULL COMMENT '用户id',
+  `password`  VARCHAR (20) DEFAULT NULL COMMENT '头像',
+  `loginname`  VARCHAR (20) DEFAULT NULL COMMENT '群主',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
