@@ -1,5 +1,6 @@
 package com.baomidou.springboot;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.Banner;
@@ -17,8 +18,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = {
         "com.baomidou.springboot.config",
         "com.baomidou.springboot.controller",
-        "com.baomidou.springboot.service",
-        "com.baomidou.springboot.domain"})
+        "com.baomidou.springboot.auth.mapper",
+        "com.baomidou.springboot.auth.service"})
+@MapperScan("com.baomidou.springboot.auth.mapper")
 public class Application {
 
     protected final static Logger logger = LoggerFactory.getLogger(Application.class);
