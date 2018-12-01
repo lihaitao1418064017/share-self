@@ -1,4 +1,4 @@
-package com.baomidou.springboot.config.jwt;
+package com.baomidou.springboot.auth.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;

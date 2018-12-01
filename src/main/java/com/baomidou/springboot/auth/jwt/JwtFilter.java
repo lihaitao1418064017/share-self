@@ -1,4 +1,4 @@
-package com.baomidou.springboot.config.jwt;
+package com.baomidou.springboot.auth.jwt;
 
 
 import com.baomidou.springboot.response.ResponseMessage;

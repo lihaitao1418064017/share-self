@@ -1,4 +1,4 @@
-package com.baomidou.springboot.config.jwt;
+package com.baomidou.springboot.auth.jwt;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
