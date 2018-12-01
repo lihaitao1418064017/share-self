@@ -1,4 +1,3 @@
-/*
 package com.baomidou.springboot.cache;
 
 import com.google.common.cache.CacheBuilder;
@@ -11,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-*/
 /**
  * 抽象Guava缓存类、缓存模板。
  * 子类需要实现fetchData(key)，从数据库或其他数据源（如Redis）中获取数据。
@@ -22,8 +20,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @param <K> key 类型
  * @param <V> value 类型
- *//*
-
+ */
 @Data
 public abstract class GuavaAbstractLoadingCache<K, V> {
 	protected final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -38,12 +35,10 @@ public abstract class GuavaAbstractLoadingCache<K, V> {
 
 	private LoadingCache<K, V> cache;
 	
-	*/
-/**
+	/**
 	 * 通过调用getCache().get(key)来获取数据 
 	 * @return cache
-	 *//*
-
+	 */
 	public LoadingCache<K, V> getCache() {
 		if(cache == null){	//使用双重校验锁保证只有一个cache实例
 			synchronized (this) {
@@ -66,25 +61,21 @@ public abstract class GuavaAbstractLoadingCache<K, V> {
 		return cache;
 	}
 	
-	*/
-/**
+	/**
 	 * 根据key从数据库或其他数据源中获取一个value，并被自动保存到缓存中。
 	 * @param key
 	 * @return value,连同key一起被加载到缓存中的。 
-	 *//*
-
+	 */
 	protected abstract V fetchData(K key);
 
 
-	*/
-/**
+	/**
 	* @Description:    判断key是否存在
 	* @Author:         Lihaitao
 	* @Date:       2018/8/10 15:39
 	* @UpdateUser:
 	* @UpdateRemark:
-	*//*
-
+	*/
 	public boolean keyExists(K key) {
 		if (key == null || "".equals(key)) {
 			logger.error("The key [{}] is empty.", key);
@@ -101,14 +92,12 @@ public abstract class GuavaAbstractLoadingCache<K, V> {
 		getCache().put(key,value);
 		return true;
 	}
-	*/
-/**
+	/**
 	 * 从缓存中获取数据（第一次自动调用fetchData从外部获取数据），并处理异常
 	 * @param key
 	 * @return Value
 	 * @throws ExecutionException
-	 *//*
-
+	 */
 	public V getValue(K key)throws Exception {
 		if(key == null || "".equals(key)){
 			return null;
@@ -124,4 +113,3 @@ public abstract class GuavaAbstractLoadingCache<K, V> {
 
 
 }
-*/

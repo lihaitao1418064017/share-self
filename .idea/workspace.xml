@@ -1,244 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db4c74d8-3fa0-428c-afd8-dad2ff5f7a0b" name="Default" comment="git试用">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a940d575-a73f-4997-9468-28f701569000.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a940d575-a73f-4997-9468-28f701569000.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+    <list default="true" id="db4c74d8-3fa0-428c-afd8-dad2ff5f7a0b" name="Default" comment="重构项目结构">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_beta_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-29.0.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-12-01.0.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/controller/IndexController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/controller/PermissionController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/controller/RoleController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/controller/RolePermissionController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/controller/UserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/controller/UserRoleController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/entity/Permission.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/entity/Role.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/entity/RolePermission.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/entity/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/entity/UserRole.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/jwt/JwtConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/jwt/JwtFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/mapper/PermissionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/mapper/RoleMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/mapper/RolePermissionMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/mapper/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/mapper/UserRoleMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/IPermissionService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/IRolePermissionService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/IRoleService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/IUserRoleService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/IUserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/impl/PermissionServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/impl/RolePermissionServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/impl/RoleServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/impl/UserRoleServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/shiro/KickoutSessionControlFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/shiro/RetryLimitHashedCredentialsMatcher.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/shiro/ShiroConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/shiro/ShiroRealm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/vo/UserVO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/controller/ArticleController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/controller/CommentsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/controller/FocusUserController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/controller/LoveArticleController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/controller/PhotoArticleController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/controller/VideoArticleController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/Article.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/Comments.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/FocusUser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/LoveArticle.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/Photos.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/SuperEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/Video.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/enums/ArticleType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/enums/UserRoleEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/mapper/ArticleMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/mapper/CommenstMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/mapper/FocusUserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/mapper/LoveArticleMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/mapper/PhotosMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/mapper/VideoMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/IArticleService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/ICommentsService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/IFocusUserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/ILoveArticleService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/IPhotosService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/IVideoService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/impl/ArticleServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/impl/CommentsServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/impl/FocusUserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/impl/LoveArticleServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/impl/PhotosServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/impl/VideoServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/vo/ArticleVO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/vo/CommentsVO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/ImServerDemoStart.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/chat/IpStatListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/chat/ServerAioListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/chat/WebsocketStarter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/chat/WsMsgHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/command/DemoWsHandshakeProcessor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/controller/FriendGroupController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/Apply.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/ApplyStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/ApplyType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/FriendGroup.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/FriendGroupDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/Group.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/GroupUser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/Message.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/Msg.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/UserDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/listener/ImDemoGroupListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/ApplyMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/FriendGroupMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/GroupMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/GroupUserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/MessageMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/MsgMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/processor/LoginServiceProcessor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/GroupService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/IApplyService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/IFriendGroupService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/IGroupUserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/IMsgService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/MessageService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/ApplyServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/FriendGroupServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/GroupServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/GroupUserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/MessageServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/MsgServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/util/ImgMnUtil$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/util/ImgMnUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/jim.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/logback.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/page/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/page/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/page/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/page/static/js/date.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/page/static/js/main.27481b66.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/page/static/js/main.27481b66.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/page/test/bean.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/page/test/plain.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/page/test/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/page/test/upload.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ssl/keystore.jks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-10-30.0.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-10-30.0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-14.0.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-14.0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-16.0.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-16.0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-17.0.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-17.0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/share/content/entity/Article.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/share/content/entity/Comments.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/share/content/entity/FocusUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/share/content/entity/FriendGroup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/share/content/entity/GroupUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/share/content/entity/LoveArticle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/share/content/entity/Photos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/share/content/entity/SuperEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/share/content/entity/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/share/content/entity/Video.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/share/content/entity/enums/ArticleType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/com/share/content/entity/enums/UserRoleEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mybatisplus-spring-boot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatisplus-spring-boot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/IndexController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/jwt/JwtConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/jwt/JwtConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/jwt/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/jwt/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/jwt/JwtHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/jwt/JwtHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/KickoutSessionControlFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/KickoutSessionControlFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/RetryLimitHashedCredentialsMatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/RetryLimitHashedCredentialsMatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/ShiroConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/ShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/ShiroRealm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaAbstractLoadingCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaAbstractLoadingCache.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaArticleCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaArticleCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/chat/IpStatListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/chat/IpStatListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/chat/ServerAioListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/chat/ServerAioListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/chat/WebsocketStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/chat/WebsocketStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/chat/WsMsgHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/chat/WsMsgHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/CommonsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/CommonsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/KickoutSessionControlFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/KickoutSessionControlFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/RetryLimitHashedCredentialsMatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/RetryLimitHashedCredentialsMatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/ShiroConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/ShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/ShiroRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/CommentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/controller/CommentsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/CurrentUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/CurrentUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/FileUploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/FocusUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/controller/FocusUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/FriendGroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/controller/FriendGroupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/LoveArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/controller/LoveArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/PermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/PermissionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/PhotoArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/controller/PhotoArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/RolePermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/RolePermissionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/UserRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/UserRoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/VideoArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/controller/VideoArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/Comments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/Comments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/FocusUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/FocusUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/FriendGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/FriendGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/GroupUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/GroupUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/LoveArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/LoveArticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/Photos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/Photos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/SuperEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/SuperEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/Video.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/dto/Apply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/Apply.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/dto/ApplyStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/ApplyStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/dto/ApplyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/ApplyType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/dto/FriendGroupDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/FriendGroupDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/dto/Msg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/Msg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/enums/ArticleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/enums/ArticleType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/enums/UserRoleEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/enums/UserRoleEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/po/Permission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/entity/Permission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/po/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/po/RolePermission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/entity/RolePermission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/po/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/entity/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/ApplyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/ApplyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/mapper/ArticleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/CommenstMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/mapper/CommenstMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/FocusUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/mapper/FocusUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/FriendGroupMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/FriendGroupMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/GroupUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/GroupUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/LoveArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/mapper/LoveArticleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/MsgMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/MsgMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/PermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/mapper/PermissionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/PhotosMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/mapper/PhotosMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/mapper/RoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/RolePermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/mapper/RolePermissionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/UserRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/mapper/UserRoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/mapper/VideoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/mapper/VideoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IApplyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/IApplyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/IArticleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/ICommentsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/ICommentsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IFocusUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/IFocusUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IFriendGroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/IFriendGroupService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IGroupUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/IGroupUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/ILoveArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/ILoveArticleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IMsgService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/IMsgService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IPermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/IPermissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IPhotosService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/IPhotosService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IRolePermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/IRolePermissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/IRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IUserRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/IUserRoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IVideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/IVideoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/ApplyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/ApplyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/impl/ArticleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/CommentsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/impl/CommentsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/FocusUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/impl/FocusUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/FriendGroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/FriendGroupServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/GroupUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/GroupUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/LoveArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/impl/LoveArticleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/MsgServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/MsgServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/PermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/impl/PermissionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/PhotosServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/impl/PhotosServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/RolePermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/impl/RolePermissionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/UserRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/impl/UserRoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/VideoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/impl/VideoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util/MsgUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util/MsgUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/vo/ArticleVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/vo/ArticleVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/vo/CommentsVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/vo/CommentsVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/vo/UserVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/vo/UserVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/test/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/FriendGroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/FriendGroupServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CommonsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CommonsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PhotosMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PhotosMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ReplyMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RolePermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/RolePermissionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/baomidou/springboot/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/baomidou/springboot/test/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/cache/GuavaArticleCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/cache/GuavaArticleCache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/chat/IpStatListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/chat/ServerAioListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/chat/WebsocketStarter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/chat/WsMsgHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/shiro/KickoutSessionControlFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/shiro/RetryLimitHashedCredentialsMatcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/shiro/ShiroConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/shiro/ShiroRealm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/ArticleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/CommentsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/CurrentUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/CurrentUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/FileUploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/FileUploadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/FocusUserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/IndexController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/LoveArticleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/PermissionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/PhotoArticleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/RoleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/RolePermissionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/UserRoleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/controller/VideoArticleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/Article.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/Comments.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/FocusUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/FriendGroup.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/GroupUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/LoveArticle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/Photos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/SuperEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/Video.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/dto/Apply.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/dto/ApplyStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/dto/ApplyType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/dto/FriendGroupDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/dto/Msg.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/dto/UserDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/enums/ArticleType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/enums/UserRoleEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/po/Permission.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/po/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/po/RolePermission.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/domain/po/UserRole.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/ApplyMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/ArticleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/CommenstMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/FocusUserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/FriendGroupMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/GroupUserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/LoveArticleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/MsgMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/PermissionMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/PhotosMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/RoleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/RolePermissionMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/UserRoleMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/mapper/VideoMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IApplyService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IArticleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/ICommentsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IFocusUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IFriendGroupService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IGroupUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/ILoveArticleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IMsgService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IPermissionService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IPhotosService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IRolePermissionService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IRoleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IUserRoleService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/IVideoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/ApplyServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/ArticleServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/CommentsServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/FocusUserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/FriendGroupServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/GroupUserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/LoveArticleServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/MsgServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/PermissionServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/PhotosServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/RolePermissionServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/RoleServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/UserRoleServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/service/impl/VideoServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/util/MsgUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/util/MsgUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/vo/ArticleVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/vo/CommentsVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/vo/UserVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CommonsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CommonsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PermissionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PhotosMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PhotosMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ReplyMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/RoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/RolePermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/RolePermissionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserRoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/VideoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/VideoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/baomidou/springboot/test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/baomidou/springboot/test/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/page/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/page/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/jwt/JwtConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/jwt/JwtFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/jwt/JwtHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/jwt/JwtHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ArticleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CommonsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PermissionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PhotosMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/RoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/RolePermissionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserRoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/VideoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/example.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/DemoHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/page/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/tio/tiows.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/demo/target/" />
@@ -296,42 +226,50 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="7" />
-          <entry key="html" value="1" />
-          <entry key="java" value="178" />
+          <entry key="html" value="3" />
+          <entry key="java" value="216" />
+          <entry key="jks" value="1" />
           <entry key="js" value="1" />
           <entry key="md" value="2" />
+          <entry key="properties" value="2" />
           <entry key="sql" value="2" />
-          <entry key="xml" value="12" />
-          <entry key="yml" value="2" />
+          <entry key="xml" value="25" />
+          <entry key="yml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="7" />
-          <entry key="HTML" value="1" />
-          <entry key="JAVA" value="178" />
+          <entry key="HTML" value="3" />
+          <entry key="JAVA" value="216" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Properties" value="2" />
           <entry key="SQL" value="2" />
-          <entry key="XML" value="12" />
-          <entry key="YAML" value="2" />
+          <entry key="XML" value="25" />
+          <entry key="YAML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1712" />
+          <entry key="html" value="4" />
+          <entry key="java" value="1781" />
           <entry key="md" value="3" />
-          <entry key="txt" value="12" />
-          <entry key="xml" value="33" />
+          <entry key="properties" value="3" />
+          <entry key="txt" value="22" />
+          <entry key="xml" value="61" />
           <entry key="yml" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1712" />
+          <entry key="HTML" value="4" />
+          <entry key="JAVA" value="1781" />
           <entry key="Markdown" value="3" />
-          <entry key="PLAIN_TEXT" value="12" />
-          <entry key="XML" value="33" />
+          <entry key="PLAIN_TEXT" value="22" />
+          <entry key="Properties" value="3" />
+          <entry key="XML" value="61" />
           <entry key="YAML" value="36" />
         </counts>
       </usages-collector>
@@ -343,75 +281,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/Article.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="123" selection-start-line="23" selection-start-column="123" selection-end-line="23" selection-end-column="123" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/CommonsConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="114" column="72" selection-start-line="114" selection-start-column="72" selection-end-line="114" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/ShiroRealm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/IndexController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaAbstractLoadingCache.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="e#0#2910#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="46">
+              <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaArticleCache.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+            <state relative-caret-position="135">
+              <caret line="9" column="87" selection-start-line="9" selection-start-column="87" selection-end-line="9" selection-end-column="87" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RolePermissionMapper.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+            <state relative-caret-position="75">
+              <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -422,7 +313,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RolePermissionMapper.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PhotosMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommonsMapper.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
@@ -461,6 +385,7 @@
       <find>isClosed</find>
       <find>logging</find>
       <find>login</find>
+      <find>8888</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -478,27 +403,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/FileUploadController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/logback-spring.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/ICache.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/redisImpl/CacheImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util/MsgUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/Application.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/response/ResponseMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util/ShiroUtils.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/README.md" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/wap/login.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/IndexController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/Video.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/chat/entity/Users.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/common/ConstantsPub.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IGroupUserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/chat/WsMsgHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IMsgService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/IFriendGroupService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/FriendGroup.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/FriendGroupController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/MsgServiceImpl.java" />
@@ -521,14 +425,35 @@
         <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/MsgServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/vo/UserVO.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/PhotosMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/CommonsConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/ShiroRealm.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaAbstractLoadingCache.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaArticleCache.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/CommonsConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/FriendGroupServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util/ImgMnUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/jim.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/page/index.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/command/DemoWsHandshakeProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/MessageMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/GroupService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/MessageService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/GroupServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/MessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/Group.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/GroupMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/ImServerDemoStart.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/KickoutSessionControlFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/processor/LoginServiceProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/PhotosMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml" />
       </list>
     </option>
   </component>
@@ -555,10 +480,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="34" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="807" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -623,71 +548,7 @@
               <item name="share-self" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="share-self" type="b2602c69:ProjectViewProjectNode" />
-              <item name="share-self" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="baomidou" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="share-self" type="b2602c69:ProjectViewProjectNode" />
-              <item name="share-self" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="baomidou" type="462c0819:PsiDirectoryNode" />
-              <item name="springboot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="share-self" type="b2602c69:ProjectViewProjectNode" />
-              <item name="share-self" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="baomidou" type="462c0819:PsiDirectoryNode" />
-              <item name="springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="share-self" type="b2602c69:ProjectViewProjectNode" />
-              <item name="share-self" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="baomidou" type="462c0819:PsiDirectoryNode" />
-              <item name="springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="cache" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="share-self" type="b2602c69:ProjectViewProjectNode" />
-              <item name="share-self" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="baomidou" type="462c0819:PsiDirectoryNode" />
-              <item name="springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="share-self" type="b2602c69:ProjectViewProjectNode" />
-              <item name="share-self" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="baomidou" type="462c0819:PsiDirectoryNode" />
-              <item name="springboot" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="share-self" type="b2602c69:ProjectViewProjectNode" />
@@ -695,6 +556,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -709,10 +571,10 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="GroupUserCon&#9;null&#9;null&#10;Fri&#9;FILE&#9;file:///STUDY/code/share-self/src/main/java/com/baomidou/springboot/domain/FriendGroup.java&#10;MsgUtil&#9;FILE&#9;file:///STUDY/code/share-self/src/main/java/com/baomidou/springboot/util/MsgUtil.java&#10;User&#9;FILE&#9;file://E:/person-project/mybatisplus-spring-boot/src/main/java/com/baomidou/springboot/domain/User.java" />
+    <property name="SearchEverywhereHistoryKey" value="UserMapper&#9;FILE&#9;file:///STUDY/code/share-self/src/main/java/com/baomidou/springboot/im/mapper/UserMapper.java&#10;GroupUserCon&#9;null&#9;null&#10;Fri&#9;FILE&#9;file:///STUDY/code/share-self/src/main/java/com/baomidou/springboot/domain/FriendGroup.java&#10;MsgUtil&#9;FILE&#9;file:///STUDY/code/share-self/src/main/java/com/baomidou/springboot/util/MsgUtil.java&#10;User&#9;FILE&#9;file://E:/person-project/mybatisplus-spring-boot/src/main/java/com/baomidou/springboot/domain/User.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543642685955" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543646028169" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -723,16 +585,16 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/.idea" />
-      <recent name="$PROJECT_DIR$/src/main/java" />
-      <recent name="E:\person-project\mybatisplus-spring-boot\src\main\resources\mapper" />
-      <recent name="E:\person-project\mybatisplus-spring-boot\src\main\java\com\baomidou\springboot\domain\entity" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
       <recent name="com.baomidou.springboot" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.baomidou.springboot.service.impl" />
@@ -741,12 +603,12 @@
       <recent name="com.baomidou.springboot.domain.dto" />
       <recent name="com.baomidou.springboot.util" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\person-project\mybatisplus-spring-boot\src\main\resources" />
-      <recent name="E:\person-project\mybatisplus-spring-boot\src\main\java\com\baomidou\springboot\domain\dto" />
-      <recent name="E:\person-project\mybatisplus-spring-boot\src\main\resources\static\wap" />
-      <recent name="E:\person-project\mybatisplus-spring-boot\src\main\resources\static\wap\js" />
-      <recent name="E:\person-project\mybatisplus-spring-boot\src\main\resources\static" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/.idea" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+      <recent name="E:\person-project\mybatisplus-spring-boot\src\main\resources\mapper" />
+      <recent name="E:\person-project\mybatisplus-spring-boot\src\main\java\com\baomidou\springboot\domain\entity" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1091,7 +953,7 @@
       <workItem from="1542804954243" duration="8054000" />
       <workItem from="1542991360597" duration="3768000" />
       <workItem from="1543505040136" duration="713000" />
-      <workItem from="1543640021545" duration="2433000" />
+      <workItem from="1543640021545" duration="5690000" />
     </task>
     <task id="LOCAL-00001" summary="1，添加注释">
       <created>1534322613276</created>
@@ -1233,7 +1095,21 @@
       <option name="project" value="LOCAL" />
       <updated>1543036876069</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="重构项目结构">
+      <created>1543642773120</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1543642773120</updated>
+    </task>
+    <task id="LOCAL-00022" summary="重构项目结构1">
+      <created>1543643040342</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1543643040342</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1269,11 +1145,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324560000" />
+    <option name="totallyTimeSpent" value="327817000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24606581" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -1288,19 +1163,19 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.46506023" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5144578" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4969743" weight="0.32843137" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4969743" visible="true" weight="0.32771084" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5030257" side_tool="true" weight="0.32843137" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32843137" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32789317" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32771084" />
       <window_info anchor="bottom" id="JRebel Executor" order="12" />
       <window_info anchor="bottom" id="JRebel Console" order="13" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
-      <window_info anchor="bottom" id="Messages" order="15" weight="0.32891566" />
+      <window_info anchor="bottom" id="Messages" order="15" weight="0.4192771" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1380,7 +1255,9 @@
     <MESSAGE value="1，加入群聊配置,和日志" />
     <MESSAGE value="更新代码" />
     <MESSAGE value="git试用" />
-    <option name="LAST_COMMIT_MESSAGE" value="git试用" />
+    <MESSAGE value="重构项目结构" />
+    <MESSAGE value="重构项目结构1" />
+    <option name="LAST_COMMIT_MESSAGE" value="重构项目结构1" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -1397,319 +1274,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/entity/UserRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/mapper/PermissionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/mapper/RoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/mapper/RolePermissionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/mapper/UserRoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/impl/PermissionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/impl/RolePermissionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/impl/RoleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/impl/UserRoleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/IPermissionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/IRolePermissionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/IRoleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/IUserRoleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/IUserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/PermissionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/RolePermissionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/UserRoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/ApplyMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/MsgMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/IApplyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/IMsgService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/ApplyServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/MsgServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/Apply.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/ApplyStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/ApplyType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/FriendGroupDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/Msg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/UserDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/vo/UserVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="87" selection-start-line="9" selection-start-column="87" selection-end-line="9" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommonsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ReplyMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PhotosMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RolePermissionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="123" selection-start-line="23" selection-start-column="123" selection-end-line="23" selection-end-column="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/CommonsConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="114" column="72" selection-start-line="114" selection-start-column="72" selection-end-line="114" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/ShiroRealm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="379">
@@ -1739,8 +1303,378 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaArticleCache.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="255">
           <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/IFriendGroupService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/IUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/FriendGroupServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/GlobalExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/CommonsConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/MetaObjectHandlerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/ServerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GroupMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/page/test/bean.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ssl/keystore.jks">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/logback.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="123" selection-start-line="23" selection-start-column="123" selection-end-line="23" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jim.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/page/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="451" column="36" selection-start-line="451" selection-start-column="36" selection-end-line="451" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="e#31#37#1" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#2;n#!!top" expanded="true" />
+            <element signature="e#31#37#1" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#2;n#!!top" expanded="true" />
+            <element signature="e#31#37#1" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#282#288#1" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="e#31#37#1" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
+            <element signature="e#31#37#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/command/DemoWsHandshakeProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="22" column="58" lean-forward="true" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/GroupService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/MessageService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/MessageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/SuperMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/MessageMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/GroupMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/GroupServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/ImServerDemoStart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="40" column="60" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util/ImgMnUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/controller/FriendGroupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/KickoutSessionControlFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19">
+          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/processor/LoginServiceProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/Article.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RolePermissionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ReplyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PhotosMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommonsMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="87" selection-start-line="9" selection-start-column="87" selection-end-line="9" selection-end-column="87" />
         </state>
       </provider>
     </entry>
