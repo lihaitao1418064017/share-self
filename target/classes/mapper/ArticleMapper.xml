@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.baomidou.springboot.mapper.ArticleMapper">
+<mapper namespace="com.baomidou.springboot.content.mapper.ArticleMapper">
     <!--photo-->
-    <resultMap id="PhotoResultMap" type="com.baomidou.springboot.domain.Photos">
+    <resultMap id="PhotoResultMap" type="com.baomidou.springboot.content.entity.Photos">
         <id column="id" jdbcType="INTEGER" property="id" />
         <result column="url" jdbcType="VARCHAR" property="url" />
     </resultMap>
     <!--video-->
-    <resultMap id="VideoResultMap" type="com.baomidou.springboot.domain.Video">
+    <resultMap id="VideoResultMap" type="com.baomidou.springboot.content.entity.Video">
         <id column="id" jdbcType="VARCHAR" property="id" />
         <result column="url" jdbcType="VARCHAR" property="url" />
     </resultMap>
 
 
-    <resultMap id="ArticleVO" type="com.baomidou.springboot.vo.ArticleVO">
+    <resultMap id="ArticleVO" type="com.baomidou.springboot.content.vo.ArticleVO">
         <id column="a_id" jdbcType="INTEGER" property="id" /><!--id-->
         <result column="a_title" jdbcType="VARCHAR" property="title" />
         <result column="a_content" jdbcType="VARCHAR" property="content" />
         <result column="a_date" jdbcType="DATE" property="content" />
         <result column="a_article_type" jdbcType="INTEGER" property="articleType" />
         <result column="a_recommend" jdbcType="INTEGER" property="recommend" />
-        <association property="user" column="user_id" javaType="com.baomidou.springboot.domain.User"><!--exam对象-->
+        <association property="user" column="user_id" javaType="com.baomidou.springboot.auth.entity.User"><!--exam对象-->
             <id  property="id" column="id"  />
             <result column="name" property="name" jdbcType="VARCHAR" />
             <result column="age" property="age" jdbcType="INTEGER" />
@@ -36,10 +36,10 @@
             <result column="address" property="address" jdbcType="VARCHAR" />
         </association>
         <collection property="photosList" column="a_id" javaType="java.util.ArrayList"
-                    ofType="com.baomidou.springboot.domain.Photos" select="selectPhotosListByArticleId">
+                    ofType="com.baomidou.springboot.content.entity.Photos" select="selectPhotosListByArticleId">
         </collection>
         <collection property="videosList" column="a_id" javaType="java.util.ArrayList"
-                    ofType="com.baomidou.springboot.domain.Video" select="selectVideoListByArticleId">
+                    ofType="com.baomidou.springboot.content.entity.Video" select="selectVideoListByArticleId">
         </collection>
     </resultMap>
 <!--根据wrapper查询文章-->

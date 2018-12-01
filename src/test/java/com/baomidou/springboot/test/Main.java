@@ -1,8 +1,7 @@
 package com.baomidou.springboot.test;
 
-import com.baomidou.springboot.domain.User;
+import com.baomidou.springboot.auth.entity.User;
 import com.baomidou.springboot.util.JsonUtil;
-import org.junit.Before;
 import org.junit.Test;
 
 /**

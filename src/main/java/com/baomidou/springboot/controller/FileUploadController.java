@@ -2,7 +2,7 @@ package com.baomidou.springboot.controller;
 
 import cn.hutool.core.util.RandomUtil;
 import com.baomidou.springboot.response.ResponseMessage;
-import com.baomidou.springboot.service.IPhotosService;
+import com.baomidou.springboot.content.service.IPhotosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.web.servlet.MultipartProperties;

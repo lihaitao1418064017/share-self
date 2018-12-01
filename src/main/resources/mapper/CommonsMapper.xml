@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.baomidou.springboot.mapper.CommenstMapper">
-    <resultMap id="CommentsVO" type="com.baomidou.springboot.vo.CommentsVO">
+<mapper namespace="com.baomidou.springboot.content.mapper.CommenstMapper">
+    <resultMap id="CommentsVO" type="com.baomidou.springboot.content.vo.CommentsVO">
         <id column="co_id" jdbcType="INTEGER" property="id" />
         <result column="co_content" jdbcType="VARCHAR" property="content" />
         <result column="co_date" jdbcType="DATE" property="content" />
         <result column="co_praise" jdbcType="INTEGER" property="praise" />
-        <association property="parentUser" column="parent_id" javaType="com.baomidou.springboot.domain.User">
+        <association property="parentUser" column="parent_id" javaType="com.baomidou.springboot.auth.entity.User">
             <id  property="id" column="id"  />
             <result column="name" property="name" jdbcType="VARCHAR" />
             <result column="age" property="age" jdbcType="INTEGER" />
@@ -21,7 +21,7 @@
             <result column="article_sum" property="articleSum" jdbcType="INTEGER" />
             <result column="address" property="address" jdbcType="VARCHAR" />
         </association>
-        <association property="currentUser" column="user_id" javaType="com.baomidou.springboot.domain.User">
+        <association property="currentUser" column="user_id" javaType="com.baomidou.springboot.auth.entity.User">
             <id  property="id" column="id"  />
             <result column="name" property="name" jdbcType="VARCHAR" />
             <result column="age" property="age" jdbcType="INTEGER" />

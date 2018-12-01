@@ -1,6 +1,6 @@
 package com.baomidou.springboot.controller;
 
-import com.baomidou.springboot.domain.User;
+import com.baomidou.springboot.auth.entity.User;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 

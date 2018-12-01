@@ -10,7 +10,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     platform: mysql
-    url: jdbc:mysql://localhost:3306/share_self?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://47.99.216.57:3306/share_self?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
@@ -21,8 +21,8 @@ mybatis-plus:
   mapper-locations: classpath*:mapper/*Mapper.xml
 #  mapper-locations: classpath:/mappers/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.baomidou.springboot.domain
-  typeEnumsPackage: com.baomidou.springboot.domain.enums
+  typeAliasesPackage: com.baomidou.springboot.content.entity,com.baomidou.springboot.auth.entity,com.baomidou.springboot.im.entity
+  typeEnumsPackage: com.baomidou.springboot.content.entity.enums
   global-config:
     #刷新mapper 调试神器
     db-config:
