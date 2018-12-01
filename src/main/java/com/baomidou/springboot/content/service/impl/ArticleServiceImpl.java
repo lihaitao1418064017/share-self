@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * User 表数据服务层接口实现类
+ * UserClient 表数据服务层接口实现类
  *
  */
 @Service

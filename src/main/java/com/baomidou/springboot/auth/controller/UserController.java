@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.plugins.pagination.PageHelper;
 import com.baomidou.springboot.common.ConstantsPub;
-import com.baomidou.springboot.config.jwt.JwtHelper;
+import com.baomidou.springboot.auth.jwt.JwtHelper;
 import com.baomidou.springboot.auth.entity.User;
 import com.baomidou.springboot.content.entity.enums.UserRoleEnum;
 import com.baomidou.springboot.response.ResponseMessage;

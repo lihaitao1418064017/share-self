@@ -3,7 +3,6 @@ package com.baomidou.springboot.config;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.baomidou.springboot.cache.GuavaArticleCache;
 import com.baomidou.springboot.cache.ICache;
 import com.baomidou.springboot.cache.redisImpl.CacheImpl;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
@@ -35,11 +34,11 @@ public class CommonsConfig {
     /**
      * ArticleCache对象注入
      */
-    @Bean
-    public GuavaArticleCache articleCache(){
-
-        return new GuavaArticleCache();
-    }
+//    @Bean
+//    public GuavaArticleCache articleCache(){
+//
+//        return new GuavaArticleCache();
+//    }
 
     /**
      * 注入redis缓存接口
@@ -95,7 +94,7 @@ public class CommonsConfig {
 //            public boolean doFilter(MetaObject metaObject) {
 //                MappedStatement ms = PluginUtils.getMappedStatement(metaObject);
 //                // 过滤自定义查询此时无租户信息约束【 麻花藤 】出现
-//                if ("com.baomidou.springboot.auth.mapper.UserMapper.selectListBySQL".equals(ms.getId())) {
+//                if ("com.baomidou.springboot.auth.mapper.UserClientMapper.selectListBySQL".equals(ms.getId())) {
 //                    return true;
 //                }
 //                return false;

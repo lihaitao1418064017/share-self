@@ -21,7 +21,7 @@ mybatis-plus:
   mapper-locations: classpath*:mapper/*Mapper.xml
 #  mapper-locations: classpath:/mappers/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.baomidou.springboot.domain
+  typeAliasesPackage: com.baomidou.springboot.content.entity,com.baomidou.springboot.auth.entity,com.baomidou.springboot.im.entity
   typeEnumsPackage: com.baomidou.springboot.content.entity.enums
   global-config:
     #刷新mapper 调试神器

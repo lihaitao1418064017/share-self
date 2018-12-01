@@ -33,7 +33,7 @@ public class Comments extends SuperEntity<Comments> {
     /**
      * 评论人
      */
-//    private User user;
+//    private UserClient user;
     private Long userId;
 
 

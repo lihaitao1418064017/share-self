@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baomidou.springboot.auth.mapper.PermissionMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.baomidou.springboot.auth.entity.Permission">
+		<id column="id" property="id" />
+		<result column="pid" property="pid" />
+		<result column="name" property="name" />
+		<result column="type" property="type" />
+		<result column="sort" property="sort" />
+		<result column="url" property="url" />
+		<result column="perm_code" property="permCode" />
+		<result column="icon" property="icon" />
+		<result column="description" property="description" />
+		<result column="status" property="status" />
+		<result column="create_time" property="createTime" />
+		<result column="modify_time" property="modifyTime" />
+	</resultMap>
+
+	<select id="findPermissionByUser" resultMap="BaseResultMap">
+		SELECT * FROM permission WHERE id IN
+		(
+		SELECT permission_id FROM role_permission WHERE role_id IN
+		(
+		SELECT role_id FROM user_role INNER JOIN role ON user_role.role_id = role.id WHERE user_id = #{0} AND status = 1
+		)
+		) AND status = 1 /*and type in (1,2)*/
+	</select>
+
+
+</mapper>

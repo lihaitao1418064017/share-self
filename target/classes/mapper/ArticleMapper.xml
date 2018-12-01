@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baomidou.springboot.content.mapper.ArticleMapper">
+    <!--photo-->
+    <resultMap id="PhotoResultMap" type="com.baomidou.springboot.content.entity.Photos">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="url" jdbcType="VARCHAR" property="url" />
+    </resultMap>
+    <!--video-->
+    <resultMap id="VideoResultMap" type="com.baomidou.springboot.content.entity.Video">
+        <id column="id" jdbcType="VARCHAR" property="id" />
+        <result column="url" jdbcType="VARCHAR" property="url" />
+    </resultMap>
+
+
+    <resultMap id="ArticleVO" type="com.baomidou.springboot.content.vo.ArticleVO">
+        <id column="a_id" jdbcType="INTEGER" property="id" /><!--id-->
+        <result column="a_title" jdbcType="VARCHAR" property="title" />
+        <result column="a_content" jdbcType="VARCHAR" property="content" />
+        <result column="a_date" jdbcType="DATE" property="content" />
+        <result column="a_article_type" jdbcType="INTEGER" property="articleType" />
+        <result column="a_recommend" jdbcType="INTEGER" property="recommend" />
+        <association property="user" column="user_id" javaType="com.baomidou.springboot.auth.entity.User"><!--exam对象-->
+            <id  property="id" column="id"  />
+            <result column="name" property="name" jdbcType="VARCHAR" />
+            <result column="age" property="age" jdbcType="INTEGER" />
+            <result column="birthday" property="birthday" jdbcType="DATE" />
+            <result column="headshot" property="headshot" jdbcType="VARCHAR" />
+            <result column="signature" property="signature" jdbcType="VARCHAR" />
+            <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+            <result column="phone" property="phone" jdbcType="VARCHAR" />
+            <result column="role" property="role" jdbcType="INTEGER" />
+            <result column="love" property="love" jdbcType="INTEGER" />
+            <result column="focus" property="focus" jdbcType="INTEGER" />
+            <result column="article_sum" property="articleSum" jdbcType="INTEGER" />
+            <result column="address" property="address" jdbcType="VARCHAR" />
+        </association>
+        <collection property="photosList" column="a_id" javaType="java.util.ArrayList"
+                    ofType="com.baomidou.springboot.content.entity.Photos" select="selectPhotosListByArticleId">
+        </collection>
+        <collection property="videosList" column="a_id" javaType="java.util.ArrayList"
+                    ofType="com.baomidou.springboot.content.entity.Video" select="selectVideoListByArticleId">
+        </collection>
+    </resultMap>
+<!--根据wrapper查询文章-->
+    <select id="selectByWrapper" resultMap="ArticleVO">
+        SELECT a.id AS a_id,
+        a.title AS a_title,
+        a.content AS a_content,
+        a.date AS a_date,
+        a.article_type AS a_article_type,
+        a.recommend AS a_recommend,
+
+        u.id AS id,
+        u.age AS age,
+        u.name AS name,
+        u.birthday AS birthday,
+        u.headshot AS headshot,
+        u.signature AS signature,
+        u.nickname AS nickname,
+        u.phone AS phone,
+        u.role AS role,
+        u.love AS love,
+        u.article_sum AS article_sum,
+        u.address AS address,
+        u.focus AS focus
+        FROM article a
+        INNER JOIN user u ON u.id = a.user_id
+        <where>
+            ${ew.sqlSegment}
+        </where>
+    </select>
+<!--根据文章用户id查询-->
+    <select id="selectByUserId" resultMap="ArticleVO">
+         SELECT
+          a.id AS a_id,
+          a.title AS a_title,
+          a.content AS a_content,
+          a.date AS a_date,
+          a.article_type AS a_article_type,
+          a.recommend AS a_recommend,
+
+        u.id AS id,
+        u.age AS age,
+        u.name AS name,
+        u.birthday AS birthday,
+        u.headshot AS headshot,
+        u.signature AS signature,
+        u.nickname AS nickname,
+        u.phone AS phone,
+        u.role AS role,
+        u.love AS love,
+        u.article_sum AS article_sum,
+        u.address AS address,
+        u.focus AS focus
+        FROM article a
+        INNER JOIN user u ON u.id = a.user_id
+        WHERE a.user_id = #{userId ,jdbcType=INTEGER}
+    </select>
+    <!--根据文章id查询-->
+    <select id="selectByArticlePrimaryKey" resultMap="ArticleVO">
+       SELECT a.id AS a_id,
+          a.title AS a_title,
+          a.content AS a_content,
+          a.date AS a_date,
+          a.article_type AS a_article_type,
+          a.recommend AS a_recommend,
+
+        u.id AS id,
+        u.age AS age,
+        u.name AS name,
+        u.birthday AS birthday,
+        u.headshot AS headshot,
+        u.signature AS signature,
+        u.nickname AS nickname,
+        u.phone AS phone,
+        u.role AS role,
+        u.love AS love,
+        u.article_sum AS article_sum,
+        u.address AS address,
+        u.focus AS focus
+        FROM article a
+        INNER JOIN user u ON u.id = a.user_id
+        WHERE a.id = #{articleId ,jdbcType=INTEGER}
+    </select>
+
+
+    <select id="selectPhotosListByArticleId" resultMap="PhotoResultMap">
+        SELECT
+        ph.id,
+        ph.url
+        FROM photos ph
+        INNER JOIN article a ON a.id = ph.article_id
+        WHERE a.id = #{a_id, jdbcType=INTEGER}
+    </select>
+    <select id="selectVideoListByArticleId" resultMap="VideoResultMap">
+        SELECT
+        vi.id,
+        vi.url
+        FROM video vi
+        INNER JOIN article a ON a.id = vi.article_id
+        WHERE a.id = #{a_id, jdbcType=INTEGER}
+    </select>
+</mapper>

@@ -1,174 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db4c74d8-3fa0-428c-afd8-dad2ff5f7a0b" name="Default" comment="重构项目结构">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_beta_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-29.0.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-12-01.0.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/controller/IndexController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/controller/PermissionController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/controller/RoleController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/controller/RolePermissionController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/controller/UserRoleController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/entity/Permission.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/entity/Role.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/entity/RolePermission.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/entity/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/entity/UserRole.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/jwt/JwtConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/jwt/JwtFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/mapper/PermissionMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/mapper/RoleMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/mapper/RolePermissionMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/mapper/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/mapper/UserRoleMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/IPermissionService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/IRolePermissionService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/IRoleService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/IUserRoleService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/IUserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/impl/PermissionServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/impl/RolePermissionServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/impl/RoleServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/impl/UserRoleServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/shiro/KickoutSessionControlFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/shiro/RetryLimitHashedCredentialsMatcher.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/shiro/ShiroConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/shiro/ShiroRealm.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/vo/UserVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/controller/ArticleController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/controller/CommentsController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/controller/FocusUserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/controller/LoveArticleController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/controller/PhotoArticleController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/controller/VideoArticleController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/Article.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/Comments.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/FocusUser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/LoveArticle.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/Photos.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/SuperEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/Video.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/enums/ArticleType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/entity/enums/UserRoleEnum.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/mapper/ArticleMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/mapper/CommenstMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/mapper/FocusUserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/mapper/LoveArticleMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/mapper/PhotosMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/mapper/VideoMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/IArticleService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/ICommentsService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/IFocusUserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/ILoveArticleService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/IPhotosService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/IVideoService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/impl/ArticleServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/impl/CommentsServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/impl/FocusUserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/impl/LoveArticleServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/impl/PhotosServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/service/impl/VideoServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/vo/ArticleVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/content/vo/CommentsVO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/ImServerDemoStart.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/chat/IpStatListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/chat/ServerAioListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/chat/WebsocketStarter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/chat/WsMsgHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/command/DemoWsHandshakeProcessor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/controller/FriendGroupController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/Apply.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/ApplyStatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/ApplyType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/FriendGroup.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/FriendGroupDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/Group.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/GroupUser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/Message.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/Msg.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/entity/UserDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/listener/ImDemoGroupListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/ApplyMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/FriendGroupMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/GroupMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/GroupUserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/MessageMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/MsgMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/mapper/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/processor/LoginServiceProcessor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/GroupService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/IApplyService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/IFriendGroupService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/IGroupUserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/IMsgService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/MessageService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/ApplyServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/FriendGroupServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/GroupServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/GroupUserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/MessageServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/MsgServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/im/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/util/ImgMnUtil$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/util/ImgMnUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/jim.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/logback.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/page/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/page/500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/page/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/page/static/js/date.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/page/static/js/main.27481b66.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/page/static/js/main.27481b66.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/page/test/bean.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/page/test/plain.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/page/test/post.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/page/test/upload.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ssl/keystore.jks" afterDir="false" />
+    <list default="true" id="db4c74d8-3fa0-428c-afd8-dad2ff5f7a0b" name="Default" comment="提交整个项目结构">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_197.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_197.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_thoughtworks_paranamer_paranamer_2_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_lukehutch_fast_classpath_scanner_2_18_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_0_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_25_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_25_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_25_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_25_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_25_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_25_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_25_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_25_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_25_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_25_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_25_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_25_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_1_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_1_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_websocket_javax_websocket_api_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_46.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_46.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_core_2_5_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_core_2_5_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_compress_1_16_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_compress_1_16_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_31.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_31.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_31.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_31.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_31.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_31.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_annotations_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_annotations_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_client_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_client_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_continuation_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_continuation_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_plus_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_plus_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_security_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_server_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlet_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlets_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_servlets_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_webapp_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_webapp_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_xml_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_xml_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_javax_websocket_client_impl_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_javax_websocket_client_impl_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_javax_websocket_server_impl_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_javax_websocket_server_impl_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_api_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_api_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_client_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_client_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_common_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_common_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_server_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_server_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_servlet_9_4_11_v20180605.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_websocket_websocket_servlet_9_4_11_v20180605.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_28.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_28.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_10_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_10_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mortbay_jasper_apache_el_8_5_24_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mortbay_jasper_apache_el_8_5_24_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_analysis_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_analysis_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_commons_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_commons_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_tree_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_tree_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_0_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_0_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_0_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_0_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_0_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_0_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_0_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_0_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_0_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_0_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_0_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_0_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_0_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_0_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jetty_2_0_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jetty_2_0_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_0_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_0_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_0_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_0_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_0_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_0_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_0_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_0_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_0_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_0_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_0_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_19.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_19.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-10-30.0.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-10-30.0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-14.0.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-14.0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-16.0.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-16.0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-17.0.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-17.0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/jwt/JwtConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/jwt/JwtConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/jwt/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/jwt/JwtFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/jwt/JwtHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/jwt/JwtHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/KickoutSessionControlFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/KickoutSessionControlFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/RetryLimitHashedCredentialsMatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/RetryLimitHashedCredentialsMatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/ShiroConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/ShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/ShiroRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaAbstractLoadingCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaAbstractLoadingCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaArticleCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaArticleCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-29.0.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-11-29.0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-12-01.0.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOG_HOME_IS_UNDEFINED/@share-self@.log.2018-12-01.0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mybatisplus-spring-boot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mybatisplus-spring-boot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaAbstractLoadingCache.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/cache/GuavaArticleCache.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/CommonsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/CommonsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/jwt/JwtConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/jwt/JwtConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/jwt/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/jwt/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/jwt/JwtHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/jwt/JwtHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/KickoutSessionControlFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/RetryLimitHashedCredentialsMatcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/ShiroConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/config/shiro/ShiroRealm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/Comments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/Comments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/IndexController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/FriendGroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/FriendGroupServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/page/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/page/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/jwt/JwtConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/jwt/JwtFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/config/jwt/JwtHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/baomidou/springboot/auth/jwt/JwtHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ArticleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CommonsMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PermissionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PhotosMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/RoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/RolePermissionMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserRoleMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/VideoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/example.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/page/DemoHandler.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/page/demo.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/page/demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/page/demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CommonsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PhotosMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/RolePermissionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/example.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/page/DemoHandler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/page/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/page/demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/page/demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/page/tio/tiows.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jim.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jim.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logback.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logback.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/page/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/page/500.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/page/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/page/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/page/tio/tiows.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/page/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/static/js/date.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/page/static/js/date.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/static/js/main.27481b66.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/page/static/js/main.27481b66.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/static/js/main.27481b66.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/page/static/js/main.27481b66.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/test/bean.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/page/test/bean.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/test/plain.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/page/test/plain.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/test/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/page/test/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/page/test/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/page/test/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ssl/keystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ssl/keystore.jks" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/demo/target/" />
@@ -227,13 +207,13 @@
         <counts>
           <entry key="class" value="7" />
           <entry key="html" value="3" />
-          <entry key="java" value="216" />
+          <entry key="java" value="220" />
           <entry key="jks" value="1" />
           <entry key="js" value="1" />
           <entry key="md" value="2" />
           <entry key="properties" value="2" />
           <entry key="sql" value="2" />
-          <entry key="xml" value="25" />
+          <entry key="xml" value="29" />
           <entry key="yml" value="3" />
         </counts>
       </usages-collector>
@@ -241,23 +221,24 @@
         <counts>
           <entry key="CLASS" value="7" />
           <entry key="HTML" value="3" />
-          <entry key="JAVA" value="216" />
+          <entry key="JAVA" value="220" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="2" />
           <entry key="SQL" value="2" />
-          <entry key="XML" value="25" />
+          <entry key="XML" value="29" />
           <entry key="YAML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="dummy" value="36" />
           <entry key="html" value="4" />
-          <entry key="java" value="1781" />
+          <entry key="java" value="1782" />
           <entry key="md" value="3" />
           <entry key="properties" value="3" />
-          <entry key="txt" value="22" />
+          <entry key="txt" value="36" />
           <entry key="xml" value="61" />
           <entry key="yml" value="36" />
         </counts>
@@ -265,9 +246,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="4" />
-          <entry key="JAVA" value="1781" />
+          <entry key="JAVA" value="1782" />
           <entry key="Markdown" value="3" />
-          <entry key="PLAIN_TEXT" value="22" />
+          <entry key="PLAIN_TEXT" value="72" />
           <entry key="Properties" value="3" />
           <entry key="XML" value="61" />
           <entry key="YAML" value="36" />
@@ -283,13 +264,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/Article.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
+            <state relative-caret-position="318">
               <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/processor/LoginServiceProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="110" column="18" lean-forward="true" selection-start-line="110" selection-start-column="18" selection-end-line="110" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -313,43 +306,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RolePermissionMapper.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RoleMapper.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PhotosMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommonsMapper.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/UserClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/UserClientMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util/ImgMnUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -403,7 +393,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/domain/FriendGroup.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/controller/FriendGroupController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/MsgServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/service/impl/GroupUserServiceImpl.java" />
@@ -449,11 +438,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/ImServerDemoStart.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/shiro/KickoutSessionControlFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/processor/LoginServiceProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/PhotosMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/PermissionMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/processor/LoginServiceProcessor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/UserClientMapper.java" />
       </list>
     </option>
   </component>
@@ -548,7 +538,38 @@
               <item name="share-self" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="share-self" type="b2602c69:ProjectViewProjectNode" />
+              <item name="share-self" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="baomidou" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="share-self" type="b2602c69:ProjectViewProjectNode" />
+              <item name="share-self" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="baomidou" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="share-self" type="b2602c69:ProjectViewProjectNode" />
+              <item name="share-self" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="baomidou" type="462c0819:PsiDirectoryNode" />
+              <item name="springboot" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="share-self" type="b2602c69:ProjectViewProjectNode" />
@@ -556,7 +577,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -574,7 +594,7 @@
     <property name="SearchEverywhereHistoryKey" value="UserMapper&#9;FILE&#9;file:///STUDY/code/share-self/src/main/java/com/baomidou/springboot/im/mapper/UserMapper.java&#10;GroupUserCon&#9;null&#9;null&#10;Fri&#9;FILE&#9;file:///STUDY/code/share-self/src/main/java/com/baomidou/springboot/domain/FriendGroup.java&#10;MsgUtil&#9;FILE&#9;file:///STUDY/code/share-self/src/main/java/com/baomidou/springboot/util/MsgUtil.java&#10;User&#9;FILE&#9;file://E:/person-project/mybatisplus-spring-boot/src/main/java/com/baomidou/springboot/domain/User.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543646028169" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543647348740" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -590,8 +610,8 @@
       <recent name="com.baomidou.springboot" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im" />
       <recent name="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util" />
       <recent name="$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl" />
@@ -953,7 +973,7 @@
       <workItem from="1542804954243" duration="8054000" />
       <workItem from="1542991360597" duration="3768000" />
       <workItem from="1543505040136" duration="713000" />
-      <workItem from="1543640021545" duration="5690000" />
+      <workItem from="1543640021545" duration="6484000" />
     </task>
     <task id="LOCAL-00001" summary="1，添加注释">
       <created>1534322613276</created>
@@ -1109,7 +1129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543643040342</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="提交整个项目结构">
+      <created>1543646424770</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1543646424770</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1145,7 +1172,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="327817000" />
+    <option name="totallyTimeSpent" value="328611000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1161,14 +1188,14 @@
       <window_info id="Nl-Palette" order="8" />
       <window_info id="Web" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5144578" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4969743" visible="true" weight="0.32771084" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4969743" weight="0.32771084" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5030257" side_tool="true" weight="0.32843137" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32843137" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32771084" />
@@ -1257,7 +1284,8 @@
     <MESSAGE value="git试用" />
     <MESSAGE value="重构项目结构" />
     <MESSAGE value="重构项目结构1" />
-    <option name="LAST_COMMIT_MESSAGE" value="重构项目结构1" />
+    <MESSAGE value="提交整个项目结构" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交整个项目结构" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -1446,7 +1474,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/IUserClientService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
@@ -1513,7 +1541,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/service/impl/IUserClientClientServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
@@ -1537,16 +1565,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="40" column="60" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util/ImgMnUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1580,66 +1598,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/processor/LoginServiceProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/auth/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/Article.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/RolePermissionMapper.xml">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1671,10 +1635,68 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommonsMapper.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/content/entity/Article.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/util/ImgMnUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/processor/LoginServiceProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="110" column="18" lean-forward="true" selection-start-line="110" selection-start-column="18" selection-end-line="110" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="87" selection-start-line="9" selection-start-column="87" selection-end-line="9" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/VideoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserRoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/entity/UserClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/baomidou/springboot/im/mapper/UserClientMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
         </state>
       </provider>
     </entry>
