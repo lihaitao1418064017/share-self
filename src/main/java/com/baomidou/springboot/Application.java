@@ -23,6 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
         "com.baomidou.springboot.im.controller",
         "com.baomidou.springboot.im.service",
         "com.baomidou.springboot.auth.controller",
+        "com.baomidou.springboot.im.processor",
         "com.baomidou.springboot.auth.service"})
 @MapperScan(basePackages = {"com.baomidou.springboot.content.mapper","com.baomidou.springboot.im.mapper","com.baomidou.springboot.auth.mapper"})
 public class Application {

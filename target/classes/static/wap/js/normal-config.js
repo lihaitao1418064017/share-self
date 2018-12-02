@@ -87,7 +87,7 @@
         chatlogin:function (data,successCallBack,failCallBack) {
             ajaxRequest({
                 type:'POST',
-                url : baseUrl+'/userclient/login?name='+data.name+"&password="+data.password,
+                url : baseUrl+'/userclient/login?loginname='+data.loginname+"&password="+data.password,
                 dataType : 'json'
             },successCallBack,failCallBack);
         }

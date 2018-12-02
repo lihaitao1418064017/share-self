@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
  * author:LiHaitao
  * 封装redisTemplate公用处理接口
  */
+
 public interface ICache extends IStringCache,ISetCache,IListCache,IHashCache {
     /**
      * 删除键为key的缓存(hash/set/list/string)

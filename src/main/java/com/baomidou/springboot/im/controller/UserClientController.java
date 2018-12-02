@@ -22,10 +22,10 @@ public class UserClientController {
 
     @RequestMapping("/login")
     public ResponseMessage<UserClient> login(@RequestParam String loginname, @RequestParam String password){
-//        QueryWrapper<UserClient> queryWrapper=new QueryWrapper();
-//        queryWrapper.eq("loginname",loginname);
-//        queryWrapper.eq("password",password);
-        UserClient userClient=userClientService.selectById(1);
+        QueryWrapper<UserClient> queryWrapper=new QueryWrapper();
+        queryWrapper.eq("loginname",loginname);
+        queryWrapper.eq("password",password);
+        UserClient userClient=userClientService.selectOne(queryWrapper);
         if (userClient!=null){
             return ResponseMessage.ok(userClient);
         }

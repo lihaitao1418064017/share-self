@@ -14,12 +14,14 @@ import org.jim.common.utils.JsonKit;
 import org.jim.server.command.CommandManager;
 import org.jim.server.command.handler.LoginReqHandler;
 import org.jim.server.command.handler.processor.handshake.WsHandshakeProcessor;
+import org.springframework.stereotype.Component;
 import org.tio.core.ChannelContext;
 
 /**
  *
  *
  */
+@Component
 public class ImWsHandshakeProcessor extends WsHandshakeProcessor {
 
     @Override

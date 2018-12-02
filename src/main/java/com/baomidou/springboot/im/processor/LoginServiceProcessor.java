@@ -3,7 +3,7 @@
  */
 package com.baomidou.springboot.im.processor;
 
-import cn.hutool.core.util.RandomUtil;
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.springboot.cache.ICache;
 import com.baomidou.springboot.im.entity.Friend;
@@ -16,14 +16,13 @@ import com.baomidou.springboot.im.service.IGroupUserService;
 import com.baomidou.springboot.im.service.IUserClientService;
 import com.baomidou.springboot.util.ImgMnUtil;
 import com.google.common.collect.Lists;
-import org.apache.commons.lang3.StringUtils;
-
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.ObjectUtils;
 import org.jim.common.ImAio;
 import org.jim.common.ImPacket;
 import org.jim.common.ImSessionContext;
 import org.jim.common.ImStatus;
 import org.jim.common.packets.*;
-import org.jim.common.session.id.impl.UUIDSessionIdGenerator;
 import org.jim.common.utils.JsonKit;
 import org.jim.server.command.CommandManager;
 import org.jim.server.command.handler.JoinGroupReqHandler;
@@ -31,22 +30,30 @@ import org.jim.server.command.handler.processor.login.LoginCmdProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.tio.core.ChannelContext;
 
-import java.util.*;
+import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
  * @author
  */
+@Component
+@Slf4j
 public class LoginServiceProcessor implements LoginCmdProcessor {
 
     private Logger logger = LoggerFactory.getLogger(LoginServiceProcessor.class);
 
 
 
+
     @Autowired
     private IUserClientService userClientService;
+
     @Autowired
     private IGroupUserService groupUserService;
 
@@ -58,6 +65,18 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
 
     @Autowired
     private ICache cache;
+
+    private static LoginServiceProcessor loginServiceProcessor;
+
+    @PostConstruct
+    public void init(){
+        loginServiceProcessor=this;
+        loginServiceProcessor.cache=this.cache;
+        loginServiceProcessor.groupUserService=this.groupUserService;
+        loginServiceProcessor.friendService=this.friendService;
+        loginServiceProcessor.userClientService=this.userClientService;
+        loginServiceProcessor.groupService=this.groupService;
+    }
 
 
     private static String[] familyName = new String[]{"谭", "刘", "张", "李", "胡", "沈", "朱", "钱", "王", "伍", "赵", "孙", "吕", "马", "秦", "毛", "成", "梅", "黄", "郭", "杨", "季", "童", "习", "郑",
@@ -92,18 +111,37 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
      * @return
      * @author:
      */
-    public UserClient getUser(String userId) {
-        UserClient user=(UserClient)cache.stringGetStringByKey(userId);
-        if (user!=null){
-            return user;
-        }
+    public User getUser(String userId) {
+//        User user=(User)loginServiceProcessor.cache.stringGetStringByKey(userId);
+//        if (user!=null){
+//            return user;
+//        }
         QueryWrapper<UserClient> queryWrapper=new QueryWrapper<UserClient>();
         queryWrapper.eq("id",userId);
-        user=userClientService.selectOne(queryWrapper);
-        user.setGroups(initGroups(user));
-        user.setFriendList(initFriends(user));
-        cache.stringSetString(user.getId().toString(),user);
-        return user;
+        UserClient userClient=loginServiceProcessor.userClientService.selectOne(queryWrapper);
+        userClient.setGroups(initGroups(userClient));
+
+        User u=userClientToUser(userClient);
+        List<Group> groupsList=Lists.newArrayList();
+        if (initGroups(userClient)!=null){
+           groupsList=initGroups(userClient).stream().map(this::gcToGroup).collect(Collectors.toList());
+        }
+        u.setGroups(groupsList);
+
+
+        List<GroupClient> groupClients=initFriends(userClient);
+        List<Group> groups=Lists.newArrayList();
+        if (groupClients!= null){
+            groupClients.forEach(groupClient->{
+                Group group=gcToGroup(groupClient);
+                group.setOnline(1);
+                groups.add(group);
+            });
+        }
+
+        u.setFriends(groups);
+        loginServiceProcessor.cache.stringSetString(userClient.getId().toString(),u);
+        return u;
     }
 
     public List<GroupClient> initGroups(UserClient user) {
@@ -112,18 +150,21 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
         QueryWrapper<GroupUser> groupQueryWrapper=new QueryWrapper<>();
         groupQueryWrapper.eq("user_id",user.getId());
         //查询用户的所有群组
-        List<GroupUser> groupUsers=groupUserService.selectList(groupQueryWrapper);
+        List<GroupUser> groupUsers=loginServiceProcessor.groupUserService.selectList(groupQueryWrapper);
+        if (groupUsers.isEmpty()){
+            return null;
+        }
         groupUsers.forEach(groupUser -> {
-           GroupClient groupClient =groupService.selectById(groupUser.getGroupId());
+           GroupClient groupClient =loginServiceProcessor.groupService.selectById(groupUser.getGroupId());
            groupClients.add(groupClient);//添加群
             //查询群组中的人
                 QueryWrapper<GroupUser> groupUserQueryWrapper = new QueryWrapper<>();
                 groupUserQueryWrapper.eq("group_id", groupClient.getGroup_id());
-                List<GroupUser> groupUserList=groupUserService.selectList(groupUserQueryWrapper);//所有加群的用户
+                List<GroupUser> groupUserList=loginServiceProcessor.groupUserService.selectList(groupUserQueryWrapper);//所有加群的用户
                  //转换成用户放入群组
                 List<UserClient> userClients=Lists.newArrayList();
                 for (GroupUser each:groupUserList){
-                    UserClient userClient= userClientService.selectById(each.getUserId());
+                    UserClient userClient= loginServiceProcessor.userClientService.selectById(each.getUserId());
                     userClients.add(userClient);
                 }
                 groupClient.setUsers(userClients);
@@ -131,11 +172,29 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
         return groupClients;
     }
 
-    public List<Friend> initFriends(UserClient user) {
+    public List<GroupClient> initFriends(UserClient user) {
         List<Friend> friends=Lists.newArrayList();
         QueryWrapper<Friend> friendQueryWrapper=new QueryWrapper<>();
-        friendQueryWrapper.eq("id",user.getId());
-        return friendService.selectList(friendQueryWrapper);
+        friendQueryWrapper.eq("user_id",user.getId());
+        friends=loginServiceProcessor.friendService.selectList(friendQueryWrapper);
+        if (friends.isEmpty()){
+            return null;
+        }
+        List<GroupClient> groupClients=Lists.newArrayList();
+        GroupClient group=new GroupClient();
+        group.setId(1L);
+        group.setCmd(1);
+        group.setOnline(1);
+        group.setCreateTime(123124124L);
+        groupClients.add(group);
+        List<UserClient> list=new ArrayList<>();
+        for(Friend each:friends){
+            UserClient userClient=loginServiceProcessor.userClientService.selectById(each.getFriendId());
+            list.add(userClient);
+        }
+        group.setUsers(list);
+
+        return groupClients;
     }
 
     public String nextImg() {
@@ -146,40 +205,20 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
         return UUID.randomUUID().toString();
     }
 
-    /**
-     * doLogin方法注意：J-IM登陆命令是根据user是否为空判断是否登陆成功,
-     * <p>
-     * 当登陆失败时设置user属性需要为空，相反登陆成功user属性是必须非空的;
-     */
-    @Override
-    public LoginRespBody doLogin(LoginReqBody loginReqBody, ChannelContext channelContext) {
-        String loginname = loginReqBody.getLoginname();
-        LoginRespBody loginRespBody;
-        UserClient userClient = this.getUser(loginname);
-        User user=ucToUser(userClient);
-        if (user == null) {
-            loginRespBody = new LoginRespBody(Command.COMMAND_LOGIN_RESP, ImStatus.C10008);
-        } else {
-            loginRespBody = new LoginRespBody(Command.COMMAND_LOGIN_RESP, ImStatus.C10007, user);
-        }
-        return loginRespBody;
-    }
+
     public Group gcToGroup(GroupClient client){
         Group group=new Group();
         group.setAvatar(client.getAvatar());
         group.setName(client.getName());
-        group.setGroup_id(client.getGroup_id());
+        group.setGroup_id(client.getId().toString());
         group.setOnline(client.getOnline());
         group.setCmd(client.getCmd());
         group.setCreateTime(client.getCreateTime());
-        group.setUsers(client.getUsers().stream().map(this::ucToUser).collect(Collectors.toList()));
+        group.setUsers(client.getUsers().stream().map(this::userClientToUser).collect(Collectors.toList()));
         return group;
     }
     public User ucToUser(UserClient client){
         User user=new User();
-        List<Group> list=Lists.newArrayList();
-        list.add(friendToGroup(client.getFriendList()));
-        user.setFriends(list);
         user.setAvatar(client.getAvatar());
         user.setGroups(client.getGroups().stream().map(this::gcToGroup).collect(Collectors.toList()));
         user.setId(client.getId().toString());
@@ -189,16 +228,7 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
         user.setTerminal(client.getTerminal());
         return user;
     }
-    public Group friendToGroup(List<Friend> friends){
-        Group group=new Group();
-        List<UserClient> list=new ArrayList<>();
-        for(Friend each:friends){
-            UserClient userClient=userClientService.selectById(each.getUserId());
-            list.add(userClient);
-        }
-        group.setUsers(list.stream().map(this::userClientToUser).collect(Collectors.toList()));
-        return group;
-    }
+
 
     public User userClientToUser(UserClient client){
         User user=new User();
@@ -209,6 +239,25 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
         user.setSign(client.getSign());
         user.setTerminal(client.getTerminal());
         return user;
+    }
+
+    /**
+     *
+     * <p>
+     * 当登陆失败时设置user属性需要为空，相反登陆成功user属性是必须非空的;
+     */
+    @Override
+    public LoginRespBody doLogin(LoginReqBody loginReqBody, ChannelContext channelContext) {
+        String loginname = loginReqBody.getLoginname();
+        LoginRespBody loginRespBody;
+        User user=this.getUser(loginname);
+
+        if (user == null) {
+            loginRespBody = new LoginRespBody(Command.COMMAND_LOGIN_RESP, ImStatus.C10008);
+        } else {
+            loginRespBody = new LoginRespBody(Command.COMMAND_LOGIN_RESP, ImStatus.C10007, user);
+        }
+        return loginRespBody;
     }
 
     @Override
@@ -228,6 +277,17 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
                 }
             }
         }
+//        if (user.getFriends() != null) {
+//            for (Group group : user.getFriends()) {//发送加入群组通知
+//                ImPacket groupPacket = new ImPacket(Command.COMMAND_JOIN_GROUP_REQ, JsonKit.toJsonBytes(group));
+//                try {
+//                    JoinGroupReqHandler joinGroupReqHandler = CommandManager.getCommand(Command.COMMAND_JOIN_GROUP_REQ, JoinGroupReqHandler.class);
+//                    joinGroupReqHandler.joinGroupNotify(groupPacket, channelContext);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
     }
 
     @Override

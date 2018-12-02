@@ -205,7 +205,7 @@ CREATE TABLE `friend_group` (
 
 
 
-CREATE TABLE `group_user` (
+CREATE TABLE `im_group_user` (
   `id` bigint(20) NOT NULL COMMENT '主键ID',
   `tenant_id` bigint(20) NOT NULL COMMENT 'ID',
   `group_id`  VARCHAR (255) DEFAULT NULL COMMENT '群id',

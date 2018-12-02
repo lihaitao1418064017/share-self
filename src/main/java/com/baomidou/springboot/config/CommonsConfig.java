@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.baomidou.springboot.cache.ICache;
 import com.baomidou.springboot.cache.redisImpl.CacheImpl;
+import com.baomidou.springboot.im.processor.LoginServiceProcessor;
 import org.mybatis.spring.annotation.MapperScan;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.Bean;
@@ -17,6 +18,9 @@ import com.baomidou.mybatisplus.extension.plugins.tenant.TenantSqlParser;
 
 import net.sf.jsqlparser.expression.Expression;
 import net.sf.jsqlparser.expression.LongValue;
+
+import javax.annotation.PostConstruct;
+
 /**
 * @Description:    配置类
 * @Author:         LiHaitao
@@ -50,6 +54,10 @@ public class CommonsConfig {
         return  new CacheImpl();
     }
 
+    @Bean
+    public LoginServiceProcessor loginServiceProcessor(){
+        return new LoginServiceProcessor();
+    }
 
 
     /**

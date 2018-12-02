@@ -1,5 +1,6 @@
 package com.baomidou.springboot.im.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.springboot.content.entity.SuperEntity;
 import lombok.Data;
 
@@ -13,6 +14,7 @@ import lombok.Data;
  * @Version 1.0.0
  **/
 @Data
+@TableName("im_group_user")
 public class GroupUser extends SuperEntity<GroupUser> {
 
 
