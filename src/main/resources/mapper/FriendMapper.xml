@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baomidou.springboot.im.mapper.FriendMapper">
+
+
+    <resultMap id="FriendVO" type="com.baomidou.springboot.im.vo.FriendVO">
+        <result column="id" javaType="INTEGER"/>
+        <result column="u_user" jdbcType="VARCHAR" property="user" />
+        <association property="friend" column="friend_id" javaType="com.baomidou.springboot.im.entity.UserClient"><!--exam对象-->
+            <id  property="id" column="user_id"  />
+            <result column="nick" property="nick" jdbcType="VARCHAR" />
+            <result column="avatar" property="avatar" jdbcType="VARCHAR" />
+        </association>
+    </resultMap>
+
+    <select id="selectFriendsByUserId" resultMap="FriendVO">
+        SELECT
+        im_friend.id,
+        im_friend.user_id AS u_user,
+
+        im_user.id AS user_id,
+        im_user.nick AS nick,
+        im_user.avatar AS avatar
+
+        FROM im_friend,im_user
+        WHERE im_friend.friend_id=im_user.id AND im_friend.user_id = #{userId ,jdbcType=VARCHAR}
+    </select>
+
+
+
+</mapper>

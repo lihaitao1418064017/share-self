@@ -19,6 +19,8 @@ import org.jim.server.command.handler.LoginReqHandler;
 
 import org.tio.core.ssl.SslConfig;
 
+import static com.baomidou.springboot.util.ImgMnUtil.start;
+
 
 /**
  * IM服务端DEMO启动类;
@@ -44,6 +46,10 @@ public class ImServerStart {
         loginReqHandler.addProcessor(new LoginServiceProcessor());
         /*****************end *******************************************************************************************/
         imServerStarter.start();
+    }
+
+    public static void main(String[] args)throws Exception {
+        chatStart();
     }
 
     /**

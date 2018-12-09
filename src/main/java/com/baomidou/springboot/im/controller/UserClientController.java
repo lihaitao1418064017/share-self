@@ -7,6 +7,8 @@ import com.baomidou.springboot.response.ResponseMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Description:
  *
@@ -35,7 +37,11 @@ public class UserClientController {
     @PostMapping("/add")
     public ResponseMessage<Boolean> login(@RequestBody UserClient userClient){
 
-
         return ResponseMessage.ok(userClientService.insert(userClient));
     }
+
+
+
+
+
 }

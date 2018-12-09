@@ -15,13 +15,19 @@ $(function () {
     var username;
     var onSelected;
     var curUser;
+    //={
+    //         friends:[],
+    //         groups:[],
+    //         nick:""
+    //
+    //     };
     var friends = [];
     var groupClients = [];
     connect();
     function connect() {
 
         if (curUser) {
-            // alert("当前已登录,请先退出登录!");
+            alert("当前已登录,请先退出登录!");
             return;
         }
 
@@ -85,8 +91,6 @@ $(function () {
     function COMMAND_LOGIN_RESP(dataObj, data) {
         if (10007 == dataObj.code) {//登陆成功;
             // logDiv.innerHTML += "<font color='green' size='1'>连接成功...</font><br>";
-
-
             var userCmd = "{\"cmd\":17,\"type\":\"0\",\"userid\":\"" + username + "\"}";
             var msgCmd = "{\"cmd\":19,\"type\":\"0\",\"userId\":\"" + username + "\"}";
             socket.send(userCmd);//获取登录用户信息;
@@ -98,14 +102,15 @@ $(function () {
     }
     //退出群组通知
     function COMMAND_EXIT_GROUP_NOTIFY_RESP(data) {
-        var exitGroupNotify = data.data;
-        var onlineUserCmd = "{\"cmd\":17,\"type\":\"0\",\"userid\":\"" + curUser.id + "\"}";
-        logDiv.innerHTML += "<font color='#A3A3A3' size='1'>" + exitGroupNotify.user.nick + "(" + exitGroupNotify.user.id + ")退出群聊...</font><br>";
+        //设置离线后的样式
+        $('#'+data.data.user.id).attr("class","gray");
+        $('#'+data.data.user.nick).css("color","#787878");
         socket.send(onlineUserCmd);//获取在线用户列表;
     }
 
     //加入群组的消息通知处理;
     function COMMAND_JOIN_GROUP_NOTIFY_RESP(data) {
+
         var joinGroupNotify = data.data;
         // logDiv.innerHTML += "<font color='#A3A3A3' size='1'>" + joinGroupNotify.user.nick + "(" + joinGroupNotify.user.id + ")加入群聊...</font><br>";
         var onlineUserCmd = "{\"cmd\":17,\"type\":\"0\",\"userid\":\"" + curUser.id + "\"}";
@@ -156,6 +161,7 @@ $(function () {
 
     //好友消息
     function friendOfflineMessage(msgObj, msgFlag) {
+        alert("好友上线")
         var friends = msgObj.friends;
         for (var key in friends) {
             var chatDatas = friends[key];
@@ -170,6 +176,7 @@ $(function () {
 
     //群组消息
     function groupOfflineMessage(msgObj, msgFlag) {
+        alert("群友上线")
         var groupClients = msgObj.groupClients;
         for (var key in groupClients) {
             var chatDatas = groupClients[key];
@@ -204,36 +211,93 @@ $(function () {
     }
 
     function initOnlineUsers() {
-        var groupClients = curUser.groupClients;
-        var onlineUserStr = "";
-        alert(curUser.avatar);
-        for (var g = 0; g < groupClients.length; g++) {
-            var groupClient = groupClients[g];
+        // $("#friend").html("");
+        $('.pet_news_list_tag_name').html(curUser.nick);
 
-            var users = groupClient.users;
-            onlineUserStr += "&nbsp;" + groupClient.name + "在线成员(" + users.length + "/" + users.length + ")";
-            for (var u = 0; u < users.length; u++) {
-                var user = users[u];
-                onlineUserStr += "<div id=\"" + user.id + "\" nick=\"" + user.nick + "\" style=\"line-height: 25px;margin: 5px 5px 0 5px;padding-left:15px;cursor:pointer;\" onclick=\"onlineDb(this);\" onmouseover=\"onlineMove(this);\"  onmouseleave=\"onlineLeave(this);\"><img alt=\"" + user.id + "\" src=\"" + user.avatar + "\" height=\"25px\" width=\"25px;\" style=\"float:left\">&nbsp;<font size='2'>" + user.nick + "(" + user.id + ")</font></div>";
-            }
+        if (curUser==null){
+            return;
         }
-        if (!onlineUserStr) {
-            onlineUserStr = "&nbsp;在线成员(0/0)";
+        var friendList = curUser.friends;
+        var users=friendList[0].users;
+        if (users.length>0){
+           for (var i=0;i<users.length;i++){
+               $('#'+users[i].id).removeClass("gray");
+               $('#'+users[i].nick).css("color","#28FF7C");
+           }
+
         }
-        document.getElementById("onlinePanel").innerHTML = onlineUserStr;
+
+
+
+
+
+
+        // for (var g = 0; g < friendUsers.length; g++) {
+        //     var friend = friendUsers[g];
+        //         // onlineUserStr += "<div id=\"" + user.id + "\" nick=\"" + user.nick + "\" style=\"line-height: 25px;margin: 5px 5px 0 5px;padding-left:15px;cursor:pointer;\" onclick=\"onlineDb(this);\" onmouseover=\"onlineMove(this);\"  onmouseleave=\"onlineLeave(this);\"><img alt=\"" + user.id + "\" src=\"" + user.avatar + "\" height=\"25px\" width=\"25px;\" style=\"float:left\">&nbsp;<font size='2'>" + user.nick + "(" + user.id + ")</font></div>";
+        //     var onlineUser=$("<div class=\"pet_sixin_to\"  style=\"height: 50px;\">\n" +
+        //         "            <div class=\"pet_sixin_to_l\">\n" +
+        //         "                <img src="+friend.avatar+" style=\"height: 50px;\" alt=\"\">\n" +
+        //         "            </div>\n" +
+        //         "            <div class=\"pet_sixin_to_r\">\n" +
+        //         "                <div class=\"pet_sixin_to_r_nr\">\n" +
+        //         "                <div class=\"pet_sixin_to_r_nr_sj\"></div>\n" +
+        //         "             "+friend.nick+"    \n" +
+        //         "                </div>\n" +
+        //         "            </div>\n" +
+        //         "            <div class=\"pet_sixin_shijian\"></div>\n" +
+        //         "        </div>\n");
+        //     $('#friend').append(onlineUser);
+        // }
+        //
+        //
+        // for (var g = 0; g < groupList.length; g++) {
+        //     var group = groupList[g];
+        //     // onlineUserStr += "<div id=\"" + user.id + "\" nick=\"" + user.nick + "\" style=\"line-height: 25px;margin: 5px 5px 0 5px;padding-left:15px;cursor:pointer;\" onclick=\"onlineDb(this);\" onmouseover=\"onlineMove(this);\"  onmouseleave=\"onlineLeave(this);\"><img alt=\"" + user.id + "\" src=\"" + user.avatar + "\" height=\"25px\" width=\"25px;\" style=\"float:left\">&nbsp;<font size='2'>" + user.nick + "(" + user.id + ")</font></div>";
+        //     var onlineGroup=$("<div class=\"pet_sixin_to\"  style=\"height: 50px;\">\n" +
+        //         "            <div class=\"pet_sixin_to_l\">\n" +
+        //         "                <img src="+group.avatar+" style=\"height: 50px;\" alt=\"\">\n" +
+        //         "            </div>\n" +
+        //         "            <div class=\"pet_sixin_to_r\">\n" +
+        //         "                <div class=\"pet_sixin_to_r_nr\">\n" +
+        //         "                <div class=\"pet_sixin_to_r_nr_sj\"></div>\n" +
+        //         "             "+group.name+"    \n" +
+        //         "                </div>\n" +
+        //         "            </div>\n" +
+        //         "            <div class=\"pet_sixin_shijian\"></div>\n" +
+        //         "        </div>\n");
+        //
+        //     $('#friend').append(onlineGroup);
+        // }
+
     }
 
     function disConnect() {
         socket.close();
     }
 
-    function send() {
-        var toId = "";
-        if (onSelected) {
-            toId = onSelected.getElementsByTagName("img")[0].alt;
+    function getUserOrGroupId(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+    }
+    $('#send').click(function () {
+        if (getQueryString("u_id")!=null){
+            send(getQueryString("u_id"));
+        } else if (getQueryString("g_id")!=null){
+            sendGroup(getQueryString("g_id"));
+        } else {
+            alert("用户不在线")
         }
+    })
+
+
+    function send(id) {
+        var toId = id;
         var createTime = new Date().getTime();
-        var content = document.getElementById('content').value;
+        //获取发送的内容
+        var content = $("#content").val();
         if (content == "")
             return;
         var msg = "{\"from\": \"" + username + "\",\"to\": \"" + toId + "\",\"cmd\":11,\"createTime\":" + createTime + ",\"chatType\":\"2\",\"msgType\": \"0\",\"content\": \"" + content + "\"}";
@@ -241,13 +305,34 @@ $(function () {
             alert("请选择要私聊的人!");
             return;
         }
-        if (toId == username) {
+        if (toId === username) {
             alert("无法给自己发送消息!");
             return;
         }
         socket.send(msg);
         var chatObj = eval("(" + msg + ")");
         var createTime = new Date(chatObj.createTime).Format("yyyy/MM/dd HH:mm:ss");
+        var selfMessage=$("   <div class=\"pet_sixin_form\">\n" +
+            "                    <div class=\"pet_sixin_form_l\">\n" +
+            "                        <img src=\""+curUser.avatar+"\" alt=\"\">\n" +
+            "                    </div>\n" +
+            "                    <div class=\"pet_sixin_form_r\">\n" +
+            "                        <div class=\"pet_sixin_form_r_nr\">\n" +
+            "                            <div class=\"pet_sixin_form_r_nr_sj\"></div>\n" +
+            "                           "+chatObj.content+"\n" +
+            "                        </div>\n" +
+            "                    </div>\n" +
+            "                    <div class=\"pet_sixin_shijian\">"+createTime+"</div>\n" +
+            "                </div>")
+        $('#message').append(selfMessage);
+
+
+
+
+
+
+
+
         //处理数据
         logDiv.innerHTML += "<font color='#228B22' size='1' style='font-weight: bold'>" + chatObj.from + " " + createTime + "</font><br>";
         //处理数据
@@ -319,7 +404,7 @@ $(function () {
             }
         }
     }
-
+//设置用户名
     function setUserName() {
         document.getElementById("username").value = new Date().getTime();
     }
@@ -339,7 +424,7 @@ $(function () {
         var authCmd = "{\"cmd\":3,\"token\":\"校验码\"}";
         socket.send(authCmd);
     }
-
+//心跳
     function heartbeatCmd() {
         if (!curUser) {
             alert("demo中模拟命令需要先登录，请先登录!");
@@ -348,6 +433,7 @@ $(function () {
         socket.send(heartbeatCmd);
     }
 
+    //获取朋友历史消息
     function friendHistoryCmd() {
         if (!curUser) {
             alert("请先登录!");
@@ -363,6 +449,7 @@ $(function () {
         socket.send(msgHistoryCmd);//获取用户历史消息;
     }
 
+    //获取群组历史消息
     function groupHistoryCmd() {
         if (!curUser) {
             alert("请先登录!");

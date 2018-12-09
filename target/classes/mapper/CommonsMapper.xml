@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.baomidou.springboot.content.mapper.CommenstMapper">
+
+
     <resultMap id="CommentsVO" type="com.baomidou.springboot.content.vo.CommentsVO">
         <id column="co_id" jdbcType="INTEGER" property="id" />
         <result column="co_content" jdbcType="VARCHAR" property="content" />
-        <result column="co_date" jdbcType="DATE" property="content" />
+        <result column="co_date" jdbcType="DATE" property="date" />
         <result column="co_praise" jdbcType="INTEGER" property="praise" />
         <association property="parentUser" column="parent_id" javaType="com.baomidou.springboot.auth.entity.User">
             <id  property="id" column="id"  />

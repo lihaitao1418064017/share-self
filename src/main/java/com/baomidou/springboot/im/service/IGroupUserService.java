@@ -2,7 +2,10 @@ package com.baomidou.springboot.im.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.springboot.im.entity.GroupUser;
+import com.baomidou.springboot.im.vo.GroupUserVO;
 import org.tio.core.ChannelContext;
+
+import java.util.List;
 
 /**
 * @Description:
@@ -21,4 +24,5 @@ public interface IGroupUserService extends IService<GroupUser> {
      */
     public void bingAllGroup(String userId, ChannelContext channelContext);
 
+    List<GroupUserVO> selectGroupsByUserId(Long userId);
 }

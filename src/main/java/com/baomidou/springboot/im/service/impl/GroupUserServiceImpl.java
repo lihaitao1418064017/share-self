@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.springboot.im.entity.GroupUser;
 import com.baomidou.springboot.im.mapper.GroupUserMapper;
 import com.baomidou.springboot.im.service.IGroupUserService;
+import com.baomidou.springboot.im.vo.GroupUserVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,5 +41,11 @@ public class GroupUserServiceImpl extends ServiceImpl<GroupUserMapper, GroupUser
         }
         list.forEach(groupUser -> Aio.bindGroup(channelContext,groupUser.getGroupId()));
         log.info("绑定群组通道完成："+list.size());
+    }
+
+    @Override
+    public List<GroupUserVO> selectGroupsByUserId(Long userId) {
+
+        return baseMapper.selectGroupsByUserId(userId);
     }
 }

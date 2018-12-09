@@ -90,6 +90,21 @@
                 url : baseUrl+'/userclient/login?loginname='+data.loginname+"&password="+data.password,
                 dataType : 'json'
             },successCallBack,failCallBack);
+        },
+
+        getFriend:function (data,successCallBack,failCallBack) {
+            ajaxRequest({
+                type:'GET',
+                url : baseUrl+'/friend/'+data.userId,
+                dataType : 'json'
+            },successCallBack,failCallBack);
+        },
+        getGroup:function (data,successCallBack,failCallBack) {
+            ajaxRequest({
+                type:'GET',
+                url : baseUrl+'/groupuser/'+data.userId,
+                dataType : 'json'
+            },successCallBack,failCallBack);
         }
 
 

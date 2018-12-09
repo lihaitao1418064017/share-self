@@ -19,7 +19,7 @@ public class GroupUser extends SuperEntity<GroupUser> {
 
 
 
-    private String userId;
+    private Long userId;
 
     private String groupId;
 

@@ -15,7 +15,6 @@ import lombok.Data;
 public class Friend extends SuperEntity<Friend>
 {
 
-
     /**
      * 用户
      */

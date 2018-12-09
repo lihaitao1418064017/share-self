@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baomidou.springboot.im.mapper.GroupUserMapper">
+
+
+    <resultMap id="GroupUserVO" type="com.baomidou.springboot.im.vo.GroupUserVO">
+        <result column="id" jdbcType="VARCHAR" /><!--一 定要写出id，否则查询结果永远只有一条-->
+        <result column="user_id" jdbcType="VARCHAR" property="user" />
+        <association property="groupClient" column="group_id" javaType="com.baomidou.springboot.im.entity.GroupClient"><!--exam对象-->
+            <id  property="id" column="group_id"  />
+            <result column="name" property="name" jdbcType="VARCHAR" />
+            <result column="avatar" property="avatar" jdbcType="VARCHAR" />
+        </association>
+    </resultMap>
+
+    <select id="selectGroupsByUserId" resultMap="GroupUserVO">
+        SELECT
+         im_group_user.id,
+         im_group_user.user_id,
+         im_group.id AS group_id,
+         im_group.name AS name,
+         im_group.avatar AS avatar
+        FROM im_group_user,im_group
+        WHERE im_group_user.group_id = im_group.id AND im_group_user.user_id = #{userId ,jdbcType=INTEGER}
+    </select>
+
+
+
+</mapper>

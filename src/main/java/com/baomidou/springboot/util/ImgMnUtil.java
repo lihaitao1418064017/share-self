@@ -45,7 +45,7 @@ public class ImgMnUtil {
     static AtomicInteger imgIndex = new AtomicInteger();
 
     public static String nextImg() {
-
+        start();
         Lock lock = imgListWithLock.getLock().readLock();
         try {
             lock.lock();
@@ -80,7 +80,7 @@ public class ImgMnUtil {
                 while (true) {
                     work();
                     try {
-                        Thread.sleep(PropKit.getInt("shedule", 5) * 1000 * 60); //多长时间爬一次
+                        Thread.sleep(PropKit.getInt("shedule", 2) * 1000 * 60); //多长时间爬一次
                     } catch (Exception e) {
                         log.error(e.toString(), e);
                     }
@@ -119,7 +119,7 @@ public class ImgMnUtil {
         File file = new File(basePath + filepath);
         if (file.exists()) {
             List<String> list = FileUtil.readLines(file, "utf-8");
-            if (list.size() >= 1000) {
+            if (list.size() >= 500) {
                 imgListWithLock.getObj().addAll(list);
                 return;
             }

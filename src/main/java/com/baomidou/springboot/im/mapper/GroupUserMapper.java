@@ -3,6 +3,10 @@ package com.baomidou.springboot.im.mapper;
 
 import com.baomidou.springboot.SuperMapper;
 import com.baomidou.springboot.im.entity.GroupUser;
+import com.baomidou.springboot.im.vo.GroupUserVO;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
 * @Description:
@@ -16,6 +20,7 @@ import com.baomidou.springboot.im.entity.GroupUser;
 public interface GroupUserMapper extends SuperMapper<GroupUser> {
 
 
+    List<GroupUserVO> selectGroupsByUserId(@Param("userId")Long userId);
 
 
 

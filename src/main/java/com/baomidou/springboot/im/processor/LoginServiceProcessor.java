@@ -66,6 +66,7 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
     @Autowired
     private ICache cache;
 
+    private String loginname=null;
     private static LoginServiceProcessor loginServiceProcessor;
 
     @PostConstruct
@@ -119,6 +120,9 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
         QueryWrapper<UserClient> queryWrapper=new QueryWrapper<UserClient>();
         queryWrapper.eq("id",userId);
         UserClient userClient=loginServiceProcessor.userClientService.selectOne(queryWrapper);
+        if (userClient==null){
+            return null;
+        }
         userClient.setGroups(initGroups(userClient));
 
         User u=userClientToUser(userClient);
@@ -145,6 +149,9 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
     }
 
     public List<GroupClient> initGroups(UserClient user) {
+        if (user==null){
+            return new ArrayList<>();
+        }
         //业务去查数据库或者缓存;
         List<GroupClient> groupClients = new ArrayList<GroupClient>();
         QueryWrapper<GroupUser> groupQueryWrapper=new QueryWrapper<>();
@@ -248,10 +255,19 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
      */
     @Override
     public LoginRespBody doLogin(LoginReqBody loginReqBody, ChannelContext channelContext) {
-        String loginname = loginReqBody.getLoginname();
+         loginname = loginReqBody.getLoginname();
+        if (loginname==null){
+            LoginRespBody    loginRespBody = new LoginRespBody(Command.COMMAND_LOGIN_RESP, ImStatus.C10008);
+            return loginRespBody;
+        }
         LoginRespBody loginRespBody;
         User user=this.getUser(loginname);
-
+        if (user!=null) {
+            user.setAvatar(ImgMnUtil.nextImg());
+            user.getGroups().forEach(group -> {
+                group.setAvatar(ImgMnUtil.nextImg());
+            });
+        }
         if (user == null) {
             loginRespBody = new LoginRespBody(Command.COMMAND_LOGIN_RESP, ImStatus.C10008);
         } else {
@@ -262,9 +278,16 @@ public class LoginServiceProcessor implements LoginCmdProcessor {
 
     @Override
     public void onSuccess(ChannelContext channelContext) {
+        if (loginname==null){
+            return;
+        }
         logger.info("登录成功回调方法");
         ImSessionContext imSessionContext = (ImSessionContext) channelContext.getAttribute();
         User user = imSessionContext.getClient().getUser();
+        user.setAvatar(ImgMnUtil.nextImg());
+        user.getGroups().forEach(group -> {
+            group.setAvatar(ImgMnUtil.nextImg());
+        });
         ImAio.bindUser(channelContext,user.getId());
         if (user.getGroups() != null) {
             for (Group group : user.getGroups()) {//发送加入群组通知
